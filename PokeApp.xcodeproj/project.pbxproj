@@ -17,6 +17,10 @@
 		740ECA95290054E800C7CF26 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740ECA94290054E800C7CF26 /* UIColorExtensions.swift */; };
 		740ECA97290054F800C7CF26 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740ECA96290054F800C7CF26 /* ColorExtensions.swift */; };
 		7415028629A22A600071BC11 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415028529A22A600071BC11 /* ViewExtensions.swift */; };
+		741E291F29A2453D001A273E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E291E29A2453D001A273E /* SignUpViewModel.swift */; };
+		741E292229A2454C001A273E /* SuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E292129A2454B001A273E /* SuccessScreen.swift */; };
+		741E292429A24608001A273E /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E292329A24608001A273E /* ImageAsset.swift */; };
+		741E292629A24611001A273E /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E292529A24611001A273E /* ImageExtensions.swift */; };
 		74243469297C53A500462399 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74243468297C53A500462399 /* Logger.swift */; };
 		74274A6D29377D400070E1AD /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74274A6529377D3F0070E1AD /* Loadable.swift */; };
 		74274A6E29377D400070E1AD /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74274A6629377D3F0070E1AD /* APICall.swift */; };
@@ -86,6 +90,10 @@
 		740ECA94290054E800C7CF26 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		740ECA96290054F800C7CF26 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		7415028529A22A600071BC11 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		741E291E29A2453D001A273E /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		741E292129A2454B001A273E /* SuccessScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessScreen.swift; sourceTree = "<group>"; };
+		741E292329A24608001A273E /* ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		741E292529A24611001A273E /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		74243468297C53A500462399 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		74274A6529377D3F0070E1AD /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		74274A6629377D3F0070E1AD /* APICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 			children = (
 				740CF9D9292501FD000ADFEE /* StackExtensions.swift */,
 				740ECA94290054E800C7CF26 /* UIColorExtensions.swift */,
+				741E292529A24611001A273E /* ImageExtensions.swift */,
 				740ECA96290054F800C7CF26 /* ColorExtensions.swift */,
 				7415028529A22A600071BC11 /* ViewExtensions.swift */,
 			);
@@ -191,6 +200,7 @@
 				74C334AF29268A1900FE7A34 /* ColorToken.swift */,
 				74DC01332910DE3800629D11 /* FontStyle.swift */,
 				740CF9DE29250442000ADFEE /* SpacingToken.swift */,
+				741E292329A24608001A273E /* ImageAsset.swift */,
 				740ECA9229004F0D00C7CF26 /* FontToken.swift */,
 			);
 			path = Tokens;
@@ -230,10 +240,19 @@
 				749CC8FA2913B4E400BB9E87 /* SignUp */,
 				74727A9729707A4600ED29FF /* Home */,
 				74727A9929707A4D00ED29FF /* Favorites */,
+				741E292029A2454B001A273E /* Success */,
 				74727A9A29707A5000ED29FF /* Reservations */,
 				74727A9B29707A5800ED29FF /* Profile */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		741E292029A2454B001A273E /* Success */ = {
+			isa = PBXGroup;
+			children = (
+				741E292129A2454B001A273E /* SuccessScreen.swift */,
+			);
+			path = Success;
 			sourceTree = "<group>";
 		};
 		74243467297C539C00462399 /* Internal */ = {
@@ -423,6 +442,7 @@
 		749CC8FA2913B4E400BB9E87 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				741E291E29A2453D001A273E /* SignUpViewModel.swift */,
 				749CC8FD2913B63A00BB9E87 /* SignUpScreen.swift */,
 			);
 			path = SignUp;
@@ -570,12 +590,14 @@
 				7456AFC528D4782900C347E9 /* Restaurant.swift in Sources */,
 				7456AFBF28D467B000C347E9 /* AppDelegate.swift in Sources */,
 				740ECA95290054E800C7CF26 /* UIColorExtensions.swift in Sources */,
+				741E292629A24611001A273E /* ImageExtensions.swift in Sources */,
 				740CF9DF29250442000ADFEE /* SpacingToken.swift in Sources */,
 				740ECA9329004F0D00C7CF26 /* FontToken.swift in Sources */,
 				74C334B029268A1900FE7A34 /* ColorToken.swift in Sources */,
 				74274A7329377D400070E1AD /* Store.swift in Sources */,
 				74727A8E29700A9D00ED29FF /* NavigationControllerHost.swift in Sources */,
 				74727A8B29700A9C00ED29FF /* NavigationStyle.swift in Sources */,
+				741E292229A2454C001A273E /* SuccessScreen.swift in Sources */,
 				74727A9F29707A9000ED29FF /* FavoritesScreen.swift in Sources */,
 				74727A8D29700A9C00ED29FF /* RouterHost.swift in Sources */,
 				740CF9D32924FD64000ADFEE /* Logo.swift in Sources */,
@@ -589,6 +611,7 @@
 				74274A7229377D400070E1AD /* NetworkingHelpers.swift in Sources */,
 				7456AFBC28D4676B00C347E9 /* Env.swift in Sources */,
 				74727AA129707B1900ED29FF /* Reservations.swift in Sources */,
+				741E291F29A2453D001A273E /* SignUpViewModel.swift in Sources */,
 				7415028629A22A600071BC11 /* ViewExtensions.swift in Sources */,
 				74243469297C53A500462399 /* Logger.swift in Sources */,
 				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
@@ -605,6 +628,7 @@
 				740ECA8B29004ECE00C7CF26 /* TextLabel.swift in Sources */,
 				747FB0FC2989335E006AFE43 /* Button.swift in Sources */,
 				74727A8F29700A9D00ED29FF /* Route.swift in Sources */,
+				741E292429A24608001A273E /* ImageAsset.swift in Sources */,
 				74274A7129377D400070E1AD /* Helpers.swift in Sources */,
 				74274A7029377D400070E1AD /* WebRepository.swift in Sources */,
 				74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */,
