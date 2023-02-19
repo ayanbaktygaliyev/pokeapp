@@ -31,7 +31,12 @@ public struct SignInScreen: View {
             
             Spacer(minLength: 200)
             
-            Button(title: StringConstants.SignIn.signIn, action: viewModel.didTapSignIn)
+            Button(
+                title: StringConstants.SignIn.signIn,
+                action: {
+                    router.push(.home)
+                }
+            )
             
             Spacer(minLength: 32)
                 .fixedSize()
