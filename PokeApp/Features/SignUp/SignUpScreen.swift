@@ -23,8 +23,8 @@ public struct SignUpScreen: View {
             Spacer(minLength: 40)
                 .fixedSize()
             
-            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignIn.username)
-            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignIn.password)
+//            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignIn.username)
+//            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignIn.password)
             
             Spacer(minLength: 200)
             
