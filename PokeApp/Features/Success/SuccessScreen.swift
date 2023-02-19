@@ -19,32 +19,40 @@ public struct SuccessScreen: View {
                 Circle()
                     .fill(Color(.foodieGreen))
                     .frame(width: 92, height: 92)
+                
                 Image(asset: .check)
             }
+            
             Spacer(minLength: 29)
                 .fixedSize()
             
             TextLabel(
                 content: StringConstants.Success.success,
                 color: .black,
-                fontToken: .size36,
+                fontToken: .size27,
                 style: .bold
             )
+            
+            Spacer(minLength: 12)
+                .fixedSize()
+            
             TextLabel(
                 content: StringConstants.Success.Congrats,
                 color: .grey,
-                fontToken: .size21,
-                style: .bold
+                fontToken: .size17,
+                style: .regular
             )
             .multilineTextAlignment(.center)
             
-            Spacer(minLength: 202)
+            Spacer(minLength: 190)
                 .fixedSize()
             
-            Button(title: StringConstants.Success.signIn, action: {})
-            .button {
-                router.popTo(.signIn)
-            }
+            Button(
+                title: StringConstants.Success.signIn,
+                action: {
+                    router.push(.signIn)
+                }
+            )
             
         }
     }
