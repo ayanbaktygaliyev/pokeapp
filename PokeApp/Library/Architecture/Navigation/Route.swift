@@ -6,6 +6,7 @@ public enum Route: Equatable {
     case loading
     case signIn
     case signUp
+    case success
     case home
     case favorites
     case reservations

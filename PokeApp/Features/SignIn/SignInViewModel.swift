@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 class SignInViewModel: ObservableObject {
     struct State {
@@ -15,9 +16,5 @@ class SignInViewModel: ObservableObject {
     
     func didTapSignIn() {
         print("Hello Sign In")
-    }
-    
-    func didTapCreateAccount() {
-        print("Hello Create account")
     }
 }

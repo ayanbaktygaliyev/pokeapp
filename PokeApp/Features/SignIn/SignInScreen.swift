@@ -1,6 +1,9 @@
 import SwiftUI
 
 public struct SignInScreen: View {
+    @EnvironmentObject
+    private var router: Router<Route>
+    
     @StateObject
     private var viewModel = SignInViewModel()
     
@@ -48,7 +51,7 @@ public struct SignInScreen: View {
                     style: .regular
                 )
                 .button {
-                    viewModel.didTapCreateAccount()
+                    router.push(.signUp)
                 }
             }
         }
