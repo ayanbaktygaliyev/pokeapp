@@ -23,7 +23,7 @@ private extension Button {
                     .foregroundColor(Color(.foodieGreen))
                 
                 TextLabel(
-                    content: StringConstants.SignIn.signIn,
+                    content: title,
                     color: .white,
                     fontToken: .size17,
                     style: .regular
