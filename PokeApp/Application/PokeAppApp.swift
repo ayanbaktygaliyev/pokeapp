@@ -6,7 +6,7 @@ struct PokeAppApp: App {
     private var appDelegate
     
     @StateObject
-    private var router = Router(initial: Route.signIn, debug: true)
+    private var router = Router(initial: Route.signUp, debug: true)
     
     // In future can improve it with passing some dependency
     // injector container instead of passing GameState directly

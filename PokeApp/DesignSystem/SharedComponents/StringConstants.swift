@@ -18,8 +18,9 @@ public enum StringConstants {
     public enum SignUp {
         static let username = "Username"
         static let password = "Password"
-        static let welcome = "Welcome back,\nSign in to continue"
-        static let signIn = "Sign In"
-        static let noAccount = "Don’t have an account? Create account"
+        static let getStarted = "Get started\n with your new favourite app"
+        static let signUp = "Sign up"
+        static let haveAcoount = "Already have an account?"
+        static let signIn = "Sign in"
     }
 }

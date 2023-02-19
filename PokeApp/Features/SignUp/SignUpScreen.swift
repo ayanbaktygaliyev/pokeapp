@@ -1,8 +1,8 @@
 import SwiftUI
 
 public struct SignUpScreen: View {
-//    @StateObject
-//    private var viewModel = SignUpViewModel()
+    @StateObject
+    private var viewModel = SignUpViewModel()
     
     public var body: some View {
         VStack(alignment: .center, spacing: .spacing0) {
@@ -13,7 +13,7 @@ public struct SignUpScreen: View {
                 .fixedSize()
             
             TextLabel(
-                content: StringConstants.SignIn.welcome,
+                content: StringConstants.SignUp.getStarted,
                 color: .black,
                 fontToken: .size17,
                 style: .regular
@@ -23,32 +23,32 @@ public struct SignUpScreen: View {
             Spacer(minLength: 40)
                 .fixedSize()
             
-//            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignIn.username)
-//            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignIn.password)
+            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignUp.username)
+            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignUp.password)
             
             Spacer(minLength: 200)
             
-            Button(title: StringConstants.SignIn.signIn, action: {})
+            Button(title: StringConstants.SignUp.signUp, action: viewModel.didTapSignUp)
             
             Spacer(minLength: 32)
                 .fixedSize()
             
             HStack(spacing: .spacing2) {
                 TextLabel(
-                    content: StringConstants.SignIn.noAccount,
+                    content: StringConstants.SignUp.haveAcoount,
                     color: .black,
                     fontToken: .size15,
                     style: .regular
                 )
                 
                 TextLabel(
-                    content: StringConstants.SignIn.createAccount,
+                    content: StringConstants.SignUp.signIn,
                     color: .foodieGreen,
                     fontToken: .size15,
                     style: .regular
                 )
                 .button {
-                    print("Hello")
+                    print("Hello from sign in")
                 }
             }
         }
