@@ -1,6 +1,9 @@
 import SwiftUI
 
 public struct SignUpScreen: View {
+    @EnvironmentObject
+    private var router: Router<Route>
+    
     @StateObject
     private var viewModel = SignUpViewModel()
     
@@ -48,7 +51,7 @@ public struct SignUpScreen: View {
                     style: .regular
                 )
                 .button {
-                    print("Hello from sign in")
+                    router.popTo(.signIn)
                 }
             }
         }
