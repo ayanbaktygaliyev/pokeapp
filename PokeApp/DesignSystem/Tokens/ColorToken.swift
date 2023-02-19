@@ -11,4 +11,6 @@ public enum ColorToken: Int64 {
     
     case attention = 0x2B2B2E
     case mono400 = 0x999999
+    case successBackground = 0x40bfff
+    case grey = 0x828282
 }
