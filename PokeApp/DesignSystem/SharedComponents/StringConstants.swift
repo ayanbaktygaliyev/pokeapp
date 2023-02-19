@@ -23,9 +23,20 @@ public enum StringConstants {
         static let haveAcoount = "Already have an account?"
         static let signIn = "Sign In"
     }
+    
     public enum Success {
         static let success = "Success"
         static let Congrats = "Congratulations your account has\n been created"
         static let signIn = "Sign In"
+    }
+    
+    public enum Home {
+        static let yourLocation = "Your location"
+        static let restaurants = "Restaurants"
+        static let seeAll = "See all"
+        static let recommended = "Recommended"
+        static let cuisines = "Cuisines"
+        static let nearby = "Nearby"
+        static let places = "places"
     }
 }

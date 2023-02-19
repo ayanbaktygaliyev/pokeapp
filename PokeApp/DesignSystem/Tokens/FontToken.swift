@@ -10,5 +10,7 @@ public enum FontToken: CGFloat {
     case size17 = 17
     case size16 = 16
     case size15 = 15
-
+    case size13 = 13
+    case size12 = 12
+    case size10 = 10
 }
