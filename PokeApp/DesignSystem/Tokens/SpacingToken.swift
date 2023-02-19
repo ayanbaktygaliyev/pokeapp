@@ -6,6 +6,7 @@ public enum SpacingToken: CGFloat {
     case spacing4 = 4
     case spacing6 = 6
     case spacing8 = 8
+    case spacing10 = 10
     case spacing12 = 12
     case spacing16 = 16
     case spacing18 = 18
