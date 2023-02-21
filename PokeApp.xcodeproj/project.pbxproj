@@ -63,6 +63,8 @@
 		74C334B029268A1900FE7A34 /* ColorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C334AF29268A1900FE7A34 /* ColorToken.swift */; };
 		74DC01342910DE3800629D11 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC01332910DE3800629D11 /* FontStyle.swift */; };
 		74DC01372910E18200629D11 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC01362910E18200629D11 /* SignInScreen.swift */; };
+		E436784229A4DB7700041AF3 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E436784129A4DB7700041AF3 /* GifView.swift */; };
+		E436784629A4DEF500041AF3 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E436784529A4DEF500041AF3 /* loading.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		74C334AF29268A1900FE7A34 /* ColorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorToken.swift; sourceTree = "<group>"; };
 		74DC01332910DE3800629D11 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		74DC01362910E18200629D11 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		E436784129A4DB7700041AF3 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		E436784529A4DEF500041AF3 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,7 +421,9 @@
 		74727A932970788600ED29FF /* Loading */ = {
 			isa = PBXGroup;
 			children = (
+				E436784529A4DEF500041AF3 /* loading.gif */,
 				74727A942970788E00ED29FF /* LoadingScreen.swift */,
+				E436784129A4DB7700041AF3 /* GifView.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E436784629A4DEF500041AF3 /* loading.gif in Resources */,
 				7456AF9928D4665400C347E9 /* Preview Assets.xcassets in Resources */,
 				7456AF9628D4665400C347E9 /* Assets.xcassets in Resources */,
 			);
@@ -637,6 +644,7 @@
 				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
+				E436784229A4DB7700041AF3 /* GifView.swift in Sources */,
 				7456AF9228D4665100C347E9 /* PokeAppApp.swift in Sources */,
 				74274A6D29377D400070E1AD /* Loadable.swift in Sources */,
 				74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */,
