@@ -13,24 +13,31 @@ public struct HomeScreen: View {
     }
     
     private var content: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: .spacing16) {                
-                headerView
-                
-                TextLabel(
-                    content: StringConstants.Home.restaurants,
-                    color: .black,
-                    fontToken: .size24,
-                    style: .bold
-                )
-                
-                recommendedSection
-                
-                cuisinesSection
-                
-                nearbySection
+        VStack(alignment: .leading, spacing: .spacing16){
+            
+            headerView
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: .spacing16) {
+
+                    TextLabel(
+                        content: StringConstants.Home.restaurants,
+                        color: .black,
+                        fontToken: .size24,
+                        style: .bold
+                    )
+                    
+                    recommendedSection
+                    
+                    cuisinesSection
+                    
+                    nearbySection
+                    
+                }
             }
+            
         }
+        
     }
     
     private var headerView: some View {
