@@ -110,7 +110,7 @@ struct HomeRecommendedCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(systemName: "heart.fill")
+            Image(asset: .favorites)
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)

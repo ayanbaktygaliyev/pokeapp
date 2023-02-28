@@ -9,7 +9,7 @@ public struct HomeScreen: View {
     
     public var body: some View {
         content
-            .padding(.horizontal, 16)
+            .padding(.leading, 16)
     }
     
     private var content: some View {
@@ -86,9 +86,10 @@ public struct HomeScreen: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { _ in
+                    ForEach(0..<10) { index in
                         HomeRecommendedCard.stub()
                             .frame(width: 166, height: 220)
+                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
                     }
                 }
             }
@@ -120,9 +121,10 @@ public struct HomeScreen: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { _ in
+                    ForEach(0..<10) { index in
                         HomeCuisineCard.stub()
                             .frame(width: 140, height: 200)
+                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
                     }
                 }
             }
@@ -154,9 +156,10 @@ public struct HomeScreen: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { _ in
+                    ForEach(0..<10) { index in
                         HomeRecommendedCard.stub()
                             .frame(width: 166, height: 220)
+                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
                     }
                 }
             }
