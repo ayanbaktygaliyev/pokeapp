@@ -27,11 +27,7 @@ private extension TextField {
                     .padding(.horizontal, 16)
             }
             
-            Rectangle()
-                .frame(height: 0.5)
-                .padding(.horizontal, 16)
-                .foregroundColor(.black.opacity(0.5))
-
+            Separator(.indented)
         }
         .frame(height: 60)
     }

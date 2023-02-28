@@ -22,6 +22,7 @@ public struct LoadingScreen: View {
         }
     }
 }
+
 struct LoadingScreen_Previews: PreviewProvider {
     static var previews: some View {
         SignInScreen()

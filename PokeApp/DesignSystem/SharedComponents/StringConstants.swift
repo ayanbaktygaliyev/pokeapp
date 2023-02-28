@@ -6,6 +6,13 @@ public enum StringConstants {
         static let slogan = "reserve with pleasure"
     }
     
+    public enum TabView {
+        static let home = "Home"
+        static let allRestaurants = "Restaurants"
+        static let reservations = "Reservations"
+        static let profile = "Profile"
+    }
+    
     public enum SignIn {
         static let username = "Username"
         static let password = "Password"
