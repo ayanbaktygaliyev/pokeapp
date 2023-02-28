@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RootTopScreen: View {
     @StateObject
-    private var router = Router(initial: Route.signIn, debug: true)
+    private var router = Router(initial: Route.launch, debug: true)
     
     @StateObject
     private var viewModel = RootTopViewModel()
