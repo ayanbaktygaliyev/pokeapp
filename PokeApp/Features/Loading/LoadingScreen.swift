@@ -1,9 +1,11 @@
 import SwiftUI
 
 public struct LoadingScreen: View {
+    @EnvironmentObject
+    private var router: Router<Route>
+    
     public var body: some View {
-        VStack{
-            
+        VStack {
             Spacer(minLength: 150)
                 .fixedSize()
             
@@ -19,6 +21,13 @@ public struct LoadingScreen: View {
             
             GifImage("loading")
                 .allowsHitTesting(false)
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.3)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    router.push(.signIn)
+                }
+            }
         }
     }
 }

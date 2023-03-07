@@ -1,6 +1,9 @@
 import SwiftUI
 
 public struct LaunchScreen: View {
+    @EnvironmentObject
+    private var router: Router<Route>
+    
     public var body: some View {
         ZStack {
             Color(.foodieGreen)
@@ -22,6 +25,13 @@ public struct LaunchScreen: View {
                 )
             }
             .padding(.bottom, 200)
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.3)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    router.push(.loading)
+                }
+            }
         }
     }
 }
