@@ -29,7 +29,7 @@ public struct LaunchScreen: View {
         .onAppear {
             withAnimation(.easeInOut(duration: 0.3)) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    router.push(.loading)
+                    router.push(.signIn)
                 }
             }
         }
