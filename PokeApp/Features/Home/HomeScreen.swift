@@ -27,6 +27,8 @@ public struct HomeScreen: View {
                         style: .bold
                     )
                     
+                    salesSection
+                    
                     recommendedSection
                     
                     cuisinesSection
@@ -58,6 +60,22 @@ public struct HomeScreen: View {
             Spacer()
             
             Logo(fontToken: .size20)
+        }
+    }
+    
+    private var salesSection: some View {
+        VStack(spacing: .spacing6) {
+            HStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: .spacing12) {
+                        ForEach(0..<10) { index in
+                            HomeSalesCard.stub()
+                                .frame(width: 343, height: 164)
+                                .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                        }
+                    }
+                }
+            }
         }
     }
     
