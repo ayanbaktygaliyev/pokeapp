@@ -7,6 +7,11 @@ public struct HomeScreen: View {
     @StateObject
     private var viewModel = HomeViewModel()
     
+    private enum Constants {
+        static let salesCardWidth: CGFloat = 343
+        static let salesCardHeight: CGFloat = 164
+    }
+    
     public var body: some View {
         content
             .padding(.leading, 16)
@@ -65,19 +70,18 @@ public struct HomeScreen: View {
     
     private var salesSection: some View {
         VStack(spacing: .spacing6) {
-            HStack {
-                ScrollView(.horizontal, showsIndicators: false) {
+            ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: .spacing12) {
                         ForEach(0..<10) { index in
                             HomeSalesCard.stub()
-                                .frame(width: 343, height: 164)
+                                .frame(width: Constants.salesCardWidth, height: Constants.salesCardHeight)
                                 .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                        }
                     }
                 }
             }
         }
     }
+    
     
     private var recommendedSection: some View {
         VStack(spacing: .spacing6) {

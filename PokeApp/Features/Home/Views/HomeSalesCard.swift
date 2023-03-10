@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HomeSalesCard: View {
+    
     let imageName: String
     
     var body: some View {
@@ -14,13 +15,10 @@ struct HomeSalesCard: View {
     }
     
     private var content: some View {
-        VStack(alignment: .leading) {
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(15, corners: [.topLeft, .topRight])
-
-        }
     }
 }
 
