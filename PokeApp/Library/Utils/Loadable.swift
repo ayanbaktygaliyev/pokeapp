@@ -6,14 +6,14 @@ typealias LoadableSubject<Value> = Binding<Loadable<Value>>
 enum Loadable<T> {
 
     case notRequested
-    case isLoading(last: T?, cancelBag: CancelBag)
+    case isLoading(last: T?)
     case loaded(T)
     case failed(Error)
 
     var value: T? {
         switch self {
         case let .loaded(value): return value
-        case let .isLoading(last, _): return last
+        case let .isLoading(last): return last
         default: return nil
         }
     }
@@ -27,14 +27,13 @@ enum Loadable<T> {
 
 extension Loadable {
     
-    mutating func setIsLoading(cancelBag: CancelBag) {
-        self = .isLoading(last: value, cancelBag: cancelBag)
+    mutating func setIsLoading() {
+        self = .isLoading(last: value)
     }
     
     mutating func cancelLoading() {
         switch self {
-        case let .isLoading(last, cancelBag):
-            cancelBag.cancel()
+        case let .isLoading(last):
             if let last = last {
                 self = .loaded(last)
             } else {
@@ -53,9 +52,8 @@ extension Loadable {
             switch self {
             case .notRequested: return .notRequested
             case let .failed(error): return .failed(error)
-            case let .isLoading(value, cancelBag):
-                return .isLoading(last: try value.map { try transform($0) },
-                                  cancelBag: cancelBag)
+            case let .isLoading(value):
+                return .isLoading(last: try value.map { try transform($0) })
             case let .loaded(value):
                 return .loaded(try transform(value))
             }
@@ -95,7 +93,7 @@ extension Loadable: Equatable where T: Equatable {
     static func == (lhs: Loadable<T>, rhs: Loadable<T>) -> Bool {
         switch (lhs, rhs) {
         case (.notRequested, .notRequested): return true
-        case let (.isLoading(lhsV, _), .isLoading(rhsV, _)): return lhsV == rhsV
+        case let (.isLoading(lhsV), .isLoading(rhsV)): return lhsV == rhsV
         case let (.loaded(lhsV), .loaded(rhsV)): return lhsV == rhsV
         case let (.failed(lhsE), .failed(rhsE)):
             return lhsE.localizedDescription == rhsE.localizedDescription
