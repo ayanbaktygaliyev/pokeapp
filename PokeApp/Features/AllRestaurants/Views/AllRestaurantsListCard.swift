@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HomeRecommendedCard: View {
+struct AllRestaurantsListCard: View {
     let imageName: String
     let restaurantName: String
     let categories: [String]
@@ -22,7 +22,7 @@ struct HomeRecommendedCard: View {
             ZStack(alignment: .topTrailing) {
                 Image(imageName)
                     .resizable()
-                    .scaledToFit()
+                    .frame(width: 344, height: 160)
                     .cornerRadius(15, corners: [.topLeft, .topRight])
                 
                 likeButton
@@ -110,7 +110,7 @@ struct HomeRecommendedCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(systemName: ImageAsset.favorites.rawValue)
+            Image(asset: .favorites)
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)
@@ -123,18 +123,10 @@ struct HomeRecommendedCard: View {
     }
 }
 
-struct Line: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: rect.width, y: 0))
-        return path
-    }
-}
 
-extension HomeRecommendedCard {
+extension AllRestaurantsListCard {
     static func stub() -> Self {
-        HomeRecommendedCard(
+        AllRestaurantsListCard(
             imageName: "test",
             restaurantName: "Seoul Food",
             categories: ["healthy", "korean"],
@@ -144,8 +136,8 @@ extension HomeRecommendedCard {
     }
 }
 
-struct HomeRecommendedCard_Previews: PreviewProvider {
+struct AllRestaurantsListCard_Previews: PreviewProvider {
     static var previews: some View {
-        HomeRecommendedCard.stub()
+        AllRestaurantsListCard.stub()
     }
 }

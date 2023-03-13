@@ -7,7 +7,7 @@ public enum Route: Equatable {
     case signUp
     case success
     case home
-    case favorites
+    case allRestaurants
     case reservations
     case profile
 }

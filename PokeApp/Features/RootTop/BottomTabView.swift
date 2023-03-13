@@ -31,7 +31,7 @@ private extension BottomTabView {
                 HomeScreen()
                 
             case .allRestaurants:
-                FavoritesScreen()
+                AllRestaurantsScreen()
                 
             case .reservations:
                 ReservationsScreen()

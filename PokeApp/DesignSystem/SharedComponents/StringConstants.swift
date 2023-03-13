@@ -46,4 +46,12 @@ public enum StringConstants {
         static let nearby = "Nearby"
         static let places = "places"
     }
+    public enum AllRestaurants {
+        static let yourLocation = "Your location"
+        static let restaurants = "Restaurants"
+        static let allrestaurants = "All Restaurants"
+        static let seeAll = "See all"
+        static let cuisines = "Cuisines"
+        static let places = "places"
+    }
 }
