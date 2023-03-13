@@ -11,7 +11,6 @@ struct RootTopScreen: View {
         RouterHost(router) { route in
             switch route {
             case .launch: LaunchScreen()
-            case .loading: LoadingScreen()
             case .signIn: SignInScreen()
             case .signUp: SignUpScreen()
             case .success: SuccessScreen()
