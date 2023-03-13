@@ -15,7 +15,7 @@ struct RootTopScreen: View {
             case .signUp: SignUpScreen()
             case .success: SuccessScreen()
             case .home: BottomTabView(viewModel: viewModel)
-            case .favorites: FavoritesScreen()
+            case .allRestaurants: AllRestaurantsScreen()
             case .reservations: ReservationsScreen()
             case .profile: ProfileScreen()
             }
