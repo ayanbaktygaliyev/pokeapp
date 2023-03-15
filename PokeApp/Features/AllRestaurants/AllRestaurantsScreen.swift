@@ -20,6 +20,7 @@ public struct AllRestaurantsScreen: View {
     public var body: some View {
         content
             .padding(.leading, 16)
+            .padding(.trailing, 12)
     }
     
     private enum Constants {
@@ -111,7 +112,7 @@ public struct AllRestaurantsScreen: View {
 }
 
 private var allRestaurantsSection: some View {
-    VStack(spacing: .spacing6) {
+    VStack(spacing: .spacing28) {
             HStack {
                 TextLabel(
                     content: StringConstants.AllRestaurants.allrestaurants,
@@ -138,7 +139,7 @@ private var allRestaurantsSection: some View {
             VStack(spacing: .spacing96) {
                 ForEach(0..<10) { index in
                     AllRestaurantsListCard.stub()
-                        .frame(width: 344, height: 160)
+                        .frame(width: 343, height: 164)
                         .padding(.trailing, index == 10 - 1 ? 16 : 0)
                 }
             }

@@ -1,11 +1,12 @@
 import SwiftUI
 
-struct AllRestaurantsListCard: View {
+struct ReservationsCard: View {
     let imageName: String
     let restaurantName: String
-    let categories: [String]
-    let price: Int
-    let rating: Double
+    let numOfPeople: Int
+    let time: String
+    let tableNumber: Double
+    let address: String
     
     var body: some View {
         content
@@ -26,29 +27,33 @@ struct AllRestaurantsListCard: View {
                     .cornerRadius(15, corners: [.topLeft, .topRight])
                 
                 likeButton
+                
+                TextLabel(
+                    content: restaurantName,
+                    color: .white,
+                    fontToken: .size13,
+                    style: .semibold
+                )
+                .padding(.bottom, 10)
+                .padding(.leading, 16)
             }
             
             Spacer(minLength: 7)
                 .fixedSize()
             
-            TextLabel(
-                content: restaurantName,
-                color: .black,
-                fontToken: .size13,
-                style: .semibold
-            )
+            
             .padding(.leading, 12)
             
             Spacer(minLength: 3)
                 .fixedSize()
             
-            TextLabel(
-                content: categories.joined(separator: ", "),
-                color: .black,
-                fontToken: .size12,
-                style: .regular
-            )
-            .padding(.leading, 12)
+//            TextLabel(
+//                content: categories.joined(separator: ", "),
+//                color: .black,
+//                fontToken: .size12,
+//                style: .regular
+//            )
+//            .padding(.leading, 12)
             
             Line()
                 .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
@@ -124,19 +129,20 @@ struct AllRestaurantsListCard: View {
 }
 
 
-extension AllRestaurantsListCard {
+extension ReservationsCard {
     static func stub() -> Self {
-        AllRestaurantsListCard(
+        ReservationsCard(
             imageName: "test",
             restaurantName: "Seoul Food",
-            categories: ["healthy", "korean"],
-            price: 2,
-            rating: 5
+            numOfPeople: 2,
+            time: "19:30",
+            tableNumber: 34,
+            address: "Tauke khan ave, 170/4"
         )
     }
 }
 
-struct AllRestaurantsListCard_Previews: PreviewProvider {
+struct ReservationsCard_Previews: PreviewProvider {
     static var previews: some View {
         AllRestaurantsListCard.stub()
     }

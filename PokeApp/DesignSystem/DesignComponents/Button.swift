@@ -21,6 +21,7 @@ private extension Button {
                 RoundedRectangle(cornerRadius: 14)
                     .frame(height: 56)
                     .foregroundColor(Color(.foodieGreen))
+                    .opacity(0.5)
                 
                 TextLabel(
                     content: title,

@@ -34,6 +34,7 @@ public struct SignInScreen: View {
             Button(
                 title: StringConstants.SignIn.signIn,
                 action: {
+                    router.push(.home)
                     viewModel.didTapSignIn()
                 }
             )

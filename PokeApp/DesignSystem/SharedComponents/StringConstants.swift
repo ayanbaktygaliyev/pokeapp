@@ -54,4 +54,9 @@ public enum StringConstants {
         static let cuisines = "Cuisines"
         static let places = "places"
     }
+    public enum Reservations {
+        static let yourLocation = "Your location"
+        static let reservations = "Reservations"
+    }
 }
+    
