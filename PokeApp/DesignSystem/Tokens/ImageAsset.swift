@@ -12,4 +12,10 @@ public enum ImageAsset: String {
     case allRestaurants = "all_restaurants"
     case reservations = "reservations"
     case profile = "profile"
+    
+    //reservation card
+    case person = "person"
+    case table = "table"
+    case location = "location"
+    case clock = "clock"
 }
