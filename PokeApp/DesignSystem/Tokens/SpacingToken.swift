@@ -18,6 +18,7 @@ public enum SpacingToken: CGFloat {
     case spacing40 = 40
     case spacing44 = 44
     case spacing48 = 48
+    case spacing50 = 50
     case spacing56 = 56
     case spacing64 = 64
     case spacing80 = 80
