@@ -27,8 +27,8 @@ public struct LaunchScreen: View {
             .padding(.bottom, 200)
         }
         .onAppear {
-            withAnimation(.easeInOut(duration: 0.3)) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation(.easeInOut(duration: 0.3)) {
                     router.push(.signIn)
                 }
             }

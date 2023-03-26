@@ -29,7 +29,7 @@ public final class SessionCoordinator {
         return publisher.map(decode).eraseToAnyPublisher()
     }
     
-    public func add<T: Decodable>(
+    public func post<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
     ) -> AnyPublisher<Result<T, Error>, Never> {
@@ -42,7 +42,7 @@ public final class SessionCoordinator {
         return publisher.map(decode).eraseToAnyPublisher()
     }
     
-    public func remove<T: Decodable>(
+    public func delete<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
     ) -> AnyPublisher<Result<T, Error>, Never> {
@@ -98,7 +98,13 @@ public final class SessionCoordinator {
                 
                 return .success(data)
             }
-            .replaceError(with: .failure(.unknown(code: 500, error: "What")))
+            .catch { failure in
+                return Just(
+                    .failure(
+                        .apiError(String(describing: failure))
+                    )
+                )
+            }
             .eraseToAnyPublisher()
     }
 }
@@ -119,7 +125,6 @@ private extension SessionCoordinator {
             }
         }
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("Bearer \(1)", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
     
@@ -128,14 +133,18 @@ private extension SessionCoordinator {
         
         switch result {
         case .success(let data):
-            do {
-                let data = try decoder.decode(T.self, from: data)
-                return .success(data)
-            } catch(let error) {
-                let mappingError = SessionError.unableToParseData(
-                    String(describing: error)
-                )
-                return .failure(mappingError)
+            if let error = try? decoder.decode(ErrorResponse.self, from: data) {
+                return .failure(SessionError.apiError(error.error))
+            } else {
+                do {
+                    let data = try decoder.decode(T.self, from: data)
+                    return .success(data)
+                } catch(let error) {
+                    let mappingError = SessionError.unableToParseData(
+                        String(describing: error)
+                    )
+                    return .failure(mappingError)
+                }
             }
         case .failure(let error):
             return .failure(error)
@@ -143,6 +152,6 @@ private extension SessionCoordinator {
     }
     
     private enum Constants {
-        static let baseURL = URL(string: "https://jsonplaceholder.typicode.com")!
+        static let baseURL = URL(string: "http://1140427-ci11141.tw1.ru:8080")!
     }
 }

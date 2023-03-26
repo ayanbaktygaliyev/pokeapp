@@ -2,49 +2,48 @@ import Foundation
 import SwiftUI
 import Combine
 
-class SignInViewModel: ObservableObject {
+final class SignInViewModel: ViewModel, ObservableObject {
+    enum Status: Equatable {
+        case idle
+        case signingIn
+        case signedIn
+    }
+    
+    enum Event {
+        case signIn
+        case createAccount
+    }
+    
     struct State {
-        var username: String
-        var password: String
+        var username = ""
+        var password = ""
+        var status = Status.idle
     }
     
     @Published
-    var state: State
+    var state = State()
     
-    private var cancellables = [AnyCancellable]()
+    private var cancellables = Set<AnyCancellable>()
     
     let authRepository = AuthRepository()
 
-    init() {
-        self.state = State(username: "", password: "")
-    }
+    init() {}
     
-    func didTapSignIn() {
-        print("Hello Sign In")
-        let param = PostParam(title: "Hi", body: "ily", userId: 1)
-        
-//        authRepository.testPostNewPost(param: param)
-//            .receive(on: DispatchQueue.main)
-//            .sink { result in
-//                switch result {
-//                case .success(let post):
-//                    print("// post: \(post)")
-//                case .failure(let error):
-//                    print("// error: \(error)")
-//                }
-//            }
-//            .store(in: &cancellables)
-        
-        authRepository.testLoadTodo(id: 1)
-            .receive(on: DispatchQueue.main)
-            .sink { result in
-                switch result {
-                case .success(let todo):
-                    print("// todo: \(todo)")
-                case .failure(let error):
-                    print("// error: \(error)")
-                }
+    func signIn() {
+        authRepository.signIn(
+            username: state.username,
+            password: state.password
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] result in
+            switch result {
+            case .success:
+                self?.state.status = .signedIn
+                
+            case .failure(let error):
+                print(String(describing: error))
             }
-            .store(in: &cancellables)
+        }
+        .store(in: &cancellables)
     }
 }

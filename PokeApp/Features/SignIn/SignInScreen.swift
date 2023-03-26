@@ -8,6 +8,19 @@ public struct SignInScreen: View {
     private var viewModel = SignInViewModel()
     
     public var body: some View {
+        content
+            .onChange(of: viewModel.state.status) { status in
+                guard case .signedIn = status else {
+                    return
+                }
+                
+                router.push(.home)
+            }
+    }
+}
+
+private extension SignInScreen {
+    private var content: some View {
         VStack(alignment: .center, spacing: .spacing0) {
             Logo(fontToken: .size50)
                 .padding(.top, 48)
@@ -34,7 +47,7 @@ public struct SignInScreen: View {
             Button(
                 title: StringConstants.SignIn.signIn,
                 action: {
-                    viewModel.didTapSignIn()
+                    viewModel.signIn()
                 }
             )
             

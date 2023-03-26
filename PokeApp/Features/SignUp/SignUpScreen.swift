@@ -34,7 +34,8 @@ public struct SignUpScreen: View {
             Button(
                 title: StringConstants.SignUp.signUp,
                 action: {
-                    router.push(.success)
+                    viewModel.signUp()
+//                    router.push(.success)
                 }
             )
             
