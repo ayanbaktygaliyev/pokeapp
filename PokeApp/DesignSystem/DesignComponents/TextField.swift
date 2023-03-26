@@ -25,6 +25,7 @@ private extension TextField {
                 
                 SwiftUI.TextField("", text: $text)
                     .padding(.horizontal, 16)
+                    .textInputAutocapitalization(.never)
             }
             
             Separator(.indented)
