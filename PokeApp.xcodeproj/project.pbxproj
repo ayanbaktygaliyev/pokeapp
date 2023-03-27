@@ -68,6 +68,9 @@
 		747FB0FA298927D9006AFE43 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0F9298927D9006AFE43 /* TextField.swift */; };
 		747FB0FC2989335E006AFE43 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0FB2989335E006AFE43 /* Button.swift */; };
 		748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */; };
+		748FAE4629D1676600062E27 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4529D1676600062E27 /* Spinner.swift */; };
+		748FAE4829D16B4600062E27 /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4729D16B4600062E27 /* Inputs.swift */; };
+		748FAE4A29D181E800062E27 /* SetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4929D181E800062E27 /* SetExtensions.swift */; };
 		749CC8FC2913B50000BB9E87 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CC8FB2913B50000BB9E87 /* SignInViewModel.swift */; };
 		749CC8FE2913B63A00BB9E87 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CC8FD2913B63A00BB9E87 /* SignUpScreen.swift */; };
 		74C334AE2926060E00FE7A34 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C334AD2926060E00FE7A34 /* StringConstants.swift */; };
@@ -163,6 +166,9 @@
 		747FB0FB2989335E006AFE43 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		748FAE4229D0A76900062E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		748FAE4529D1676600062E27 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		748FAE4729D16B4600062E27 /* Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
+		748FAE4929D181E800062E27 /* SetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExtensions.swift; sourceTree = "<group>"; };
 		749CC8FB2913B50000BB9E87 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		749CC8FD2913B63A00BB9E87 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		74C334AD2926060E00FE7A34 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				747FB0FB2989335E006AFE43 /* Button.swift */,
 				746E0A5129A7622A009876D3 /* NavigationBottom.swift */,
 				742A84BB29ADE5CB00469FEB /* Separator.swift */,
+				748FAE4529D1676600062E27 /* Spinner.swift */,
 			);
 			path = DesignComponents;
 			sourceTree = "<group>";
@@ -547,6 +554,7 @@
 			children = (
 				74DC01362910E18200629D11 /* SignInScreen.swift */,
 				749CC8FB2913B50000BB9E87 /* SignInViewModel.swift */,
+				748FAE4729D16B4600062E27 /* Inputs.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -555,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				74DC363729D080DF00F97D5C /* DictionaryExtensions.swift */,
+				748FAE4929D181E800062E27 /* SetExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -746,11 +755,13 @@
 				74C334AE2926060E00FE7A34 /* StringConstants.swift in Sources */,
 				745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */,
 				74DC01372910E18200629D11 /* SignInScreen.swift in Sources */,
+				748FAE4629D1676600062E27 /* Spinner.swift in Sources */,
 				740ECA8D29004EDC00C7CF26 /* DesignSystem.swift in Sources */,
 				74385A3E29A8DB0E004BFE07 /* RootTopViewModel.swift in Sources */,
 				740CF9DA292501FD000ADFEE /* StackExtensions.swift in Sources */,
 				7456AFBC28D4676B00C347E9 /* Env.swift in Sources */,
 				741E292829A27E99001A273E /* HomeViewModel.swift in Sources */,
+				748FAE4A29D181E800062E27 /* SetExtensions.swift in Sources */,
 				7432302F29B121ED0095B496 /* SessionError.swift in Sources */,
 				741E291F29A2453D001A273E /* SignUpViewModel.swift in Sources */,
 				745C8A6529BF28E0008A8086 /* AuthRepository.swift in Sources */,
@@ -776,6 +787,7 @@
 				747FB0FC2989335E006AFE43 /* Button.swift in Sources */,
 				74727A8F29700A9D00ED29FF /* Route.swift in Sources */,
 				741E292429A24608001A273E /* ImageAsset.swift in Sources */,
+				748FAE4829D16B4600062E27 /* Inputs.swift in Sources */,
 				7432302729B0E12A0095B496 /* JSONRequest.swift in Sources */,
 				74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */,
 				748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */,

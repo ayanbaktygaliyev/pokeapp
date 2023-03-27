@@ -12,4 +12,12 @@ public extension View {
             RoundedCorner(radius: radius, corners: corners)
         )
     }
+    
+    func overlay<Overlay: View>(
+        if condition: Bool,
+        alignment: Alignment = .center,
+        @ViewBuilder content: () -> Overlay
+    ) -> some View {
+        overlay(condition ? content() : nil, alignment: alignment)
+    }
 }
