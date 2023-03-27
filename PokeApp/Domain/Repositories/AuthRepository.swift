@@ -2,8 +2,8 @@ import Foundation
 import Combine
 
 protocol AuthRepositoryProtocol {
-    func signIn(username: String, password: String) -> ResultPublisher<EmptyResponse>
-    func signUp(username: String, password: String) -> ResultPublisher<SignUpResponse>
+    func signIn(username: String, password: String) -> ResultPublisher<AuthResponse>
+    func signUp(username: String, password: String) -> ResultPublisher<AuthResponse>
 }
 
 final class AuthRepository: AuthRepositoryProtocol {
@@ -13,14 +13,14 @@ final class AuthRepository: AuthRepositoryProtocol {
         self.session = session
     }
     
-    func signIn(username: String, password: String) -> ResultPublisher<EmptyResponse> {
+    func signIn(username: String, password: String) -> ResultPublisher<AuthResponse> {
         let parameter = AuthRequest.Parameter(login: username, password: password)
         let parameters = DictionaryHelper.makeDictionary(from: parameter)
         let request = AuthRequest.signIn
         return session.post(request: request, parameters: parameters)
     }
 
-    func signUp(username: String, password: String) -> ResultPublisher<SignUpResponse> {
+    func signUp(username: String, password: String) -> ResultPublisher<AuthResponse> {
         let parameter = AuthRequest.Parameter(login: username, password: password)
         let parameters = DictionaryHelper.makeDictionary(from: parameter)
         let request = AuthRequest.signUp
