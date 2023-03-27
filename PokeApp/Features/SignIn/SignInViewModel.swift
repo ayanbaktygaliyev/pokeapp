@@ -15,7 +15,7 @@ final class SignInViewModel: ViewModel, ObservableObject {
     
     struct State {
         var status = Status.idle
-        var inputs = Inputs()
+        var inputs = SignInInputs()
         
         var isSigningIn: Bool {
             guard case .signingIn = status else {

@@ -8,6 +8,22 @@ public struct SignUpScreen: View {
     private var viewModel = SignUpViewModel()
     
     public var body: some View {
+        content
+            .onChange(of: viewModel.state.status) { status in
+                guard case .signedUp = status else {
+                    return
+                }
+                
+                router.push(.success)
+            }
+            .overlay(if: viewModel.state.isSigningUp) {
+                Spinner(.underlay)
+            }
+    }
+}
+
+private extension SignUpScreen {
+    private var content: some View {
         VStack(alignment: .center, spacing: .spacing0) {
             Logo(fontToken: .size50)
                 .padding(.top, 48)
@@ -26,16 +42,32 @@ public struct SignUpScreen: View {
             Spacer(minLength: 40)
                 .fixedSize()
             
-            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignUp.username)
-            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignUp.password)
+            TextField(
+                text: $viewModel.state.inputs.username,
+                placeholder: StringConstants.SignUp.username,
+                status: viewModel.state.inputs.validated?.failureReasons
+                    .firstMatch([.usernameNotInput])
+                    .map { .error(message: $0.description) } ?? .normal
+            )
+            TextField(
+                text: $viewModel.state.inputs.password,
+                placeholder: StringConstants.SignUp.password,
+                status: status(
+                    viewModel.state.inputs,
+                    for: [
+                        .passwordNotInput,
+                        .passwordIsLessThan7Characters,
+                        .passwordDoesNotHaveNumbers
+                    ]
+                )
+            )
             
             Spacer(minLength: 200)
             
             Button(
                 title: StringConstants.SignUp.signUp,
                 action: {
-                    viewModel.signUp()
-//                    router.push(.success)
+                    viewModel.send(event: .signUp)
                 }
             )
             
@@ -60,6 +92,35 @@ public struct SignUpScreen: View {
                     router.popTo(.signIn)
                 }
             }
+        }
+    }
+    
+    private func status(
+        _ inputs: SignUpInputs,
+        for filter: Set<SignUpInputs.FailureReason>
+    ) -> TextField.Status {
+        guard let error = inputs.validated?.failureReasons.firstMatch(filter)?.description else {
+            return .normal
+        }
+
+        return .error(message: error.isEmpty ? nil : error)
+    }
+}
+
+private extension SignUpInputs.FailureReason {
+    var description: String {
+        switch self {
+        case .usernameNotInput:
+            return StringConstants.SignUp.usernameNotInput
+
+        case .passwordNotInput:
+            return StringConstants.SignUp.passwordNotInput
+            
+        case .passwordIsLessThan7Characters:
+            return StringConstants.SignUp.passwordIsLessThan7Characters
+            
+        case .passwordDoesNotHaveNumbers:
+            return StringConstants.SignUp.passwordDoesNotHaveNumbers
         }
     }
 }

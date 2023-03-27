@@ -1,46 +1,69 @@
 import Foundation
+import SwiftUI
 import Combine
 
-class SignUpViewModel: ViewModel, ObservableObject {
-    struct State {
-        var username: String
-        var password: String
+final class SignUpViewModel: ViewModel, ObservableObject {
+    enum Status: Equatable {
+        case idle
+        case signingUp
+        case signedUp
     }
     
     enum Event {
         case signUp
-        case signIn
+    }
+    
+    struct State {
+        var status = Status.idle
+        var inputs = SignUpInputs()
+        
+        var isSigningUp: Bool {
+            guard case .signingUp = status else {
+                return false
+            }
+
+            return true
+        }
     }
     
     @Published
-    var state: State
+    var state = State()
     
-    private var cancellables = [AnyCancellable]()
+    private var cancellables = Set<AnyCancellable>()
     
     let authRepository = AuthRepository()
 
-    init() {
-        self.state = State(username: "", password: "")
+    init() {}
+    
+    func send(event: Event) {
+        switch event {
+        case .signUp:
+            state.inputs.validate()
+            
+            if case .valid((let username, let password)) = state.inputs.validated {
+                signUp(username: username, password: password)
+            }
+        }
     }
     
-    func signUp() {
+    private func signUp(username: String, password: String) {
+        state.status = .signingUp
+        
         authRepository.signUp(
-            username: state.username,
-            password: state.password
+            username: username,
+            password: password
         )
         .receive(on: DispatchQueue.main)
-        .sink { result in
+        .sink { [weak self] result in
             switch result {
             case .success:
-                print("Success")
+                self?.state.status = .signedUp
+                
             case .failure(let error):
+                self?.state.status = .idle
                 print(String(describing: error))
             }
         }
         .store(in: &cancellables)
-    }
-    
-    func signIn() {
-        print("Hello Sign in")
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Inputs {
+public struct SignInInputs {
     public enum FailureReason: Hashable {
         case usernameNotInput
         case passwordNotInput

@@ -47,6 +47,14 @@ struct NavigationControllerHost<Route: Equatable, Screen: View>: UIViewControlle
                 navigation.popToViewController(popTo, animated: animated)
             }
         }
+        
+        router.onPresent = { controller, completion in
+            controller.view.backgroundColor = .clear
+            controller.modalTransitionStyle = .crossDissolve
+            controller.modalPresentationStyle = .overFullScreen
+            controller.accessibilityViewIsModal = true
+            navigation.present(controller, animated: true, completion: completion)
+        }
                         
         return navigation
     }
