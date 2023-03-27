@@ -31,6 +31,10 @@ public enum StringConstants {
         static let signUp = "Sign Up"
         static let haveAcoount = "Already have an account?"
         static let signIn = "Sign In"
+        static let usernameNotInput = "Please fill the username"
+        static let passwordNotInput = "Please fill the password"
+        static let passwordIsLessThan7Characters = "Password length should be at least 7"
+        static let passwordDoesNotHaveNumbers = "Password should have numeric values"
     }
     
     public enum Success {

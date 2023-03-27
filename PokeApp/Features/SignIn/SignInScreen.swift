@@ -92,7 +92,7 @@ private extension SignInScreen {
     }
 }
 
-private extension Inputs.FailureReason {
+private extension SignInInputs.FailureReason {
     var description: String {
         switch self {
         case .usernameNotInput:
