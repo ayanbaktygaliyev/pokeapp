@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SignUpResponse: Decodable {
+public struct AuthResponse: Decodable {
     public let login: String
     
     public init(login: String) {

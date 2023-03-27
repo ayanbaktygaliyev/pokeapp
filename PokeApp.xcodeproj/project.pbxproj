@@ -33,8 +33,7 @@
 		7432303529B492C00095B496 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432303429B492BF0095B496 /* RequestParameters.swift */; };
 		7432303929B4A4200095B496 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432303829B4A4200095B496 /* HTTPMethod.swift */; };
 		7432303E29B601FD0095B496 /* SessionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432303B29B601F90095B496 /* SessionLogger.swift */; };
-		7434030129D05BDE00FF1F9A /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030029D05BDE00FF1F9A /* EmptyResponse.swift */; };
-		7434030429D05C4600FF1F9A /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030329D05C4600FF1F9A /* SignUpResponse.swift */; };
+		7434030429D05C4600FF1F9A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030329D05C4600FF1F9A /* AuthResponse.swift */; };
 		7434030629D05D6000FF1F9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030529D05D6000FF1F9A /* SceneDelegate.swift */; };
 		7434030829D05F1C00FF1F9A /* ReservationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030729D05F1C00FF1F9A /* ReservationsViewModel.swift */; };
 		7434030A29D065F700FF1F9A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434030929D065F700FF1F9A /* ViewModel.swift */; };
@@ -132,8 +131,7 @@
 		7432303429B492BF0095B496 /* RequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameters.swift; sourceTree = "<group>"; };
 		7432303829B4A4200095B496 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		7432303B29B601F90095B496 /* SessionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionLogger.swift; sourceTree = "<group>"; };
-		7434030029D05BDE00FF1F9A /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
-		7434030329D05C4600FF1F9A /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		7434030329D05C4600FF1F9A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		7434030529D05D6000FF1F9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7434030729D05F1C00FF1F9A /* ReservationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewModel.swift; sourceTree = "<group>"; };
 		7434030929D065F700FF1F9A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -379,8 +377,7 @@
 		7434030229D05C3700FF1F9A /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				7434030029D05BDE00FF1F9A /* EmptyResponse.swift */,
-				7434030329D05C4600FF1F9A /* SignUpResponse.swift */,
+				7434030329D05C4600FF1F9A /* AuthResponse.swift */,
 				748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */,
 			);
 			path = Responses;
@@ -791,14 +788,13 @@
 				7432302F29B121ED0095B496 /* SessionError.swift in Sources */,
 				741E291F29A2453D001A273E /* SignUpViewModel.swift in Sources */,
 				745C8A6529BF28E0008A8086 /* AuthRepository.swift in Sources */,
-				7434030429D05C4600FF1F9A /* SignUpResponse.swift in Sources */,
+				7434030429D05C4600FF1F9A /* AuthResponse.swift in Sources */,
 				7415028629A22A600071BC11 /* ViewExtensions.swift in Sources */,
 				74243469297C53A500462399 /* Logger.swift in Sources */,
 				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
 				746E0A5229A7622A009876D3 /* NavigationBottom.swift in Sources */,
-				7434030129D05BDE00FF1F9A /* EmptyResponse.swift in Sources */,
 				742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */,
 				74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */,
 				747FB0FA298927D9006AFE43 /* TextField.swift in Sources */,
