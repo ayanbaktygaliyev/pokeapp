@@ -16,6 +16,9 @@ public struct SignInScreen: View {
                 
                 router.push(.home)
             }
+            .overlay(if: viewModel.state.isSigningIn) {
+                Spinner(.underlay)
+            }
     }
 }
 
@@ -39,15 +42,28 @@ private extension SignInScreen {
             Spacer(minLength: 40)
                 .fixedSize()
             
-            TextField(text: $viewModel.state.username, placeholder: StringConstants.SignIn.username)
-            TextField(text: $viewModel.state.password, placeholder: StringConstants.SignIn.password)
+            TextField(
+                text: $viewModel.state.inputs.username,
+                placeholder: StringConstants.SignIn.username,
+                status: viewModel.state.inputs.validated?.failureReasons
+                    .firstMatch([.usernameNotInput])
+                    .map { .error(message: $0.description) } ?? .normal
+            )
+            
+            TextField(
+                text: $viewModel.state.inputs.password,
+                placeholder: StringConstants.SignIn.password,
+                status: viewModel.state.inputs.validated?.failureReasons
+                    .firstMatch([.passwordNotInput])
+                    .map { .error(message: $0.description) } ?? .normal
+            )
             
             Spacer(minLength: 200)
             
             Button(
                 title: StringConstants.SignIn.signIn,
                 action: {
-                    viewModel.signIn()
+                    viewModel.send(event: .signIn)
                 }
             )
             
@@ -72,6 +88,18 @@ private extension SignInScreen {
                     router.push(.signUp)
                 }
             }
+        }
+    }
+}
+
+private extension Inputs.FailureReason {
+    var description: String {
+        switch self {
+        case .usernameNotInput:
+            return StringConstants.SignIn.usernameNotInput
+
+        case .passwordNotInput:
+            return StringConstants.SignIn.passwordNotInput
         }
     }
 }

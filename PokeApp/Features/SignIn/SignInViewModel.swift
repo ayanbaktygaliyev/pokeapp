@@ -11,13 +11,19 @@ final class SignInViewModel: ViewModel, ObservableObject {
     
     enum Event {
         case signIn
-        case createAccount
     }
     
     struct State {
-        var username = ""
-        var password = ""
         var status = Status.idle
+        var inputs = Inputs()
+        
+        var isSigningIn: Bool {
+            guard case .signingIn = status else {
+                return false
+            }
+
+            return true
+        }
     }
     
     @Published
@@ -29,10 +35,23 @@ final class SignInViewModel: ViewModel, ObservableObject {
 
     init() {}
     
-    func signIn() {
+    func send(event: Event) {
+        switch event {
+        case .signIn:
+            state.inputs.validate()
+            
+            if case .valid((let username, let password)) = state.inputs.validated {
+                signIn(username: username, password: password)
+            }
+        }
+    }
+    
+    private func signIn(username: String, password: String) {
+        state.status = .signingIn
+        
         authRepository.signIn(
-            username: state.username,
-            password: state.password
+            username: username,
+            password: password
         )
         .receive(on: DispatchQueue.main)
         .sink { [weak self] result in
@@ -41,6 +60,7 @@ final class SignInViewModel: ViewModel, ObservableObject {
                 self?.state.status = .signedIn
                 
             case .failure(let error):
+                self?.state.status = .idle
                 print(String(describing: error))
             }
         }
