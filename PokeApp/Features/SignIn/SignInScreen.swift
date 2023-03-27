@@ -63,7 +63,9 @@ private extension SignInScreen {
             Button(
                 title: StringConstants.SignIn.signIn,
                 action: {
-                    viewModel.send(event: .signIn)
+                    #warning("uncomment send and remove push call: it's for dev tests only")
+//                    viewModel.send(event: .signIn)
+                    router.push(.home)
                 }
             )
             

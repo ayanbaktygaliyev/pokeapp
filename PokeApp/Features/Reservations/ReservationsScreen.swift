@@ -60,7 +60,7 @@ public struct ReservationsScreen: View {
                     .frame(width: 20, height: 27)
                 
                 TextLabel(
-                    content: StringConstants.Reservations.yourLocation,
+                    content: StringConstants.App.yourLocation,
                     color: .foodieGreen,
                     fontToken: .size16,
                     style: .semibold

@@ -4,6 +4,8 @@ public enum StringConstants {
     public enum App {
         static let foodie = "foodie."
         static let slogan = "reserve with pleasure"
+        static let yourLocation = "Your location"
+        static let seeAll = "See all"
     }
     
     public enum TabView {
@@ -44,9 +46,7 @@ public enum StringConstants {
     }
     
     public enum Home {
-        static let yourLocation = "Your location"
         static let restaurants = "Restaurants"
-        static let seeAll = "See all"
         static let recommended = "Recommended"
         static let cuisines = "Cuisines"
         static let nearby = "Nearby"
@@ -55,6 +55,10 @@ public enum StringConstants {
     
     public enum Reservations {
         static let reservations = "Reservations"
-        static let yourLocation = "Your location"
+    }
+    
+    public enum AllRestaurants {
+        static let restaurants = "Restaurants"
+        static let cuisines = "Cuisines"
     }
 }

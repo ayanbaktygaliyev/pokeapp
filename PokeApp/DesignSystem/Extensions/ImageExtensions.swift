@@ -2,6 +2,10 @@ import SwiftUI
 
 public extension Image {
     init(asset: ImageAsset) {
-        self.init(asset.rawValue)
+        if case .system(let systemAsset) = asset {
+            self.init(systemName: systemAsset.rawValue)
+        } else {
+            self.init(asset.rawValue)
+        }
     }
 }

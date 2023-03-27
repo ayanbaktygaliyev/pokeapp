@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HomeRecommendedCard: View {
+struct RestaurantCard: View {
     let imageName: String
     let restaurantName: String
     let categories: [String]
@@ -22,7 +22,8 @@ struct HomeRecommendedCard: View {
             ZStack(alignment: .topTrailing) {
                 Image(imageName)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 160)
                     .cornerRadius(15, corners: [.topLeft, .topRight])
                 
                 likeButton
@@ -123,9 +124,9 @@ struct HomeRecommendedCard: View {
     }
 }
 
-extension HomeRecommendedCard {
+extension RestaurantCard {
     static func stub() -> Self {
-        HomeRecommendedCard(
+        RestaurantCard(
             imageName: "test",
             restaurantName: "Seoul Food",
             categories: ["healthy", "korean"],
@@ -135,8 +136,8 @@ extension HomeRecommendedCard {
     }
 }
 
-struct HomeRecommendedCard_Previews: PreviewProvider {
+struct RestaurantCard_Previews: PreviewProvider {
     static var previews: some View {
-        HomeRecommendedCard.stub()
+        RestaurantCard.stub()
     }
 }
