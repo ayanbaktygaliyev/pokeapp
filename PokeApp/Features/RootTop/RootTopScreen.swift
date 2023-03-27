@@ -18,6 +18,7 @@ struct RootTopScreen: View {
             case .favorites: FavoritesScreen()
             case .reservations: ReservationsScreen()
             case .profile: ProfileScreen()
+            case .allRestaurants: AllRestaurantsScreen()
             }
         }
     }

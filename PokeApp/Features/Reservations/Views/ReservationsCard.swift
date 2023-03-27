@@ -155,7 +155,7 @@ struct ReservationsCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(asset: .favorites)
+            Image(asset: .system(.favorites))
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)

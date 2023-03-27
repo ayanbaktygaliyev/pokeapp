@@ -1,11 +1,11 @@
 import SwiftUI
 
-public struct HomeScreen: View {
+public struct AllRestaurantsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
     @StateObject
-    private var viewModel = HomeViewModel()
+    private var viewModel = AllRestaurantsViewModel()
     
     public var body: some View {
         content
@@ -20,18 +20,17 @@ public struct HomeScreen: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: .spacing16) {
+
                     TextLabel(
-                        content: StringConstants.Home.restaurants,
+                        content: StringConstants.AllRestaurants.restaurants,
                         color: .black,
                         fontToken: .size24,
                         style: .bold
                     )
                     
-                    recommendedSection
-                    
                     cuisinesSection
                     
-                    nearbySection
+                    restaurantsSection
                 }
             }
         }
@@ -58,47 +57,11 @@ public struct HomeScreen: View {
         }
     }
     
-    private var recommendedSection: some View {
-        VStack(spacing: .spacing6) {
-            HStack {
-                TextLabel(
-                    content: StringConstants.Home.recommended,
-                    color: .black,
-                    fontToken: .size16,
-                    style: .semibold
-                )
-                
-                Spacer()
-                
-                TextLabel(
-                    content: StringConstants.App.seeAll,
-                    color: .foodieGreen,
-                    fontToken: .size13,
-                    style: .semibold
-                )
-                .padding(.trailing, 16)
-                .button {
-                    print("See all")
-                }
-            }
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        HomeRecommendedCard.stub()
-                            .frame(width: 166, height: 220)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                    }
-                }
-            }
-        }
-    }
-    
     private var cuisinesSection: some View {
         VStack(spacing: .spacing6) {
             HStack {
                 TextLabel(
-                    content: StringConstants.Home.cuisines,
+                    content: StringConstants.AllRestaurants.cuisines,
                     color: .black,
                     fontToken: .size16,
                     style: .semibold
@@ -130,11 +93,11 @@ public struct HomeScreen: View {
         }
     }
     
-    private var nearbySection: some View {
+    private var restaurantsSection: some View {
         VStack(spacing: .spacing6) {
             HStack {
                 TextLabel(
-                    content: StringConstants.Home.nearby,
+                    content: StringConstants.Home.recommended,
                     color: .black,
                     fontToken: .size16,
                     style: .semibold
@@ -154,21 +117,20 @@ public struct HomeScreen: View {
                 }
             }
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: .spacing12) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: .spacing12) {
                     ForEach(0..<10) { index in
-                        HomeRecommendedCard.stub()
-                            .frame(width: 166, height: 220)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                        RestaurantCard.stub()
                     }
                 }
             }
+            .padding(.trailing, 16)
         }
     }
 }
 
-struct HomeScreen_Previews: PreviewProvider {
+struct AllRestaurantsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        AllRestaurantsScreen()
     }
 }
