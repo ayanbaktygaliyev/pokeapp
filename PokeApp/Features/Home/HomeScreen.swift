@@ -7,6 +7,9 @@ public struct HomeScreen: View {
     @StateObject
     private var viewModel = HomeViewModel()
     
+    @State
+    private var currentIndex = 0
+    
     public var body: some View {
         content
             .padding(.leading, 16)
@@ -26,6 +29,8 @@ public struct HomeScreen: View {
                         fontToken: .size24,
                         style: .bold
                     )
+                    
+//                    campaignsSection
                     
                     recommendedSection
                     
@@ -55,6 +60,13 @@ public struct HomeScreen: View {
             Spacer()
             
             Logo(fontToken: .size20)
+        }
+    }
+    
+    private var campaignsSection: some View {
+        SnapCarousel(index: $currentIndex, items: HomeViewModel.stub()) { campaign in
+            HomeCampaignCard(campaign: campaign)
+                .frame(width: 343, height: 164)
         }
     }
     

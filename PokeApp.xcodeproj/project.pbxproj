@@ -64,6 +64,9 @@
 		74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A9C29707A8400ED29FF /* HomeScreen.swift */; };
 		74727A9F29707A9000ED29FF /* FavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A9E29707A9000ED29FF /* FavoritesScreen.swift */; };
 		74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727AA229707B2D00ED29FF /* ProfileScreen.swift */; };
+		747B81EC29DA0105000D6120 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81EB29DA0105000D6120 /* Carousel.swift */; };
+		747B81EE29DA026B000D6120 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81ED29DA026B000D6120 /* Campaign.swift */; };
+		747B81F029DA18E5000D6120 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81EF29DA18E5000D6120 /* Dialog.swift */; };
 		747FB0FA298927D9006AFE43 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0F9298927D9006AFE43 /* TextField.swift */; };
 		747FB0FC2989335E006AFE43 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0FB2989335E006AFE43 /* Button.swift */; };
 		748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */; };
@@ -82,6 +85,8 @@
 		74DC01342910DE3800629D11 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC01332910DE3800629D11 /* FontStyle.swift */; };
 		74DC01372910E18200629D11 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC01362910E18200629D11 /* SignInScreen.swift */; };
 		74DC363829D080DF00F97D5C /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC363729D080DF00F97D5C /* DictionaryExtensions.swift */; };
+		74E1722229D2FC5900CD1225 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1722129D2FC5900CD1225 /* Snackbar.swift */; };
+		74E1722429D3006700CD1225 /* HomeCampaignCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1722329D3006700CD1225 /* HomeCampaignCard.swift */; };
 		E431D0CB29C47DEC00B9DB31 /* ReservationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */; };
 		E431D0CC29C47DEC00B9DB31 /* ReservationsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */; };
 		E43AA2BC29C4698300E9B817 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */; };
@@ -165,6 +170,9 @@
 		74727A9C29707A8400ED29FF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		74727A9E29707A9000ED29FF /* FavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		74727AA229707B2D00ED29FF /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		747B81EB29DA0105000D6120 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		747B81ED29DA026B000D6120 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
+		747B81EF29DA18E5000D6120 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		747FB0F9298927D9006AFE43 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		747FB0FB2989335E006AFE43 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		748FAE4229D0A76900062E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +192,8 @@
 		74DC01332910DE3800629D11 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		74DC01362910E18200629D11 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		74DC363729D080DF00F97D5C /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		74E1722129D2FC5900CD1225 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
+		74E1722329D3006700CD1225 /* HomeCampaignCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCampaignCard.swift; sourceTree = "<group>"; };
 		E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsScreen.swift; sourceTree = "<group>"; };
 		E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsCard.swift; sourceTree = "<group>"; };
 		E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -233,6 +243,8 @@
 				742A84BB29ADE5CB00469FEB /* Separator.swift */,
 				748FAE4529D1676600062E27 /* Spinner.swift */,
 				748FAE5429D199AC00062E27 /* Line.swift */,
+				74E1722129D2FC5900CD1225 /* Snackbar.swift */,
+				747B81EF29DA18E5000D6120 /* Dialog.swift */,
 			);
 			path = DesignComponents;
 			sourceTree = "<group>";
@@ -316,6 +328,8 @@
 			children = (
 				741E292929A289B4001A273E /* HomeRecommendedCard.swift */,
 				741E292D29A294BE001A273E /* HomeCuisineCard.swift */,
+				74E1722329D3006700CD1225 /* HomeCampaignCard.swift */,
+				747B81EB29DA0105000D6120 /* Carousel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,6 +495,7 @@
 				7456AFC428D4782900C347E9 /* Restaurant.swift */,
 				7456AFC628D4793E00C347E9 /* Identifier.swift */,
 				74385A3629A8D898004BFE07 /* TabItem.swift */,
+				747B81ED29DA026B000D6120 /* Campaign.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -774,6 +789,7 @@
 				741E292E29A294BE001A273E /* HomeCuisineCard.swift in Sources */,
 				7432303929B4A4200095B496 /* HTTPMethod.swift in Sources */,
 				749CC8FC2913B50000BB9E87 /* SignInViewModel.swift in Sources */,
+				747B81EE29DA026B000D6120 /* Campaign.swift in Sources */,
 				74C334AE2926060E00FE7A34 /* StringConstants.swift in Sources */,
 				745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */,
 				74DC01372910E18200629D11 /* SignInScreen.swift in Sources */,
@@ -793,12 +809,15 @@
 				74243469297C53A500462399 /* Logger.swift in Sources */,
 				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
+				74E1722429D3006700CD1225 /* HomeCampaignCard.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
 				746E0A5229A7622A009876D3 /* NavigationBottom.swift in Sources */,
 				742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */,
 				74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */,
 				747FB0FA298927D9006AFE43 /* TextField.swift in Sources */,
+				747B81EC29DA0105000D6120 /* Carousel.swift in Sources */,
 				749CC8FE2913B63A00BB9E87 /* SignUpScreen.swift in Sources */,
+				74E1722229D2FC5900CD1225 /* Snackbar.swift in Sources */,
 				74385A3729A8D898004BFE07 /* TabItem.swift in Sources */,
 				74727A922970788300ED29FF /* LaunchScreen.swift in Sources */,
 				74385A3C29A8DAD9004BFE07 /* RootTopScreen.swift in Sources */,
@@ -815,6 +834,7 @@
 				7432302729B0E12A0095B496 /* JSONRequest.swift in Sources */,
 				74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */,
 				748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */,
+				747B81F029DA18E5000D6120 /* Dialog.swift in Sources */,
 				740ECA97290054F800C7CF26 /* ColorExtensions.swift in Sources */,
 				74DC01342910DE3800629D11 /* FontStyle.swift in Sources */,
 			);
