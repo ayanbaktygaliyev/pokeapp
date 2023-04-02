@@ -16,6 +16,8 @@ final class SignUpViewModel: ViewModel, ObservableObject {
     struct State {
         var status = Status.idle
         var inputs = SignUpInputs()
+        var error: String? = nil
+        var isShowingDialog = false
         
         var isSigningUp: Bool {
             guard case .signingUp = status else {
@@ -61,7 +63,8 @@ final class SignUpViewModel: ViewModel, ObservableObject {
                 
             case .failure(let error):
                 self?.state.status = .idle
-                print(String(describing: error))
+                self?.state.error = error.errorString
+                self?.state.isShowingDialog = true
             }
         }
         .store(in: &cancellables)

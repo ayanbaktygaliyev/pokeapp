@@ -19,7 +19,7 @@ public final class SessionCoordinator {
     public func load<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
-    ) -> AnyPublisher<Result<T, Error>, Never> {
+    ) -> AnyPublisher<Result<T, SessionError>, Never> {
         let publisher = sendPublisher(
             request: request,
             method: .get,
@@ -32,7 +32,7 @@ public final class SessionCoordinator {
     public func post<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
-    ) -> AnyPublisher<Result<T, Error>, Never> {
+    ) -> AnyPublisher<Result<T, SessionError>, Never> {
         let publisher = sendPublisher(
             request: request,
             method: .post,
@@ -45,7 +45,7 @@ public final class SessionCoordinator {
     public func delete<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
-    ) -> AnyPublisher<Result<T, Error>, Never> {
+    ) -> AnyPublisher<Result<T, SessionError>, Never> {
         let publisher = sendPublisher(
             request: request,
             method: .delete,
@@ -58,7 +58,7 @@ public final class SessionCoordinator {
     public func update<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
-    ) -> AnyPublisher<Result<T, Error>, Never> {
+    ) -> AnyPublisher<Result<T, SessionError>, Never> {
         let publisher = sendPublisher(
             request: request,
             method: .patch,
@@ -71,7 +71,7 @@ public final class SessionCoordinator {
     public func replace<T: Decodable>(
         request: JSONRequest,
         parameters: RequestParameters? = nil
-    ) -> AnyPublisher<Result<T, Error>, Never> {
+    ) -> AnyPublisher<Result<T, SessionError>, Never> {
         let publisher = sendPublisher(
             request: request,
             method: .put,
@@ -128,7 +128,7 @@ private extension SessionCoordinator {
         return urlRequest
     }
     
-    private func decode<T: Decodable>(from result: Result<Data, SessionError>) -> Result<T, Error> {
+    private func decode<T: Decodable>(from result: Result<Data, SessionError>) -> Result<T, SessionError> {
         let decoder = JSONDecoder()
         
         switch result {

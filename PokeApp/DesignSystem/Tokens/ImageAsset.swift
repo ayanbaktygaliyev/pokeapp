@@ -11,6 +11,7 @@ public enum ImageAsset {
     case locationPin
     case currency
     case star
+    case error
     
     // Tabs images
     case home
@@ -39,6 +40,7 @@ public enum ImageAsset {
         case .table: return "table"
         case .location: return "location"
         case .clock: return "clock"
+        case .error: return "error"
         }
     }
 }

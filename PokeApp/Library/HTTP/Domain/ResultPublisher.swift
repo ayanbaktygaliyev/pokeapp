@@ -1,3 +1,3 @@
 import Combine
 
-public typealias ResultPublisher<T: Decodable> = AnyPublisher<Result<T, Error>, Never>
+public typealias ResultPublisher<T: Decodable> = AnyPublisher<Result<T, SessionError>, Never>
