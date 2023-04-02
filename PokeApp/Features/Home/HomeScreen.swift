@@ -78,7 +78,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    print("See all")
+                    router.push(.seeallRestaurants)
                 }
             }
             
