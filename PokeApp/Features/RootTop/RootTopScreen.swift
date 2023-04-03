@@ -19,6 +19,7 @@ struct RootTopScreen: View {
             case .reservations: ReservationsScreen()
             case .profile: ProfileScreen()
             case .allRestaurants: AllRestaurantsScreen()
+            case .restaurantDetails: RestaurantDetailsScreen()
             }
         }
     }

@@ -1,12 +1,6 @@
 import Foundation
 
-public enum ImageAsset {
-    public enum System: String {
-        case favorites = "heart.fill"
-    }
-    
-    case system(System)
-    
+public enum ImageAsset {    
     case check
     case locationPin
     case currency
@@ -27,7 +21,6 @@ public enum ImageAsset {
     
     var rawValue: String {
         switch self {
-        case .system(let systemAsset): return systemAsset.rawValue
         case .check: return "check"
         case .locationPin: return "location-pin"
         case .currency: return "currency"
