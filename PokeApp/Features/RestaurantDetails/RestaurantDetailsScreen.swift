@@ -183,3 +183,9 @@ private extension RestaurantDetailsScreen {
         }
     }
 }
+
+struct RestaurantDetailsScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        RestaurantDetailsScreen()
+    }
+}

@@ -18,15 +18,10 @@ public struct RestaurantSeeAllScreen: View {
             headerView
                 .padding(.trailing, 16)
             
+            topicView
+            
             ScrollView {
                 VStack(alignment: .leading, spacing: .spacing16) {
-                    
-                    TextLabel(
-                        content: StringConstants.RestaurantSeeAll.recommended,
-                        color: .black,
-                        fontToken: .size24,
-                        style: .bold
-                    )
                     
                     Spacer()
                         .fixedSize()
@@ -55,6 +50,36 @@ public struct RestaurantSeeAllScreen: View {
             Spacer()
             
             Logo(fontToken: .size20)
+        }
+    }
+    
+    private var topicView: some View {
+        HStack(alignment: .bottom){
+            
+            ZStack {
+                Circle()
+                    .fill(.black.opacity(0.48))
+                    .frame(width: 32, height: 32)
+                
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 8, height: 12)
+            }            .button {
+                router.pop()
+            }
+            
+            Spacer()
+                .fixedSize()
+            
+            TextLabel(
+                content: StringConstants.RestaurantSeeAll.recommended,
+                color: .black,
+                fontToken: .size24,
+                style: .bold
+            )
+            .padding(.leading, 10)
+            
         }
     }
     
