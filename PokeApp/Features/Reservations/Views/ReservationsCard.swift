@@ -45,24 +45,18 @@ struct ReservationsCard: View {
             Spacer(minLength: 7)
                 .fixedSize()
             
-            
-            .padding(.leading, 12)
-            
-            HStack (spacing: .spacing50){
-                
+            HStack(spacing: .spacing50) {
                 numberOfPeopleView
                 
-                TimeView
+                timeView
                 
-                TableView
-                
+                tableView
             }
-            
             
             Spacer(minLength: 16)
                 .fixedSize()
             
-            AddressView
+            addressView
             
             Spacer(minLength: 16)
                 .fixedSize()
@@ -90,7 +84,7 @@ struct ReservationsCard: View {
         }
     }
     
-    private var TimeView: some View {
+    private var timeView: some View {
         HStack(spacing: .spacing4) {
             Image(asset: .clock)
                 .resizable()
@@ -109,7 +103,7 @@ struct ReservationsCard: View {
         }
     }
     
-    private var TableView: some View {
+    private var tableView: some View {
         HStack(spacing: .spacing4) {
             Image(asset: .table)
                 .resizable()
@@ -128,7 +122,7 @@ struct ReservationsCard: View {
         }
     }
     
-    private var AddressView: some View {
+    private var addressView: some View {
         HStack(spacing: .spacing4) {
             Image(asset: .location)
                 .resizable()
@@ -155,7 +149,7 @@ struct ReservationsCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(asset: .system(.favorites))
+            Image(systemName: "heart.fill")
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)

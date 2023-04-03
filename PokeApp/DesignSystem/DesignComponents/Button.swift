@@ -2,10 +2,16 @@ import SwiftUI
 
 public struct Button: View {
     private let title: String
+    private let color: ColorToken
     private let action: () -> Void
     
-    public init(title: String, action: @escaping () -> Void) {
+    public init(
+        title: String,
+        color: ColorToken = .foodieGreen,
+        action: @escaping () -> Void
+    ) {
         self.title = title
+        self.color = color
         self.action = action
     }
     
@@ -20,7 +26,7 @@ private extension Button {
             ZStack {
                 RoundedRectangle(cornerRadius: 14)
                     .frame(height: 56)
-                    .foregroundColor(Color(.foodieGreen))
+                    .foregroundColor(Color(color))
                 
                 TextLabel(
                     content: title,

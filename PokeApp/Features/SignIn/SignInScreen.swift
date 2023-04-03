@@ -19,6 +19,14 @@ public struct SignInScreen: View {
             .overlay(if: viewModel.state.isSigningIn) {
                 Spinner(.underlay)
             }
+            .overlay(if: viewModel.state.isShowingDialog) {
+                Dialog(
+                    isShowingDialog: $viewModel.state.isShowingDialog,
+                    title: StringConstants.App.error,
+                    subtitle: viewModel.state.error ?? "",
+                    colorToken: .foodieGreen
+                )
+            }
     }
 }
 

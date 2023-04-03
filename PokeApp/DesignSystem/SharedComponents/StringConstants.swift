@@ -6,6 +6,8 @@ public enum StringConstants {
         static let slogan = "reserve with pleasure"
         static let yourLocation = "Your location"
         static let seeAll = "See all"
+        static let close = "Close"
+        static let error = "Something went wrong!"
     }
     
     public enum TabView {

@@ -12,4 +12,5 @@ public enum Route: Equatable {
     case profile
     case allRestaurants
     case seeallRestaurants
+    case restaurantDetails
 }
