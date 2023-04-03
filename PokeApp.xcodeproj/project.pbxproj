@@ -67,6 +67,8 @@
 		747B81EC29DA0105000D6120 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81EB29DA0105000D6120 /* Carousel.swift */; };
 		747B81EE29DA026B000D6120 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81ED29DA026B000D6120 /* Campaign.swift */; };
 		747B81F029DA18E5000D6120 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81EF29DA18E5000D6120 /* Dialog.swift */; };
+		747B81F329DAC687000D6120 /* RestaurantDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81F229DAC687000D6120 /* RestaurantDetailsScreen.swift */; };
+		747B81F529DAC9FC000D6120 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81F429DAC9FC000D6120 /* RestaurantDetailsViewModel.swift */; };
 		747FB0FA298927D9006AFE43 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0F9298927D9006AFE43 /* TextField.swift */; };
 		747FB0FC2989335E006AFE43 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0FB2989335E006AFE43 /* Button.swift */; };
 		748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */; };
@@ -173,6 +175,8 @@
 		747B81EB29DA0105000D6120 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		747B81ED29DA026B000D6120 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		747B81EF29DA18E5000D6120 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		747B81F229DAC687000D6120 /* RestaurantDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsScreen.swift; sourceTree = "<group>"; };
+		747B81F429DAC9FC000D6120 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		747FB0F9298927D9006AFE43 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		747FB0FB2989335E006AFE43 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		748FAE4229D0A76900062E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				747B81F129DAC676000D6120 /* RestaurantDetails */,
 				74385A3A29A8DA4C004BFE07 /* RootTop */,
 				74727A902970787100ED29FF /* Launch */,
 				74DC01352910E16400629D11 /* SignIn */,
@@ -564,6 +569,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		747B81F129DAC676000D6120 /* RestaurantDetails */ = {
+			isa = PBXGroup;
+			children = (
+				747B81F229DAC687000D6120 /* RestaurantDetailsScreen.swift */,
+				747B81F429DAC9FC000D6120 /* RestaurantDetailsViewModel.swift */,
+			);
+			path = RestaurantDetails;
+			sourceTree = "<group>";
+		};
 		748FAE4D29D1910D00062E27 /* AllRestaurants */ = {
 			isa = PBXGroup;
 			children = (
@@ -813,6 +827,7 @@
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
 				746E0A5229A7622A009876D3 /* NavigationBottom.swift in Sources */,
 				742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */,
+				747B81F329DAC687000D6120 /* RestaurantDetailsScreen.swift in Sources */,
 				74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */,
 				747FB0FA298927D9006AFE43 /* TextField.swift in Sources */,
 				747B81EC29DA0105000D6120 /* Carousel.swift in Sources */,
@@ -834,6 +849,7 @@
 				7432302729B0E12A0095B496 /* JSONRequest.swift in Sources */,
 				74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */,
 				748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */,
+				747B81F529DAC9FC000D6120 /* RestaurantDetailsViewModel.swift in Sources */,
 				747B81F029DA18E5000D6120 /* Dialog.swift in Sources */,
 				740ECA97290054F800C7CF26 /* ColorExtensions.swift in Sources */,
 				74DC01342910DE3800629D11 /* FontStyle.swift in Sources */,

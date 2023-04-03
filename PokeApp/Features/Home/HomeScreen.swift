@@ -124,6 +124,9 @@ public struct HomeScreen: View {
                         HomeRecommendedCard.stub()
                             .frame(width: 166, height: 220)
                             .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                            .button {
+                                router.push(.restaurantDetails)
+                            }
                     }
                 }
             }
@@ -160,6 +163,9 @@ public struct HomeScreen: View {
                         HomeCuisineCard.stub()
                             .frame(width: 140, height: 200)
                             .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                            .button {
+                                router.push(.restaurantDetails)
+                            }
                     }
                 }
             }
@@ -196,6 +202,9 @@ public struct HomeScreen: View {
                         HomeRecommendedCard.stub()
                             .frame(width: 166, height: 220)
                             .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                            .button {
+                                router.push(.restaurantDetails)
+                            }
                     }
                 }
             }
