@@ -63,4 +63,8 @@ public enum StringConstants {
         static let restaurants = "Restaurants"
         static let cuisines = "Cuisines"
     }
+    
+    public enum RestaurantSeeAll {
+        static let recommended = "Recommended"
+    }
 }
