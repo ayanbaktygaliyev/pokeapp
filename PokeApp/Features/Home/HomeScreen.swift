@@ -30,6 +30,8 @@ public struct HomeScreen: View {
                         style: .bold
                     )
                     
+                    temporaryCampaignSection
+                    
 //                    campaignsSection
                     
                     recommendedSection
@@ -60,6 +62,28 @@ public struct HomeScreen: View {
             Spacer()
             
             Logo(fontToken: .size20)
+        }
+    }
+    
+    private var temporaryCampaignSection: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: .spacing12) {
+                ForEach(0..<5) { index in
+                    ZStack(alignment: .bottom) {
+                        HomeCampaignCard.stub()
+                        
+                        HStack(spacing: .spacing10) {
+                            ForEach(0..<5) { index in
+                                Circle()
+                                    .fill(Color(.foodieGreen))
+                                    .frame(width: 10, height: 10)
+                            }
+                        }
+                        .padding(.bottom, 10)
+                    }
+                    .padding(.trailing, index == 5 - 1 ? 16 : 0)
+                }
+            }
         }
     }
     
