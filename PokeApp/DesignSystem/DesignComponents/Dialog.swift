@@ -33,6 +33,8 @@ public struct Dialog: View {
                     fontToken: .size15,
                     style: .medium
                 )
+                .lineLimit(5)
+                .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
                 
                 Spacer(minLength: 12)
