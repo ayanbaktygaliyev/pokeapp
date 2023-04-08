@@ -16,7 +16,6 @@ public struct ProfileScreen: View {
         VStack(alignment: .leading){
             
             ProfileCard.stub()
-                .padding(.top, 30)
             
             accountSettings
             
@@ -33,7 +32,7 @@ public struct ProfileScreen: View {
     private var logOutButton: some View{
         ZStack(alignment: .center){
             Rectangle()
-                .fill(.gray)
+                .fill(Color(.foodieGreen))
                 .frame(width: 343, height: 56)
                 .cornerRadius(15)
             
@@ -54,7 +53,7 @@ public struct ProfileScreen: View {
                 .fill(.white)
                 .frame(width: 327, height: 99)
                 .cornerRadius(11)
-                .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
+                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             VStack(spacing: 20){
                 
                 HStack{
@@ -125,7 +124,7 @@ public struct ProfileScreen: View {
                 .fill(.white)
                 .frame(width: 327, height: 70)
                 .cornerRadius(11)
-                .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
+                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
             HStack{
                 
@@ -151,6 +150,8 @@ public struct ProfileScreen: View {
                 
             }
             .padding(.top, 10)
+            .padding(.bottom, 10)
+            
             
         }
     

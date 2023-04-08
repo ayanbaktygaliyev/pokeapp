@@ -8,12 +8,6 @@ struct ProfileCard: View {
     
     var body: some View {
         content
-            .cornerRadius(15)
-            .background(
-                Color(.white)
-                    .cornerRadius(15)
-                    .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 4)
-            )
     }
     
     private var content: some View {
@@ -23,11 +17,11 @@ struct ProfileCard: View {
                 .fill(.white)
                 .frame(width: 327, height: 70)
                 .cornerRadius(11)
-                .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
+                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
             HStack(spacing: .spacing18){
                 Circle()
-                    .fill(.green)
+                    .fill(Color(.foodieGreen))
                     .frame(width: 44, height: 44)
                     .padding(.leading, 24)
                 
@@ -59,7 +53,7 @@ struct ProfileCard: View {
         ZStack(alignment: .topTrailing){
             ZStack {
                 Circle()
-                    .fill(.black.opacity(0.18))
+                    .fill(.black.opacity(0.05))
                     .frame(width: 40, height: 40)
                 
                 
