@@ -16,14 +16,18 @@ public struct ProfileScreen: View {
         VStack(alignment: .leading){
             
             ProfileCard.stub()
-            
+                .padding(.top, 20)
+
+            Spacer(minLength: 90)
+                .fixedSize()
+
             accountSettings
-            
+
             moreSettings
-            
+
             Spacer(minLength: 265)
                 .fixedSize()
-            
+
             logOutButton
             
         }
@@ -49,12 +53,14 @@ public struct ProfileScreen: View {
     
     private var moreSettings: some View{
         ZStack(alignment: .leading){
+            
             Rectangle()
                 .fill(.white)
                 .frame(width: 327, height: 99)
                 .cornerRadius(11)
                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-            VStack(spacing: 20){
+            
+            VStack(alignment: .leading ,spacing: 20){
                 
                 HStack{
                     
@@ -72,14 +78,13 @@ public struct ProfileScreen: View {
                     )
                     .padding(.leading, 18)
                     
-                    Spacer()
-                        .fixedSize()
+                    Spacer(minLength: 0)
                     
                     Image(systemName: "chevron.right")
                         .resizable()
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
-                        .padding(.leading, 145)
+                        .padding(.trailing, 16)
                     
                 }
                 
@@ -99,22 +104,17 @@ public struct ProfileScreen: View {
                     )
                     .padding(.leading, 18)
                     
-                    Spacer()
-                        .fixedSize()
+                    Spacer(minLength: 0)
                     
                     Image(systemName: "chevron.right")
                         .resizable()
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
-                        .padding(.leading, 145)
+                        .padding(.trailing, 16)
                     
                 }
-
-                
-                
             }
-            
-            
+            .frame(width: 327)
         }
     }
     
@@ -132,7 +132,7 @@ public struct ProfileScreen: View {
                     .resizable()
                     .foregroundColor(Color(.black))
                     .frame(width: 24, height: 24)
-                    .padding(.leading, 23)
+                    .padding(.leading, 16)
                 
                 TextLabel(
                     content: "Account settings",
@@ -142,15 +142,20 @@ public struct ProfileScreen: View {
                 )
                 .padding(.leading, 18)
                 
+                Spacer(minLength: 0)
+                
                 Image(systemName: "square.and.pencil")
                     .resizable()
                     .foregroundColor(Color(.black))
                     .frame(width: 19, height: 19)
-                    .padding(.leading, 76)
-                
+                    .padding(.trailing, 16)
+                    .button {
+                        print("Edit Account Settings")
+                    }
+                    
             }
-            .padding(.top, 10)
-            .padding(.bottom, 10)
+            .frame(width: 327, alignment: .leading)
+            
             
             
         }
