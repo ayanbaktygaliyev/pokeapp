@@ -48,6 +48,18 @@ public struct FeedbackScreen: View {
             .frame(width: 343, alignment: .leading)
             
             
+            SwiftUI.TextField(
+                "Type here",
+                text: $viewModel.state.feedback
+            )
+            .padding(.leading, 10)
+            .padding(.top, 15)
+                .frame(width: 327, height: 202, alignment: .top)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    )
+            
             
             Spacer(minLength: 35)
                 .fixedSize()
@@ -56,6 +68,9 @@ public struct FeedbackScreen: View {
             
             SubmitButton
                 .frame(alignment: .center)
+                .button {
+                    router.pop()
+                }
             
             Spacer(minLength: 265)
                 

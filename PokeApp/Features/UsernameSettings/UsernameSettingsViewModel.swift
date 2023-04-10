@@ -3,8 +3,11 @@ import SwiftUI
 
 class UsernameSettingsScreenViewModel: ObservableObject {
     struct State {
+        
+        var inputs = SignInInputs()
         var username: String
         var password: String
+        
     }
     
     @Published

@@ -64,13 +64,23 @@ public struct UsernameSettingsScreen: View {
 
             usernameEdit
             
+            Spacer(minLength: 35)
+                .fixedSize()
+            
             SaveButton
+                .button {
+                    router.pop()
+                }
+                .frame(alignment: .center)
+                .padding(.leading, 90)
+            
 
-            Spacer(minLength: 265)
+            Spacer(minLength: 205)
                 .fixedSize()
 
             logOutButton
-            
+                .frame(alignment: .center)
+                .padding(.leading, -16)
         }
     }
     
@@ -112,15 +122,29 @@ public struct UsernameSettingsScreen: View {
                 style: .bold
             )
             
-//            TextField(text: "Message...", placeholder: $viewModel.username)
-//                .frame(height: 30)
-//                .padding(10)
+            SecureField("********", text: $viewModel.state.username)
+                .padding(.leading, 10)
+                .frame(width: 327, height: 48)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    )
+
+            
             TextLabel(
                 content: "Confirm Username:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold
             )
+            
+            SecureField("********", text: $viewModel.state.username)
+                .padding(.leading, 10)
+                .frame(width: 327, height: 48)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    )
         }
     }
 }
@@ -146,6 +170,7 @@ public struct UsernameSettingsScreen: View {
 
         }
         .frame(alignment: .center)
+        
         
     }
     
