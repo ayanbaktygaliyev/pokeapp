@@ -16,30 +16,51 @@ public struct UsernameSettingsScreen: View {
     private var content: some View {
         VStack(alignment: .leading){
             
+            ZStack {
+                Circle()
+                    .fill(.black.opacity(0.2))
+                    .frame(width: 32, height: 32)
+                
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 8, height: 12)
+            }
+            .button {
+                router.pop()
+            }
+            
+            Spacer()
+            
             greeting
 
             Spacer(minLength: 70)
                 .fixedSize()
             
-            TextLabel(
-                content: "Change Username",
-                color: .black,
-                fontToken: .size20,
-                style: .bold
-            )
             
-            Spacer()
-                .fixedSize()
+            VStack(alignment: .leading){
             
-            TextLabel(
-                content: "Enter your new username below:",
-                color: .grey,
-                fontToken: .size16,
-                style: .bold
-            )
-            
-            Spacer(minLength: 35)
-                .fixedSize()
+                TextLabel(
+                    content: "Change Username",
+                    color: .black,
+                    fontToken: .size20,
+                    style: .bold
+                )
+                
+                Spacer()
+                    .fixedSize()
+                
+                TextLabel(
+                    content: "Enter your new username below:",
+                    color: .grey,
+                    fontToken: .size16,
+                    style: .bold
+                )
+                
+                Spacer(minLength: 35)
+                    .fixedSize()
+            }
+
 
             usernameEdit
             

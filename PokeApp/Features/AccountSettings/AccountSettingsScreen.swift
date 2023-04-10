@@ -18,6 +18,22 @@ public struct AccountSettingsScreen: View {
     private var content: some View {
         VStack(alignment: .leading){
             
+            ZStack {
+                Circle()
+                    .fill(.black.opacity(0.2))
+                    .frame(width: 32, height: 32)
+                
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 8, height: 12)
+            }            .button {
+                router.pop()
+            }
+            
+            Spacer()
+                
+            
             greeting
 
             Spacer(minLength: 70)
@@ -106,6 +122,9 @@ public struct AccountSettingsScreen: View {
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
+                        .button {
+                            router.push(.usernamesettings)
+                        }
                     
                 }
                 

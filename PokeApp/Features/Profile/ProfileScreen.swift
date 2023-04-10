@@ -15,8 +15,21 @@ public struct ProfileScreen: View {
     private var content: some View {
         VStack(alignment: .leading){
             
+//            ZStack {
+//                Circle()
+//                    .fill(.black.opacity(0.2))
+//                    .frame(width: 32, height: 32)
+//
+//                Image(systemName: "chevron.left")
+//                    .resizable()
+//                    .foregroundColor(.white)
+//                    .frame(width: 8, height: 12)
+//            }
+//            .button {
+//                router.pop()
+//            }
+            
             ProfileCard.stub()
-                .padding(.top, 20)
 
             Spacer(minLength: 90)
                 .fixedSize()
@@ -25,7 +38,7 @@ public struct ProfileScreen: View {
 
             moreSettings
 
-            Spacer(minLength: 265)
+            Spacer(minLength: 190)
                 .fixedSize()
 
             logOutButton
@@ -85,6 +98,9 @@ public struct ProfileScreen: View {
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
+                        .button {
+                            router.push(.feedbackscreen)
+                        }
                     
                 }
                 
@@ -111,6 +127,9 @@ public struct ProfileScreen: View {
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
+                        .button {
+                            router.push(.aboutus)
+                        }
                     
                 }
             }
@@ -150,7 +169,7 @@ public struct ProfileScreen: View {
                     .frame(width: 19, height: 19)
                     .padding(.trailing, 16)
                     .button {
-                        print("Edit Account Settings")
+                        router.push(.accountsettings)
                     }
                     
             }

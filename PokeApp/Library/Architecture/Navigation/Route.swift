@@ -13,4 +13,8 @@ public enum Route: Equatable {
     case allRestaurants
     case seeallRestaurants
     case restaurantDetails
+    case accountsettings
+    case usernamesettings
+    case feedbackscreen
+    case aboutus
 }
