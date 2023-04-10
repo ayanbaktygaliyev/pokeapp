@@ -152,6 +152,6 @@ private extension SessionCoordinator {
     }
     
     private enum Constants {
-        static let baseURL = URL(string: "http://1140427-ci11141.tw1.ru:8080")!
+        static let baseURL = URL(string: "http://1385980-ci11141.tw1.ru:8080")!
     }
 }

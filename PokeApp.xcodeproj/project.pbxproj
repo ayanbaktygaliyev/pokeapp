@@ -94,8 +94,16 @@
 		E431D0CB29C47DEC00B9DB31 /* ReservationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */; };
 		E431D0CC29C47DEC00B9DB31 /* ReservationsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */; };
 		E43AA2BC29C4698300E9B817 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */; };
+		E44A929E29E3600100CBB211 /* AccountSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */; };
+		E44A92A029E3601400CBB211 /* AccountSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */; };
+		E44A92A529E367C100CBB211 /* UsernameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */; };
+		E44A92A729E367CF00CBB211 /* UsernameSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A92A629E367CF00CBB211 /* UsernameSettingsViewModel.swift */; };
 		E451443329E0A91F001555C5 /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451443229E0A91F001555C5 /* ProfileScreenViewModel.swift */; };
 		E451443529E0AF7A001555C5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451443429E0AF7A001555C5 /* ProfileCard.swift */; };
+		E4B9FE0229E3DFA6006E0DDC /* FeedbackScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0129E3DFA6006E0DDC /* FeedbackScreen.swift */; };
+		E4B9FE0429E3DFB2006E0DDC /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0329E3DFB2006E0DDC /* FeedbackViewModel.swift */; };
+		E4B9FE0729E3E621006E0DDC /* AboutUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0629E3E621006E0DDC /* AboutUsScreen.swift */; };
+		E4B9FE0929E3E62D006E0DDC /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0829E3E62D006E0DDC /* AboutUsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,8 +215,16 @@
 		E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsScreen.swift; sourceTree = "<group>"; };
 		E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsCard.swift; sourceTree = "<group>"; };
 		E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsScreen.swift; sourceTree = "<group>"; };
+		E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewModel.swift; sourceTree = "<group>"; };
+		E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameSettingsScreen.swift; sourceTree = "<group>"; };
+		E44A92A629E367CF00CBB211 /* UsernameSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameSettingsViewModel.swift; sourceTree = "<group>"; };
 		E451443229E0A91F001555C5 /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		E451443429E0AF7A001555C5 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
+		E4B9FE0129E3DFA6006E0DDC /* FeedbackScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackScreen.swift; sourceTree = "<group>"; };
+		E4B9FE0329E3DFB2006E0DDC /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
+		E4B9FE0629E3E621006E0DDC /* AboutUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsScreen.swift; sourceTree = "<group>"; };
+		E4B9FE0829E3E62D006E0DDC /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +329,10 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E4B9FE0529E3E60F006E0DDC /* AboutUs */,
+				E4B9FE0029E3DF90006E0DDC /* Feedback */,
+				E44A92A329E367A300CBB211 /* UsernameSettings */,
+				E44A929C29E35FBA00CBB211 /* AccountSettings */,
 				E40BBDB529D9E91C00CD5A4A /* RestaurantsSeeAll */,
 				747B81F129DAC676000D6120 /* RestaurantDetails */,
 				74385A3A29A8DA4C004BFE07 /* RootTop */,
@@ -663,6 +683,42 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		E44A929C29E35FBA00CBB211 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */,
+				E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		E44A92A329E367A300CBB211 /* UsernameSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */,
+				E44A92A629E367CF00CBB211 /* UsernameSettingsViewModel.swift */,
+			);
+			path = UsernameSettings;
+			sourceTree = "<group>";
+		};
+		E4B9FE0029E3DF90006E0DDC /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9FE0129E3DFA6006E0DDC /* FeedbackScreen.swift */,
+				E4B9FE0329E3DFB2006E0DDC /* FeedbackViewModel.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		E4B9FE0529E3E60F006E0DDC /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9FE0629E3E621006E0DDC /* AboutUsScreen.swift */,
+				E4B9FE0829E3E62D006E0DDC /* AboutUsViewModel.swift */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -793,6 +849,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B9FE0729E3E621006E0DDC /* AboutUsScreen.swift in Sources */,
 				7456AFC528D4782900C347E9 /* Restaurant.swift in Sources */,
 				7432303E29B601FD0095B496 /* SessionLogger.swift in Sources */,
 				7456AFBF28D467B000C347E9 /* AppDelegate.swift in Sources */,
@@ -812,6 +869,7 @@
 				E40BBDB929D9E99500CD5A4A /* RestaurantSeeAllViewModel.swift in Sources */,
 				74727A8E29700A9D00ED29FF /* NavigationControllerHost.swift in Sources */,
 				E431D0CC29C47DEC00B9DB31 /* ReservationsCard.swift in Sources */,
+				E44A929E29E3600100CBB211 /* AccountSettingsScreen.swift in Sources */,
 				74727A8B29700A9C00ED29FF /* NavigationStyle.swift in Sources */,
 				741E292229A2454C001A273E /* SuccessScreen.swift in Sources */,
 				74727A9F29707A9000ED29FF /* FavoritesScreen.swift in Sources */,
@@ -820,6 +878,7 @@
 				740CF9D32924FD64000ADFEE /* Logo.swift in Sources */,
 				74727A8C29700A9C00ED29FF /* Router.swift in Sources */,
 				748FAE5129D1916800062E27 /* AllRestaurantsViewModel.swift in Sources */,
+				E4B9FE0229E3DFA6006E0DDC /* FeedbackScreen.swift in Sources */,
 				748FAE4F29D1913500062E27 /* AllRestaurantsScreen.swift in Sources */,
 				741E292E29A294BE001A273E /* HomeCuisineCard.swift in Sources */,
 				7432303929B4A4200095B496 /* HTTPMethod.swift in Sources */,
@@ -832,6 +891,7 @@
 				745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */,
 				74DC01372910E18200629D11 /* SignInScreen.swift in Sources */,
 				748FAE4629D1676600062E27 /* Spinner.swift in Sources */,
+				E44A92A529E367C100CBB211 /* UsernameSettingsScreen.swift in Sources */,
 				740ECA8D29004EDC00C7CF26 /* DesignSystem.swift in Sources */,
 				74385A3E29A8DB0E004BFE07 /* RootTopViewModel.swift in Sources */,
 				748FAE4C29D1848E00062E27 /* Inputs + SignUp.swift in Sources */,
@@ -839,6 +899,7 @@
 				7456AFBC28D4676B00C347E9 /* Env.swift in Sources */,
 				741E292829A27E99001A273E /* HomeViewModel.swift in Sources */,
 				748FAE4A29D181E800062E27 /* SetExtensions.swift in Sources */,
+				E44A92A029E3601400CBB211 /* AccountSettingsViewModel.swift in Sources */,
 				7432302F29B121ED0095B496 /* SessionError.swift in Sources */,
 				741E291F29A2453D001A273E /* SignUpViewModel.swift in Sources */,
 				745C8A6529BF28E0008A8086 /* AuthRepository.swift in Sources */,
@@ -856,10 +917,12 @@
 				747FB0FA298927D9006AFE43 /* TextField.swift in Sources */,
 				747B81EC29DA0105000D6120 /* Carousel.swift in Sources */,
 				749CC8FE2913B63A00BB9E87 /* SignUpScreen.swift in Sources */,
+				E4B9FE0929E3E62D006E0DDC /* AboutUsViewModel.swift in Sources */,
 				74E1722229D2FC5900CD1225 /* Snackbar.swift in Sources */,
 				74385A3729A8D898004BFE07 /* TabItem.swift in Sources */,
 				74727A922970788300ED29FF /* LaunchScreen.swift in Sources */,
 				74385A3C29A8DAD9004BFE07 /* RootTopScreen.swift in Sources */,
+				E44A92A729E367CF00CBB211 /* UsernameSettingsViewModel.swift in Sources */,
 				740ECA8B29004ECE00C7CF26 /* TextLabel.swift in Sources */,
 				7434030629D05D6000FF1F9A /* SceneDelegate.swift in Sources */,
 				E431D0CB29C47DEC00B9DB31 /* ReservationsScreen.swift in Sources */,
@@ -871,6 +934,7 @@
 				748FAE5529D199AC00062E27 /* Line.swift in Sources */,
 				748FAE5329D1973400062E27 /* RestaurantCard.swift in Sources */,
 				7432302729B0E12A0095B496 /* JSONRequest.swift in Sources */,
+				E4B9FE0429E3DFB2006E0DDC /* FeedbackViewModel.swift in Sources */,
 				74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */,
 				748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */,
 				747B81F529DAC9FC000D6120 /* RestaurantDetailsViewModel.swift in Sources */,
