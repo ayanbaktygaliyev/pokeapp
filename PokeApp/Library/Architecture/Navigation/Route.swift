@@ -17,4 +17,5 @@ public enum Route: Equatable {
     case usernamesettings
     case feedbackscreen
     case aboutus
+    case reserve
 }
