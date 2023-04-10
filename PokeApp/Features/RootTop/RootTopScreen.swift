@@ -25,6 +25,7 @@ struct RootTopScreen: View {
             case .usernamesettings: UsernameSettingsScreen()
             case .feedbackscreen: FeedbackScreen()
             case .aboutus: AboutUsScreen()
+            case .reserve: ReserveScreen()
             }
         }
     }

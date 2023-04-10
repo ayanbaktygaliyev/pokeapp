@@ -66,6 +66,11 @@ private extension RestaurantDetailsScreen {
                     generalInfoView
                     
                     menu
+                    
+                    Button(title: "Reserve") {
+                        router.push(.reserve)
+                    }
+                    .padding(.bottom, 32)
                 }
                 .padding(.horizontal, 12)
             }

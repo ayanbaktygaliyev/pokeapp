@@ -7,6 +7,7 @@ public enum ColorToken: Int64 {
     case white = 0xFFFFFF
     case whitish60 = 0xE9E9EF
     case grey = 0x828282
+    case softGrey = 0xD9D9D9
     
     case foodieGreen = 0x7AEA0D
     
