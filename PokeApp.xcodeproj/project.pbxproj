@@ -62,7 +62,6 @@
 		74727A8F29700A9D00ED29FF /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A8929700A9C00ED29FF /* Route.swift */; };
 		74727A922970788300ED29FF /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A912970788300ED29FF /* LaunchScreen.swift */; };
 		74727A9D29707A8400ED29FF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A9C29707A8400ED29FF /* HomeScreen.swift */; };
-		74727A9F29707A9000ED29FF /* FavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727A9E29707A9000ED29FF /* FavoritesScreen.swift */; };
 		74727AA329707B2D00ED29FF /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74727AA229707B2D00ED29FF /* ProfileScreen.swift */; };
 		747B81EC29DA0105000D6120 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81EB29DA0105000D6120 /* Carousel.swift */; };
 		747B81EE29DA026B000D6120 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81ED29DA026B000D6120 /* Campaign.swift */; };
@@ -100,6 +99,9 @@
 		E431D0CB29C47DEC00B9DB31 /* ReservationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */; };
 		E431D0CC29C47DEC00B9DB31 /* ReservationsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */; };
 		E43AA2BC29C4698300E9B817 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */; };
+		E43B6ACC29F0A21D00F71734 /* CuisinesSeeAllScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6ACB29F0A21D00F71734 /* CuisinesSeeAllScreen.swift */; };
+		E43B6ACE29F0A22800F71734 /* CuisinesSeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6ACD29F0A22800F71734 /* CuisinesSeeAllViewModel.swift */; };
+		E43B6AD129F0A73E00F71734 /* SeeAllCuisinesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6AD029F0A73E00F71734 /* SeeAllCuisinesCard.swift */; };
 		E44A929E29E3600100CBB211 /* AccountSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */; };
 		E44A92A029E3601400CBB211 /* AccountSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */; };
 		E44A92A529E367C100CBB211 /* UsernameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */; };
@@ -188,7 +190,6 @@
 		74727A8929700A9C00ED29FF /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		74727A912970788300ED29FF /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		74727A9C29707A8400ED29FF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		74727A9E29707A9000ED29FF /* FavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		74727AA229707B2D00ED29FF /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		747B81EB29DA0105000D6120 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		747B81ED29DA026B000D6120 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
@@ -227,6 +228,9 @@
 		E431D0C829C47DEC00B9DB31 /* ReservationsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsScreen.swift; sourceTree = "<group>"; };
 		E431D0CA29C47DEC00B9DB31 /* ReservationsCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsCard.swift; sourceTree = "<group>"; };
 		E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		E43B6ACB29F0A21D00F71734 /* CuisinesSeeAllScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisinesSeeAllScreen.swift; sourceTree = "<group>"; };
+		E43B6ACD29F0A22800F71734 /* CuisinesSeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisinesSeeAllViewModel.swift; sourceTree = "<group>"; };
+		E43B6AD029F0A73E00F71734 /* SeeAllCuisinesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllCuisinesCard.swift; sourceTree = "<group>"; };
 		E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsScreen.swift; sourceTree = "<group>"; };
 		E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewModel.swift; sourceTree = "<group>"; };
 		E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameSettingsScreen.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E43B6ACA29F0A1E200F71734 /* CuisinesSeeAll */,
 				E4B9FE0529E3E60F006E0DDC /* AboutUs */,
 				E4B9FE0029E3DF90006E0DDC /* Feedback */,
 				E44A92A329E367A300CBB211 /* UsernameSettings */,
@@ -356,7 +361,6 @@
 				E431D0C729C47DEC00B9DB31 /* Reservations */,
 				74727A9729707A4600ED29FF /* Home */,
 				748FAE4D29D1910D00062E27 /* AllRestaurants */,
-				74727A9929707A4D00ED29FF /* Favorites */,
 				74727A9B29707A5800ED29FF /* Profile */,
 			);
 			path = Features;
@@ -595,14 +599,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		74727A9929707A4D00ED29FF /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				74727A9E29707A9000ED29FF /* FavoritesScreen.swift */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
 		74727A9B29707A5800ED29FF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +711,24 @@
 				E43AA2BB29C4698300E9B817 /* RoundedCorner.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		E43B6ACA29F0A1E200F71734 /* CuisinesSeeAll */ = {
+			isa = PBXGroup;
+			children = (
+				E43B6ACF29F0A72500F71734 /* Views */,
+				E43B6ACB29F0A21D00F71734 /* CuisinesSeeAllScreen.swift */,
+				E43B6ACD29F0A22800F71734 /* CuisinesSeeAllViewModel.swift */,
+			);
+			path = CuisinesSeeAll;
+			sourceTree = "<group>";
+		};
+		E43B6ACF29F0A72500F71734 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E43B6AD029F0A73E00F71734 /* SeeAllCuisinesCard.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E44A929C29E35FBA00CBB211 /* AccountSettings */ = {
@@ -906,7 +920,6 @@
 				E44A929E29E3600100CBB211 /* AccountSettingsScreen.swift in Sources */,
 				74727A8B29700A9C00ED29FF /* NavigationStyle.swift in Sources */,
 				741E292229A2454C001A273E /* SuccessScreen.swift in Sources */,
-				74727A9F29707A9000ED29FF /* FavoritesScreen.swift in Sources */,
 				E43AA2BC29C4698300E9B817 /* RoundedCorner.swift in Sources */,
 				74727A8D29700A9C00ED29FF /* RouterHost.swift in Sources */,
 				740CF9D32924FD64000ADFEE /* Logo.swift in Sources */,
@@ -914,12 +927,14 @@
 				748FAE5129D1916800062E27 /* AllRestaurantsViewModel.swift in Sources */,
 				E4B9FE0229E3DFA6006E0DDC /* FeedbackScreen.swift in Sources */,
 				748FAE4F29D1913500062E27 /* AllRestaurantsScreen.swift in Sources */,
+				E43B6AD129F0A73E00F71734 /* SeeAllCuisinesCard.swift in Sources */,
 				741E292E29A294BE001A273E /* HomeCuisineCard.swift in Sources */,
 				7432303929B4A4200095B496 /* HTTPMethod.swift in Sources */,
 				749CC8FC2913B50000BB9E87 /* SignInViewModel.swift in Sources */,
 				E40BBDB729D9E97A00CD5A4A /* RestaurantSeeAllScreen.swift in Sources */,
 				E451443329E0A91F001555C5 /* ProfileScreenViewModel.swift in Sources */,
 				747B81EE29DA026B000D6120 /* Campaign.swift in Sources */,
+				E43B6ACC29F0A21D00F71734 /* CuisinesSeeAllScreen.swift in Sources */,
 				74C334AE2926060E00FE7A34 /* StringConstants.swift in Sources */,
 				E451443529E0AF7A001555C5 /* ProfileCard.swift in Sources */,
 				745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */,
@@ -947,6 +962,7 @@
 				74972E8B29E3FC0E0006868A /* ReserveViewModel.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
 				74E1722429D3006700CD1225 /* HomeCampaignCard.swift in Sources */,
+				E43B6ACE29F0A22800F71734 /* CuisinesSeeAllViewModel.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
 				746E0A5229A7622A009876D3 /* NavigationBottom.swift in Sources */,
 				742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */,

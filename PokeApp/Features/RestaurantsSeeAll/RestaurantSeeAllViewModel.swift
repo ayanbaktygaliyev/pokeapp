@@ -3,15 +3,16 @@ import SwiftUI
 
 class RestaurantSeeAllViewModel: ObservableObject {
     struct State {
-        var username: String
-        var password: String
+        var title = ""
+        var restaurants = [Restaurant]()
     }
     
     @Published
-    var state: State
+    var state: State = State()
 
-    init() {
-        self.state = State(username: "", password: "")
+    init(title: String, restaurants: [Restaurant]) {
+        self.state.title = title
+        self.state.restaurants = restaurants
     }
     
     func didTapSignIn() {

@@ -114,7 +114,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeallRestaurants)
+                    router.push(.seeAllRestaurants(title: "Recommended", restaurants: []))
                 }
             }
             
@@ -153,7 +153,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    print("See all")
+                    router.push(.seeAllCuisines)
                 }
             }
             
@@ -192,7 +192,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    print("See all")
+                    router.push(.seeAllRestaurants(title: "Nearby", restaurants: []))
                 }
             }
             
