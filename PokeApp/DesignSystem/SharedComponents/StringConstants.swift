@@ -47,12 +47,19 @@ public enum StringConstants {
         static let signIn = "Sign In"
     }
     
+    public enum ReserveSuccess {
+        static let success = "Success"
+        static let Congrats = "Congratulations your reservation has\n been booked"
+        static let backtohomepage = "Back to Home Page"
+    }
+    
     public enum Home {
         static let restaurants = "Restaurants"
         static let recommended = "Recommended"
         static let cuisines = "Cuisines"
         static let nearby = "Nearby"
         static let places = "places"
+        static let favourites = "Favourites"
     }
     
     public enum Reservations {

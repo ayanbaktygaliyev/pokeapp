@@ -28,6 +28,15 @@ public struct AllRestaurantsScreen: View {
                         style: .bold
                     )
                     
+                    NavigationView() {
+                        
+//
+//                        RestaurantCard.stub()
+                        Text("\(viewModel.state.searchText)")
+                            }
+                            .searchable(text: $viewModel.state.searchText)
+                            .padding(.leading, -10)
+                    
                     cuisinesSection
                     
                     restaurantsSection

@@ -102,6 +102,7 @@
 		E43B6ACC29F0A21D00F71734 /* CuisinesSeeAllScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6ACB29F0A21D00F71734 /* CuisinesSeeAllScreen.swift */; };
 		E43B6ACE29F0A22800F71734 /* CuisinesSeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6ACD29F0A22800F71734 /* CuisinesSeeAllViewModel.swift */; };
 		E43B6AD129F0A73E00F71734 /* SeeAllCuisinesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6AD029F0A73E00F71734 /* SeeAllCuisinesCard.swift */; };
+		E43B6AD429F0C6D200F71734 /* ReserveSuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B6AD329F0C6D200F71734 /* ReserveSuccessScreen.swift */; };
 		E44A929E29E3600100CBB211 /* AccountSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */; };
 		E44A92A029E3601400CBB211 /* AccountSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */; };
 		E44A92A529E367C100CBB211 /* UsernameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */; };
@@ -231,6 +232,7 @@
 		E43B6ACB29F0A21D00F71734 /* CuisinesSeeAllScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisinesSeeAllScreen.swift; sourceTree = "<group>"; };
 		E43B6ACD29F0A22800F71734 /* CuisinesSeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisinesSeeAllViewModel.swift; sourceTree = "<group>"; };
 		E43B6AD029F0A73E00F71734 /* SeeAllCuisinesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllCuisinesCard.swift; sourceTree = "<group>"; };
+		E43B6AD329F0C6D200F71734 /* ReserveSuccessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveSuccessScreen.swift; sourceTree = "<group>"; };
 		E44A929D29E3600100CBB211 /* AccountSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsScreen.swift; sourceTree = "<group>"; };
 		E44A929F29E3601400CBB211 /* AccountSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewModel.swift; sourceTree = "<group>"; };
 		E44A92A429E367C100CBB211 /* UsernameSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameSettingsScreen.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E43B6AD229F0C6B400F71734 /* ReserveSuccess */,
 				E43B6ACA29F0A1E200F71734 /* CuisinesSeeAll */,
 				E4B9FE0529E3E60F006E0DDC /* AboutUs */,
 				E4B9FE0029E3DF90006E0DDC /* Feedback */,
@@ -731,6 +734,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E43B6AD229F0C6B400F71734 /* ReserveSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				E43B6AD329F0C6D200F71734 /* ReserveSuccessScreen.swift */,
+			);
+			path = ReserveSuccess;
+			sourceTree = "<group>";
+		};
 		E44A929C29E35FBA00CBB211 /* AccountSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,6 +969,7 @@
 				74972E9429E416620006868A /* SeatsStepper.swift in Sources */,
 				7415028629A22A600071BC11 /* ViewExtensions.swift in Sources */,
 				74243469297C53A500462399 /* Logger.swift in Sources */,
+				E43B6AD429F0C6D200F71734 /* ReserveSuccessScreen.swift in Sources */,
 				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
 				74972E8B29E3FC0E0006868A /* ReserveViewModel.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,

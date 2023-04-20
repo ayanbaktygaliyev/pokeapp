@@ -84,12 +84,17 @@ public struct ReservationsScreen: View {
                     ReservationsCard.stub()
                         .frame(width: 343, height: 164)
                         .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                    
+                }
+                .swipeActions {
+                    SwiftUI.Button {
+                        print("Reservation deleted")
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                    .tint(.red)
                 }
             }
-            
-            
-            
-            
         }
     }
     

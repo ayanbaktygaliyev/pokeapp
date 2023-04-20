@@ -15,65 +15,68 @@ public struct RestaurantDetailsScreen: View {
 
 private extension RestaurantDetailsScreen {
     private var content: some View {
-        ScrollView(.vertical) {
-            VStack(spacing: .spacing16) {
-                ZStack(alignment: .topLeading) {
-                    Image("test")
-                        .resizable()
-                        .frame(height: 300)
-                    
-                    ZStack {
-                        Circle()
-                            .fill(.black.opacity(0.48))
-                            .frame(width: 32, height: 32)
-                        
-                        Image(systemName: "chevron.left")
+        ZStack(alignment: .bottom) {
+            ScrollView(.vertical) {
+                VStack(spacing: .spacing16) {
+                    ZStack(alignment: .topLeading) {
+                        Image("test")
                             .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 8, height: 12)
+                            .frame(height: 300)
+                        
+                        ZStack {
+                            Circle()
+                                .fill(.black.opacity(0.48))
+                                .frame(width: 32, height: 32)
+                            
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 8, height: 12)
+                        }
+                        .padding(.leading, 16)
+                        .padding(.top, 64)
+                        .button {
+                            router.pop()
+                        }
                     }
-                    .padding(.leading, 16)
-                    .padding(.top, 64)
-                    .button {
-                        router.pop()
-                    }
-                }
-                
-                VStack(alignment: .leading, spacing: .spacing12) {
-                    HStack {
+                    
+                    VStack(alignment: .leading, spacing: .spacing12) {
+                        HStack {
+                            TextLabel(
+                                content: "Test name",
+                                color: .black,
+                                fontToken: .size24,
+                                style: .semibold
+                            )
+                            
+                            Spacer()
+                            
+                            Image(systemName: "heart.fill")
+                                .resizable()
+                                .frame(width: 20, height: 18)
+                                .foregroundColor(Color(.foodieGreen))
+                        }
+                        
                         TextLabel(
-                            content: "Test name",
+                            content: "Test description description description description",
                             color: .black,
-                            fontToken: .size24,
-                            style: .semibold
+                            fontToken: .size15,
+                            style: .regular
                         )
                         
-                        Spacer()
+                        generalInfoView
                         
-                        Image(systemName: "heart.fill")
-                            .resizable()
-                            .frame(width: 20, height: 18)
-                            .foregroundColor(Color(.foodieGreen))
+                        menu
+                        
                     }
-                    
-                    TextLabel(
-                        content: "Test description description description description",
-                        color: .black,
-                        fontToken: .size15,
-                        style: .regular
-                    )
-                    
-                    generalInfoView
-                    
-                    menu
-                    
-                    Button(title: "Reserve") {
-                        router.push(.reserve)
-                    }
-                    .padding(.bottom, 32)
+                    .padding(.horizontal, 12)
                 }
-                .padding(.horizontal, 12)
             }
+            
+            Button(title: "Reserve") {
+                router.push(.reserve)
+            }
+            .padding(.bottom, 32)
         }
     }
     
@@ -145,6 +148,9 @@ private extension RestaurantDetailsScreen {
             ForEach(0..<20) { index in
                 menuItem()
             }
+            
+            Spacer(minLength: 90)
+                .fixedSize()
         }
     }
     

@@ -3,6 +3,7 @@ import SwiftUI
 
 class AllRestaurantsViewModel: ObservableObject {
     struct State {
+        var searchText: String
         var username: String
         var password: String
     }
@@ -11,7 +12,7 @@ class AllRestaurantsViewModel: ObservableObject {
     var state: State
 
     init() {
-        self.state = State(username: "", password: "")
+        self.state = State(searchText: "", username: "", password: "")
     }
     
     func didTapSignIn() {

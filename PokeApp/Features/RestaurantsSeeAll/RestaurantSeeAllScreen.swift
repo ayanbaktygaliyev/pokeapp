@@ -88,7 +88,7 @@ public struct RestaurantSeeAllScreen: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: .spacing12) {
-                    ForEach(0..<viewModel.state.restaurants.count) { index in
+                    ForEach(0..<10) { index in
                         RestaurantCard.stub()
                     }
                 }
