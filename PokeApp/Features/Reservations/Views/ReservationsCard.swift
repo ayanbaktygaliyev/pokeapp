@@ -62,6 +62,14 @@ struct ReservationsCard: View {
                 .fixedSize()
             
         }
+            .swipeActions {
+                SwiftUI.Button(
+                    action: {
+                        print("Delete")
+                    }) {
+                        Image(systemName: "trash")
+                    }
+            }
     }
     
     

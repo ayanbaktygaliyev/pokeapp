@@ -15,17 +15,18 @@ struct RootTopScreen: View {
             case .signUp: SignUpScreen()
             case .success: SuccessScreen()
             case .home: BottomTabView(viewModel: viewModel)
-            case .favorites: FavoritesScreen()
             case .reservations: ReservationsScreen()
             case .profile: ProfileScreen()
             case .allRestaurants: AllRestaurantsScreen()
-            case .seeallRestaurants: RestaurantSeeAllScreen()
+            case .seeAllRestaurants(let title, let restaurants): RestaurantSeeAllScreen(viewModel: .init(title: title, restaurants: restaurants))
             case .restaurantDetails: RestaurantDetailsScreen()
             case .accountsettings: AccountSettingsScreen()
             case .usernamesettings: UsernameSettingsScreen()
             case .feedbackscreen: FeedbackScreen()
             case .aboutus: AboutUsScreen()
             case .reserve: ReserveScreen()
+            case .reservesuccess: ReserveSuccessScreen()
+            case .seeAllCuisines: CuisinesSeeAllScreen()
             }
         }
     }

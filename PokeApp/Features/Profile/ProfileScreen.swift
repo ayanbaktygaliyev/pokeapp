@@ -69,7 +69,7 @@ public struct ProfileScreen: View {
             
             Rectangle()
                 .fill(.white)
-                .frame(width: 327, height: 99)
+                .frame(width: 327, height: 150)
                 .cornerRadius(11)
                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
@@ -106,6 +106,35 @@ public struct ProfileScreen: View {
                 
                 HStack{
                     
+                    Image(systemName: "star")
+                        .resizable()
+                        .foregroundColor(Color(.black))
+                        .frame(width: 24, height: 24)
+                        .padding(.leading, 16)
+                    
+                    TextLabel(
+                        content: "Favourites",
+                        color: .black,
+                        fontToken: .size17,
+                        style: .regular
+                    )
+                    .padding(.leading, 18)
+                    
+                    Spacer(minLength: 0)
+                    
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .foregroundColor(Color(.black))
+                        .frame(width: 7, height: 14)
+                        .padding(.trailing, 16)
+                        .button {
+                            router.push(.seeAllRestaurants(title: "Favourites", restaurants: []))
+                        }
+                    
+                }
+                
+                HStack{
+                    
                     Image(systemName: "info.circle")
                         .resizable()
                         .foregroundColor(Color(.black))
@@ -132,6 +161,7 @@ public struct ProfileScreen: View {
                         }
                     
                 }
+                
             }
             .frame(width: 327)
         }

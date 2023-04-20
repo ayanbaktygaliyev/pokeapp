@@ -39,6 +39,8 @@ public struct HomeScreen: View {
                     cuisinesSection
                     
                     nearbySection
+                    
+                    favouritesSection
                 }
             }
         }
@@ -114,7 +116,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeallRestaurants)
+                    router.push(.seeAllRestaurants(title: "Recommended", restaurants: []))
                 }
             }
             
@@ -153,7 +155,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    print("See all")
+                    router.push(.seeAllCuisines)
                 }
             }
             
@@ -192,7 +194,7 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    print("See all")
+                    router.push(.seeAllRestaurants(title: "Nearby", restaurants: []))
                 }
             }
             
@@ -210,6 +212,46 @@ public struct HomeScreen: View {
             }
         }
     }
+    
+    private var favouritesSection: some View {
+        VStack(spacing: .spacing6) {
+            HStack {
+                TextLabel(
+                    content: StringConstants.Home.favourites,
+                    color: .black,
+                    fontToken: .size16,
+                    style: .semibold
+                )
+                
+                Spacer()
+                
+                TextLabel(
+                    content: StringConstants.App.seeAll,
+                    color: .foodieGreen,
+                    fontToken: .size13,
+                    style: .semibold
+                )
+                .padding(.trailing, 16)
+                .button {
+                    router.push(.seeAllRestaurants(title: "Favourites", restaurants: []))
+                }
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: .spacing12) {
+                    ForEach(0..<10) { index in
+                        HomeRecommendedCard.stub()
+                            .frame(width: 166, height: 220)
+                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                            .button {
+                                router.push(.restaurantDetails)
+                            }
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 struct HomeScreen_Previews: PreviewProvider {

@@ -1,11 +1,15 @@
 import SwiftUI
 
-public struct RestaurantSeeAllScreen: View {
+public struct CuisinesSeeAllScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
 
-    @ObservedObject
-    var viewModel: RestaurantSeeAllViewModel
+    @StateObject
+    var viewModel = CuisinesSeeAllViewModel()
+
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
     
     public var body: some View {
         content
@@ -26,7 +30,7 @@ public struct RestaurantSeeAllScreen: View {
                     Spacer()
                         .fixedSize()
                     
-                    restaurantsSection
+                    cuisinesSection
                 }
             }
         }
@@ -73,7 +77,7 @@ public struct RestaurantSeeAllScreen: View {
                 .fixedSize()
             
             TextLabel(
-                content: viewModel.state.title,
+                content: "Cuisines",
                 color: .black,
                 fontToken: .size24,
                 style: .bold
@@ -83,13 +87,14 @@ public struct RestaurantSeeAllScreen: View {
         }
     }
     
-    private var restaurantsSection: some View {
+    private var cuisinesSection: some View {
         VStack(spacing: .spacing6) {
             
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        RestaurantCard.stub()
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: adaptiveColumns){
+                            ForEach(0..<10) { index in
+                                SeeAllCuisineCard.stub()
+                                    .frame(width: 140, height: 190)
                     }
                 }
             }
@@ -98,8 +103,8 @@ public struct RestaurantSeeAllScreen: View {
     }
 }
 
-struct RestaurantSeeAllScreen_Previews: PreviewProvider {
+struct CuisinesSeeAllScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantSeeAllScreen(viewModel: .init(title: "", restaurants: []))
+        CuisinesSeeAllScreen()
     }
 }

@@ -73,6 +73,11 @@ private extension ReserveScreen {
                             )
                         }
                     )
+                    
+                    Button(title: "Reserve") {
+                        router.push(.reservesuccess)
+                    }
+                    .padding(.bottom, 16)
                 }
                 .padding(.horizontal, 16)                
                 .padding(.bottom, 32)
