@@ -347,6 +347,7 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				747B81F129DAC676000D6120 /* RestaurantDetails */,
 				E43B6AD229F0C6B400F71734 /* ReserveSuccess */,
 				E43B6ACA29F0A1E200F71734 /* CuisinesSeeAll */,
 				E4B9FE0529E3E60F006E0DDC /* AboutUs */,
@@ -355,7 +356,6 @@
 				E44A929C29E35FBA00CBB211 /* AccountSettings */,
 				74972E8729E3F3F20006868A /* Reserve */,
 				E40BBDB529D9E91C00CD5A4A /* RestaurantsSeeAll */,
-				747B81F129DAC676000D6120 /* RestaurantDetails */,
 				74385A3A29A8DA4C004BFE07 /* RootTop */,
 				74727A902970787100ED29FF /* Launch */,
 				74DC01352910E16400629D11 /* SignIn */,
@@ -1176,6 +1176,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1206,6 +1207,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

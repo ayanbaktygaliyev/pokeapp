@@ -17,31 +17,15 @@ public struct AllRestaurantsScreen: View {
             
             headerView
                 .padding(.trailing, 16)
-            
-            ScrollView {
-                VStack(alignment: .leading, spacing: .spacing16) {
+ 
+//            TextLabel(
+//                content: StringConstants.AllRestaurants.restaurants,
+//                color: .black,
+//                fontToken: .size24,
+//                style: .bold
+//            )
 
-                    TextLabel(
-                        content: StringConstants.AllRestaurants.restaurants,
-                        color: .black,
-                        fontToken: .size24,
-                        style: .bold
-                    )
-                    
-                    NavigationView() {
-                        
-//
-//                        RestaurantCard.stub()
-                        Text("\(viewModel.state.searchText)")
-                            }
-                            .searchable(text: $viewModel.state.searchText)
-                            .padding(.leading, -10)
-                    
-                    cuisinesSection
-                    
-                    restaurantsSection
-                }
-            }
+            restaurantsSection
         }
     }
     
@@ -66,75 +50,20 @@ public struct AllRestaurantsScreen: View {
         }
     }
     
-    private var cuisinesSection: some View {
-        VStack(spacing: .spacing6) {
-            HStack {
-                TextLabel(
-                    content: StringConstants.AllRestaurants.cuisines,
-                    color: .black,
-                    fontToken: .size16,
-                    style: .semibold
-                )
-                
-                Spacer()
-                
-                TextLabel(
-                    content: StringConstants.App.seeAll,
-                    color: .foodieGreen,
-                    fontToken: .size13,
-                    style: .semibold
-                )
-                .padding(.trailing, 16)
-                .button {
-                    print("See all")
-                }
-            }
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        HomeCuisineCard.stub()
-                            .frame(width: 140, height: 200)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                    }
-                }
-            }
-        }
-    }
     
     private var restaurantsSection: some View {
-        VStack(spacing: .spacing6) {
-            HStack {
-                TextLabel(
-                    content: StringConstants.Home.recommended,
-                    color: .black,
-                    fontToken: .size16,
-                    style: .semibold
-                )
-                
-                Spacer()
-                
-                TextLabel(
-                    content: StringConstants.App.seeAll,
-                    color: .foodieGreen,
-                    fontToken: .size13,
-                    style: .semibold
-                )
-                .padding(.trailing, 16)
-                .button {
-                    print("See all")
+        NavigationStack {
+            List{
+                ForEach(0..<10) { index in
+                    RestaurantCard.stub()
                 }
             }
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        RestaurantCard.stub()
-                    }
-                }
-            }
-            .padding(.trailing, 16)
+            .listStyle(.plain)
+            .padding(.leading, -15)
+            .navigationTitle(Text("Restaurants"))
+            .navigationBarTitleDisplayMode(.large)
         }
+        .searchable(text: $viewModel.state.searchText)
     }
 }
 

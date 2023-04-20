@@ -33,7 +33,7 @@ public struct ReservationsScreen: View {
             
             headerView
             
-            ScrollView {
+//            ScrollView {
                 VStack(alignment: .leading, spacing: .spacing16) {
                     
                     TextLabel(
@@ -46,7 +46,7 @@ public struct ReservationsScreen: View {
                     ReservationsSection
                     
                 }
-            }
+//            }
             
         }
         
@@ -75,27 +75,25 @@ public struct ReservationsScreen: View {
     
     
     private var ReservationsSection: some View {
-        VStack(spacing: .spacing32) {
+//        VStack(spacing: .spacing32) {
         
-            Spacer()
+//            Spacer()
             
             VStack(spacing: .spacing96) {
-                ForEach(0..<1) { index in
-                    ReservationsCard.stub()
-                        .frame(width: 343, height: 164)
-                        .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                    
-                }
-                .swipeActions {
-                    SwiftUI.Button {
-                        print("Reservation deleted")
-                    } label: {
-                        Label("Delete", systemImage: "trash")
+                List {
+                    ForEach(0..<1) { index in
+                        ReservationsCard.stub()
+                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
+                            .buttonStyle(PlainButtonStyle())
+                            .listRowSeparator(.hidden)
                     }
-                    .tint(.red)
+                    .onDelete { indexSet in
+                        print(indexSet)
+                    }
                 }
+                .listStyle(.plain)
             }
-        }
+//        }
     }
     
     struct ReservationsScreen_Previews: PreviewProvider {
