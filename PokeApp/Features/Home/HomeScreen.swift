@@ -5,7 +5,7 @@ public struct HomeScreen: View {
     private var router: Router<Route>
     
     @StateObject
-    private var viewModel = HomeViewModel()
+    var viewModel: HomeViewModel
     
     @State
     private var currentIndex = 0
@@ -31,8 +31,6 @@ public struct HomeScreen: View {
                     )
                     
                     temporaryCampaignSection
-                    
-//                    campaignsSection
                     
                     recommendedSection
                     
@@ -118,20 +116,30 @@ public struct HomeScreen: View {
                 .padding(.trailing, 16)
                 .button {
                     router.push(
-                        .seeAllRestaurants(title: "Recommended", restaurants: [.stub(), .stub()])
+                        .seeAllRestaurants(title: "Recommended", restaurants: viewModel.state.recommended)
                     )
                 }
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        HomeRecommendedCard.stub()
-                            .frame(width: 166, height: 220)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                            .button {
-                                router.push(.restaurantDetails)
-                            }
+                    ForEach(viewModel.state.recommended) { restaurant in
+                        HomeRecommendedCard(
+                            restaurant: restaurant,
+                            heartAction: {
+                                viewModel.heartAction(restaurantID: restaurant.id) {
+                                    viewModel.reload()
+                                }
+                            },
+                            heartImage: viewModel.heartImage(restaurantID: restaurant.id)
+                        )
+                        .frame(width: 166, height: 220)
+                        .padding(.trailing, viewModel.state.recommended.last == restaurant ? 16 : 0)
+                        .button {
+                            router.push(
+                                .restaurantDetails(restaurant: restaurant)
+                            )
+                        }
                     }
                 }
             }
@@ -158,18 +166,23 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeAllCuisines)
+                    router.push(.seeAllCuisines(cuisines: viewModel.state.cuisines))
                 }
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        HomeCuisineCard.stub()
+                    ForEach(viewModel.state.cuisines, id: \.category) { cuisine in
+                        HomeCuisineCard(cuisine: cuisine)
                             .frame(width: 140, height: 200)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                            .button {
-                                router.push(.restaurantDetails)
+                            .padding(.trailing, viewModel.state.cuisines.last == cuisine ? 16 : 0)
+                            .onTapGesture {
+                                router.push(
+                                    .seeAllRestaurants(
+                                        title: cuisine.category,
+                                        restaurants: cuisine.restaurants
+                                    )
+                                )
                             }
                     }
                 }
@@ -198,20 +211,30 @@ public struct HomeScreen: View {
                 .padding(.trailing, 16)
                 .button {
                     router.push(
-                        .seeAllRestaurants(title: "Nearby", restaurants: [.stub(), .stub(), .stub()])
+                        .seeAllRestaurants(title: "Nearby", restaurants: viewModel.state.nearby)
                     )
                 }
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        HomeRecommendedCard.stub()
-                            .frame(width: 166, height: 220)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                            .button {
-                                router.push(.restaurantDetails)
-                            }
+                    ForEach(viewModel.state.nearby) { restaurant in
+                        HomeRecommendedCard(
+                            restaurant: restaurant,
+                            heartAction: {
+                                viewModel.heartAction(restaurantID: restaurant.id) {
+                                    viewModel.reload()
+                                }
+                            },
+                            heartImage: viewModel.heartImage(restaurantID: restaurant.id)
+                        )
+                        .frame(width: 166, height: 220)
+                        .padding(.trailing, viewModel.state.recommended.last == restaurant ? 16 : 0)
+                        .button {
+                            router.push(
+                                .restaurantDetails(restaurant: restaurant)
+                            )
+                        }
                     }
                 }
             }
@@ -239,29 +262,34 @@ public struct HomeScreen: View {
                 .padding(.trailing, 16)
                 .button {
                     router.push(
-                        .seeAllRestaurants(title: "Favourites", restaurants: [])
+                        .seeAllRestaurants(title: "Favourites", restaurants: viewModel.state.favorites)
                     )
                 }
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(viewModel.state.favorites) { favorite in
-                        HomeRecommendedCard.stub()
-                            .frame(width: 166, height: 220)
-                            .button {
-                                router.push(.restaurantDetails)
-                            }
+                    ForEach(viewModel.state.favorites) { restaurant in
+                        HomeRecommendedCard(
+                            restaurant: restaurant,
+                            heartAction: {
+                                viewModel.heartAction(restaurantID: restaurant.id) {
+                                    viewModel.reload()
+                                }
+                            },
+                            heartImage: viewModel.heartImage(restaurantID: restaurant.id)
+                        )
+                        .frame(width: 166, height: 220)
+                        .padding(.trailing, viewModel.state.recommended.last == restaurant ? 16 : 0)
+                        .button {
+                            router.push(
+                                .restaurantDetails(restaurant: restaurant)
+                            )
+                        }
                     }
                 }
             }
         }
     }
     
-}
-
-struct HomeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeScreen()
-    }
 }

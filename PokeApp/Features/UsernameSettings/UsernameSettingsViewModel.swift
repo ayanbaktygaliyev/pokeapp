@@ -11,7 +11,11 @@ class UsernameSettingsScreenViewModel: ObservableObject {
     @Published
     var state = State()
     
-    private let userRepository = UserRepository()
+    let userRepository: UserRepository
+    
+    init(userRepository: UserRepository) {
+        self.userRepository = userRepository
+    }
 
     func changeUsername(completion: @escaping() -> Void) {
         if state.username != state.confirmUsername {

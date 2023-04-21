@@ -4,8 +4,8 @@ public struct RestaurantDetailsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = RestaurantDetailsViewModel()
+    @ObservedObject
+    var viewModel: RestaurantDetailsViewModel
     
     public var body: some View {
         content
@@ -19,13 +19,23 @@ private extension RestaurantDetailsScreen {
             ScrollView(.vertical) {
                 VStack(spacing: .spacing16) {
                     ZStack(alignment: .topLeading) {
-                        Image("test")
-                            .resizable()
-                            .frame(height: 300)
+                        CachedAsyncImage(
+                            url: viewModel.state.restaurant.imageURL,
+                            content: { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width, height: 300)
+                            },
+                            placeholder: {
+                                FoodiePlaceholderImage()
+                                    .frame(width: UIScreen.main.bounds.width, height: 300)
+                            }
+                        )
                         
                         ZStack {
                             Circle()
-                                .fill(.black.opacity(0.48))
+                                .fill(.black.opacity(0.2))
                                 .frame(width: 32, height: 32)
                             
                             Image(systemName: "chevron.left")
@@ -43,7 +53,7 @@ private extension RestaurantDetailsScreen {
                     VStack(alignment: .leading, spacing: .spacing12) {
                         HStack {
                             TextLabel(
-                                content: "Test name",
+                                content: viewModel.state.restaurant.name,
                                 color: .black,
                                 fontToken: .size24,
                                 style: .semibold
@@ -51,30 +61,37 @@ private extension RestaurantDetailsScreen {
                             
                             Spacer()
                             
-                            Image(systemName: "heart.fill")
+                            Image(systemName: viewModel.heartImage())
                                 .resizable()
                                 .frame(width: 20, height: 18)
                                 .foregroundColor(Color(.foodieGreen))
+                                .button {
+                                    viewModel.heartAction {
+                                        viewModel.reload()
+                                    }
+                                }
                         }
                         
                         TextLabel(
-                            content: "Test description description description description",
+                            content: viewModel.state.restaurant.description,
                             color: .black,
                             fontToken: .size15,
                             style: .regular
                         )
+                        .lineLimit(5)
                         
                         generalInfoView
                         
-                        menu
-                        
+                        if !viewModel.state.restaurant.menu.isEmpty {
+                            menu
+                        }
                     }
                     .padding(.horizontal, 12)
                 }
             }
             
             Button(title: "Reserve") {
-                router.push(.reserve)
+                router.push(.reserve(tables: viewModel.state.tables))
             }
             .padding(.bottom, 32)
         }
@@ -88,7 +105,7 @@ private extension RestaurantDetailsScreen {
                     .frame(width: 14, height: 14)
                 
                 TextLabel(
-                    content: "4.8",
+                    content: String(format: "%.1f", viewModel.state.restaurant.rating),
                     color: .black,
                     fontToken: .size12,
                     style: .regular
@@ -101,7 +118,7 @@ private extension RestaurantDetailsScreen {
                     .frame(width: 14, height: 14)
                 
                 TextLabel(
-                    content: "11:00 - 23:00",
+                    content: "\(viewModel.state.restaurant.openingHours)",
                     color: .black,
                     fontToken: .size12,
                     style: .regular
@@ -127,7 +144,7 @@ private extension RestaurantDetailsScreen {
                     .frame(width: 14, height: 14)
                 
                 TextLabel(
-                    content: "7000 KZT",
+                    content: "Price range of \(viewModel.state.restaurant.priceRange)",
                     color: .black,
                     fontToken: .size12,
                     style: .regular
@@ -145,8 +162,8 @@ private extension RestaurantDetailsScreen {
                 style: .medium
             )
             
-            ForEach(0..<20) { index in
-                menuItem()
+            ForEach(viewModel.state.restaurant.menu) { menuItem in
+                menuItemCard(menuItem: menuItem)
             }
             
             Spacer(minLength: 90)
@@ -154,30 +171,27 @@ private extension RestaurantDetailsScreen {
         }
     }
     
-    private func menuItem(
-        image: String = "korean",
-        title: String = "Menu item",
-        ingredients: [String] = ["dunno", "dunno", "dunno just", "dunno just", "dunno just"],
-        price: Int = 2500
+    private func menuItemCard(
+        menuItem: MenuItem
     ) -> some View {
         HStack(spacing: .spacing12) {
             VStack(alignment: .leading, spacing: .spacing4) {
                 TextLabel(
-                    content: title,
+                    content: menuItem.name,
                     color: .black,
                     fontToken: .size13,
                     style: .medium
                 )
                 
                 TextLabel(
-                    content: ingredients.joined(separator: ","),
+                    content: menuItem.ingredients,
                     color: .black,
                     fontToken: .size12,
                     style: .regular
                 )
                 
                 TextLabel(
-                    content: "\(price) KZT",
+                    content: "\(menuItem.price) KZT",
                     color: .foodieGreen,
                     fontToken: .size12,
                     style: .regular
@@ -186,17 +200,21 @@ private extension RestaurantDetailsScreen {
             
             Spacer()
             
-            Image(image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 110, height: 70)
-                .cornerRadius(12)
+            CachedAsyncImage(
+                url: menuItem.image_url,
+                content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 110, height: 70)
+                        .cornerRadius(12)
+                },
+                placeholder: {
+                    FoodiePlaceholderImage()
+                        .frame(width: 110, height: 70)
+                        .cornerRadius(12)
+                }
+            )
         }
-    }
-}
-
-struct RestaurantDetailsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantDetailsScreen()
     }
 }

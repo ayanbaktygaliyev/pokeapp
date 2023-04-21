@@ -4,8 +4,8 @@ public struct AccountSettingsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = AccountSettingsScreenViewModel()
+    @ObservedObject
+    var viewModel: AccountSettingsScreenViewModel
     
     public var body: some View {
         content
@@ -262,15 +262,5 @@ public struct AccountSettingsScreen: View {
             
         }
     
-    }
-}
-    
-
-
-    
-
-struct AccountSettingsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountSettingsScreen()
     }
 }

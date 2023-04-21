@@ -10,11 +10,12 @@ class AccountSettingsScreenViewModel: ObservableObject {
         var password = "bunnytest1"
     }
     
-    init() {
+    init(userRepository: UserRepository) {
+        self.userRepository = userRepository
         state = State(username: userRepository.username)
     }
     
-    private var userRepository = UserRepository()
+    let userRepository: UserRepository
     
     @Published
     var state: State

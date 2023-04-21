@@ -1,9 +1,7 @@
 import SwiftUI
 
 struct SeeAllCuisineCard: View {
-    let imageName: String
-    let cuisineName: String
-    let places: Int
+    let cuisine: Category
     
     var body: some View {
         content
@@ -17,16 +15,27 @@ struct SeeAllCuisineCard: View {
     
     private var content: some View {
         VStack(alignment: .leading) {
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(15, corners: [.topLeft, .topRight])
+            CachedAsyncImage(
+                url: cuisine.image_url,
+                content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 140, height: 140)
+                        .cornerRadius(15, corners: [.topLeft, .topRight])
+                },
+                placeholder: {
+                    FoodiePlaceholderImage()
+                        .frame(width: 140, height: 140)
+                        .cornerRadius(15, corners: [.topLeft, .topRight])
+                }
+            )
             
             Spacer(minLength: 7)
                 .fixedSize()
             
             TextLabel(
-                content: cuisineName,
+                content: cuisine.category,
                 color: .black,
                 fontToken: .size13,
                 style: .semibold
@@ -34,7 +43,7 @@ struct SeeAllCuisineCard: View {
             .padding(.leading, 12)
             
             TextLabel(
-                content: "\(places) \(StringConstants.Home.places)",
+                content: "\(cuisine.restaurants.count) \(StringConstants.Home.places)",
                 color: .foodieGreen,
                 fontToken: .size10,
                 style: .semibold
@@ -44,21 +53,5 @@ struct SeeAllCuisineCard: View {
             Spacer(minLength: 10)
                 .fixedSize()
         }
-    }
-}
-
-extension SeeAllCuisineCard {
-    static func stub() -> Self {
-        SeeAllCuisineCard(
-            imageName: "korean",
-            cuisineName: "Korean",
-            places: 77
-        )
-    }
-}
-
-struct SeeAllCuisineCard_Previews: PreviewProvider {
-    static var previews: some View {
-        SeeAllCuisineCard.stub()
     }
 }

@@ -33,9 +33,11 @@ final class SignInViewModel: ViewModel, ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    let authRepository = AuthRepository()
+    let authRepository: AuthRepository
 
-    init() {}
+    init(authRepository: AuthRepository) {
+        self.authRepository = authRepository
+    }
     
     func send(event: Event) {
         switch event {

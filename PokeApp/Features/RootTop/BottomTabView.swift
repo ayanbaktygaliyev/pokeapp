@@ -28,23 +28,38 @@ private extension BottomTabView {
         NavigationView {
             switch tab {
             case .home:
-                HomeScreen()
+                HomeScreen(
+                    viewModel: .init(
+                        userRepository: viewModel.environment.userRepository,
+                        restaurantsRepository: viewModel.environment.restaurantsRepository
+                    )
+                )
                 
             case .allRestaurants:
-                AllRestaurantsScreen()
+                AllRestaurantsScreen(
+                    viewModel: .init(
+                        restaurantsRepository: viewModel.environment.restaurantsRepository,
+                        userRepository: viewModel.environment.userRepository
+                    )
+                )
                 
             case .reservations:
-                ReservationsScreen()
+                ReservationsScreen(
+                    viewModel: .init(
+                        userRepository: viewModel.environment.userRepository,
+                        restaurantsRepository: viewModel.environment.restaurantsRepository
+                    )
+                )
                 
             case .profile:
-                ProfileScreen()
+                ProfileScreen(
+                    viewModel: .init(
+                        authRepository: viewModel.environment.authRepository,
+                        restaurantsRepository: viewModel.environment.restaurantsRepository,
+                        userRepository: viewModel.environment.userRepository
+                    )
+                )
             }
         }
-    }
-}
-
-struct BottomTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomTabView(viewModel: .init())
     }
 }

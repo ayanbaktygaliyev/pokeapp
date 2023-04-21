@@ -99,7 +99,7 @@ struct RectangularDiningTableView: View {
                 .frame(width: tableWidth, height: tableHeight)
             
             TextLabel(
-                content: "\(tableNumber)",
+                content: "Capacity: \(tableNumber)",
                 color: .black,
                 fontToken: .size22,
                 style: .bold

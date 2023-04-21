@@ -3,6 +3,8 @@ import SwiftUI
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     var window: UIWindow?
 
+    let environment = Env()
+    
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -11,7 +13,10 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UIHostingController(rootView: RootTopScreen())
+        let viewModel = RootTopViewModel(environment: environment)
+        window?.rootViewController = UIHostingController(
+            rootView: RootTopScreen(viewModel: viewModel)
+        )
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

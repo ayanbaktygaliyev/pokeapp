@@ -4,8 +4,8 @@ public struct SignUpScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = SignUpViewModel()
+    @ObservedObject
+    var viewModel: SignUpViewModel
     
     public var body: some View {
         content
@@ -130,11 +130,5 @@ private extension SignUpInputs.FailureReason {
         case .passwordDoesNotHaveNumbers:
             return StringConstants.SignUp.passwordDoesNotHaveNumbers
         }
-    }
-}
-
-struct SignUpScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpScreen()
     }
 }

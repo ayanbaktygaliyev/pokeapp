@@ -4,8 +4,8 @@ public struct UsernameSettingsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = UsernameSettingsScreenViewModel()
+    @ObservedObject
+    var viewModel: UsernameSettingsScreenViewModel
     
     public var body: some View {
         content
@@ -149,15 +149,5 @@ public struct UsernameSettingsScreen: View {
                             .stroke(.gray, lineWidth: 1)
                     )
         }
-    }
-}
-    
-
-
-    
-
-struct UsernameSettingsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        UsernameSettingsScreen()
     }
 }
