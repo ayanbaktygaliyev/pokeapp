@@ -8,9 +8,7 @@ public struct FeedbackScreen: View {
     private var viewModel = FeedbackScreenViewModel()
     
     public var body: some View {
-        
         content
-            .padding(.leading, 16)
     }
     
     private var content: some View {
@@ -27,6 +25,8 @@ public struct FeedbackScreen: View {
                     .frame(width: 8, height: 12)
             }
             .padding(.top, 0)
+            .padding(.leading, 16)
+            .frame(alignment: .leading)
             .button {
                 router.pop()
             }
@@ -35,6 +35,8 @@ public struct FeedbackScreen: View {
                 .fixedSize()
             
             greeting
+                .frame(alignment: .leading)
+                .padding(.leading, 16)
             
             Spacer(minLength: 70)
                 .fixedSize()
@@ -45,34 +47,31 @@ public struct FeedbackScreen: View {
                 fontToken: .size20,
                 style: .bold
             )
-            .frame(width: 343, alignment: .leading)
+            .frame(alignment: .leading)
+            .padding(.leading, 16)
             
-            
-            SwiftUI.TextField(
-                "Type here",
-                text: $viewModel.state.feedback
-            )
-            .padding(.leading, 10)
-            .padding(.top, 15)
-                .frame(width: 327, height: 202, alignment: .top)
+            SwiftUI.TextEditor(text: $viewModel.state.feedback)
+                .frame(height: 202, alignment: .top)
                 .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(.gray, lineWidth: 1)
-                    )
-            
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(.gray, lineWidth: 1)
+                        .padding(.bottom, 15)
+                )
+                .padding(.top, 15)
+                .padding(.horizontal, 16)
             
             Spacer(minLength: 35)
-                .fixedSize()
             
             
-            
-            SubmitButton
-                .frame(alignment: .center)
-                .button {
+            Button(
+                title: "Submit",
+                action: {
                     router.pop()
                 }
+            )
             
-            Spacer(minLength: 265)
+            Spacer(minLength: 20)
+                .fixedSize()
                 
             
         }
@@ -85,33 +84,6 @@ public struct FeedbackScreen: View {
             fontToken: .size24,
             style: .bold
         )
-    }
-    
-
-    
-    
-    private var SubmitButton: some View {
-        HStack {
-            ZStack(alignment: .center){
-                
-                Rectangle()
-                    .fill(Color(.foodieGreen))
-                    .frame(width: 122, height: 33, alignment: .center)
-                    .cornerRadius(15)
-                
-                
-                TextLabel(
-                    content: "Submit",
-                    color: .white,
-                    fontToken: .size17,
-                    style: .medium
-                )
-                
-            }
-            
-        }
-        .frame(alignment: .center)
-        
     }
 }
     
