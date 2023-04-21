@@ -9,11 +9,19 @@ public struct ProfileScreen: View {
     
     public var body: some View {
         content
+            .onAppear {
+                viewModel.reload()
+            }
     }
     
     private var content: some View {
         VStack(alignment: .center){
-            ProfileCard.stub()
+            ProfileCard(
+                imageName: "test",
+                userFullName: viewModel.userRepository.fullname,
+                userEmail: "foodie@nu.edu.kz",
+                numberOfNotifications: "7"
+            )
 
             Spacer(minLength: 90)
                 .fixedSize()

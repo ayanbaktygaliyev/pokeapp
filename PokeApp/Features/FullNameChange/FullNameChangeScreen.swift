@@ -119,7 +119,7 @@ public struct FullNameChangeScreen: View {
         VStack(alignment: .leading ,spacing: 23){
             
             TextLabel(
-                content: "New Username:",
+                content: "New fullname:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold
@@ -135,7 +135,7 @@ public struct FullNameChangeScreen: View {
 
             
             TextLabel(
-                content: "Confirm Username:",
+                content: "Confirm fullname:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold

@@ -4,6 +4,7 @@ import Combine
 
 class ProfileScreenViewModel: ObservableObject {
     struct State {
+        var fullname = ""
         var favorites: [Restaurant] = []
     }
     
@@ -11,7 +12,7 @@ class ProfileScreenViewModel: ObservableObject {
     var state = State()
     
     private var cancellables = Set<AnyCancellable>()
-
+    
     init(
         authRepository: AuthRepository,
         restaurantsRepository: RestaurantsRepository,
@@ -20,6 +21,7 @@ class ProfileScreenViewModel: ObservableObject {
         self.authRepository = authRepository
         self.restaurantsRepository = restaurantsRepository
         self.userRepository = userRepository
+        self.state.fullname = userRepository.fullname
         
         getFavoriteRestaurants()
     }
@@ -27,6 +29,10 @@ class ProfileScreenViewModel: ObservableObject {
     let authRepository: AuthRepository
     let restaurantsRepository: RestaurantsRepository
     let userRepository: UserRepository
+    
+    func reload() {
+        self.state.fullname = userRepository.fullname
+    }
     
     func logOut() {
         authRepository.isSignedIn = false
