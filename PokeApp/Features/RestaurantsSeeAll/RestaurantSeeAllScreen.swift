@@ -20,13 +20,20 @@ public struct RestaurantSeeAllScreen: View {
             
             topicView
             
-            ScrollView {
-                VStack(alignment: .leading, spacing: .spacing16) {
+            if viewModel.state.restaurants.isEmpty {
+                VStack {
+                    FoodieEmptyPlaceholder(title: StringConstants.RestaurantSeeAll.empty)
                     
                     Spacer()
-                        .fixedSize()
-                    
-                    restaurantsSection
+                }
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: .spacing16) {
+                        Spacer()
+                            .fixedSize()
+                        
+                        restaurantsSection
+                    }
                 }
             }
         }
@@ -85,11 +92,10 @@ public struct RestaurantSeeAllScreen: View {
     
     private var restaurantsSection: some View {
         VStack(spacing: .spacing6) {
-            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
-                        RestaurantCard.stub()
+                    ForEach(viewModel.state.restaurants) { restaurant in
+                        RestaurantCard(restaurant: restaurant)
                     }
                 }
             }

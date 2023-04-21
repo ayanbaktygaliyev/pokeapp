@@ -75,25 +75,19 @@ public struct ReservationsScreen: View {
     
     
     private var ReservationsSection: some View {
-//        VStack(spacing: .spacing32) {
-        
-//            Spacer()
-            
-            VStack(spacing: .spacing96) {
-                List {
-                    ForEach(0..<1) { index in
-                        ReservationsCard.stub()
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
-                            .buttonStyle(PlainButtonStyle())
-                            .listRowSeparator(.hidden)
-                    }
-                    .onDelete { indexSet in
-                        print(indexSet)
-                    }
+        VStack(spacing: .spacing96) {
+            List {
+                ForEach(viewModel.state.reservations) { reservationResponse in
+                    ReservationsCard(reservationResponse: reservationResponse)
+                        .buttonStyle(PlainButtonStyle())
+                        .listRowSeparator(.hidden)
                 }
-                .listStyle(.plain)
+                .onDelete { indexSet in
+                    viewModel.deleteReservations(indexSet: indexSet)
+                }
             }
-//        }
+            .listStyle(.plain)
+            }
     }
     
     struct ReservationsScreen_Previews: PreviewProvider {

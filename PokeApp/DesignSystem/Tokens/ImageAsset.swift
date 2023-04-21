@@ -6,6 +6,8 @@ public enum ImageAsset {
     case currency
     case star
     case error
+    case foodiePlaceholder
+    case empty
     
     // Tabs images
     case home
@@ -21,6 +23,8 @@ public enum ImageAsset {
     
     var rawValue: String {
         switch self {
+        case .foodiePlaceholder: return "foodie_placeholder"
+        case .empty: return "empty"
         case .check: return "check"
         case .locationPin: return "location-pin"
         case .currency: return "currency"

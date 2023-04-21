@@ -8,9 +8,16 @@ public struct UsernameSettingsScreen: View {
     private var viewModel = UsernameSettingsScreenViewModel()
     
     public var body: some View {
-        
         content
-            .padding(.leading, 16)
+            .overlay(if: viewModel.state.isShowingDialog) {
+                Dialog(
+                    isShowingDialog: $viewModel.state.isShowingDialog,
+                    title: StringConstants.App.error,
+                    subtitle: "Make sure that you've confirmed your username correctly",
+                    colorToken: .foodieGreen
+                )
+                .frame(width: UIScreen.main.bounds.width)
+            }
     }
     
     private var content: some View {
@@ -67,20 +74,18 @@ public struct UsernameSettingsScreen: View {
             Spacer(minLength: 35)
                 .fixedSize()
             
-            SaveButton
-                .button {
-                    router.pop()
-                }
-                .frame(alignment: .center)
-                .padding(.leading, 90)
-            
 
             Spacer(minLength: 205)
                 .fixedSize()
-
-            logOutButton
+            
+            saveButton
                 .frame(alignment: .center)
                 .padding(.leading, -16)
+                .button {
+                    viewModel.changeUsername {
+                        router.pop()
+                    }
+                }
         }
     }
     
@@ -93,7 +98,7 @@ public struct UsernameSettingsScreen: View {
         )
     }
     
-    private var logOutButton: some View{
+    private var saveButton: some View{
         ZStack(alignment: .center){
             Rectangle()
                 .fill(Color(.foodieGreen))
@@ -101,14 +106,12 @@ public struct UsernameSettingsScreen: View {
                 .cornerRadius(15)
             
             TextLabel(
-                content: "Log Out",
+                content: "Save",
                 color: .white,
                 fontToken: .size17,
                 style: .medium
             )
-            
         }
-        
     }
     
     private var usernameEdit: some View{
@@ -122,7 +125,7 @@ public struct UsernameSettingsScreen: View {
                 style: .bold
             )
             
-            SecureField("********", text: $viewModel.state.username)
+            SwiftUI.TextField("", text: $viewModel.state.username)
                 .padding(.leading, 10)
                 .frame(width: 327, height: 48)
                 .overlay(
@@ -138,7 +141,7 @@ public struct UsernameSettingsScreen: View {
                 style: .bold
             )
             
-            SecureField("********", text: $viewModel.state.username)
+            SwiftUI.TextField("", text: $viewModel.state.confirmUsername)
                 .padding(.leading, 10)
                 .frame(width: 327, height: 48)
                 .overlay(
@@ -148,31 +151,6 @@ public struct UsernameSettingsScreen: View {
         }
     }
 }
-    
-    private var SaveButton: some View {
-        HStack {
-            ZStack(alignment: .center){
-                
-                Rectangle()
-                    .fill(Color(.foodieGreen))
-                    .frame(width: 122, height: 33, alignment: .center)
-                    .cornerRadius(15)
-                
-                
-                TextLabel(
-                    content: "Save",
-                    color: .white,
-                    fontToken: .size17,
-                    style: .medium
-                )
-                
-            }
-
-        }
-        .frame(alignment: .center)
-        
-        
-    }
     
 
 

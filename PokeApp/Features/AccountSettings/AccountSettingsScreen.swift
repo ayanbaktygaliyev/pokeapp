@@ -7,17 +7,15 @@ public struct AccountSettingsScreen: View {
     @StateObject
     private var viewModel = AccountSettingsScreenViewModel()
     
-
-    
     public var body: some View {
-        
         content
-            .padding(.leading, 16)
+            .onAppear {
+                viewModel.reload()
+            }
     }
     
     private var content: some View {
         VStack(alignment: .leading){
-            
             ZStack {
                 Circle()
                     .fill(.black.opacity(0.2))
@@ -27,14 +25,16 @@ public struct AccountSettingsScreen: View {
                     .resizable()
                     .foregroundColor(.white)
                     .frame(width: 8, height: 12)
-            }            .button {
+            }
+            .button {
                 router.pop()
             }
+            .padding(.leading, 30)
             
             Spacer()
                 
-            
             greeting
+                .padding(.leading, 30)
 
             Spacer(minLength: 70)
                 .fixedSize()
@@ -45,17 +45,21 @@ public struct AccountSettingsScreen: View {
                 fontToken: .size20,
                 style: .bold
             )
+            .padding(.leading, 30)
             
             Spacer(minLength: 35)
                 .fixedSize()
 
             moreSettings
+                .frame(alignment: .center)
+                .padding(.horizontal, 30)
 
             Spacer(minLength: 265)
                 .fixedSize()
 
             logOutButton
-            
+                .frame(alignment: .center)
+                .padding(.horizontal, 16)
         }
     }
     
@@ -72,7 +76,7 @@ public struct AccountSettingsScreen: View {
         ZStack(alignment: .center){
             Rectangle()
                 .fill(Color(.foodieGreen))
-                .frame(width: 343, height: 56)
+                .frame(height: 56)
                 .cornerRadius(15)
             
             TextLabel(
@@ -91,7 +95,7 @@ public struct AccountSettingsScreen: View {
             
             Rectangle()
                 .fill(.white)
-                .frame(width: 327, height: 202)
+                .frame(height: 202)
                 .cornerRadius(11)
                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
@@ -110,7 +114,7 @@ public struct AccountSettingsScreen: View {
                     Spacer(minLength: 0)
                     
                     TextLabel(
-                        content: "pokeapp",
+                        content: viewModel.state.username,
                         color: .black,
                         fontToken: .size17,
                         style: .bold
@@ -127,11 +131,6 @@ public struct AccountSettingsScreen: View {
                         }
                     
                 }
-                
-//                Line()
-//                    .stroke(style: StrokeStyle(lineWidth: 1))
-//                    .foregroundColor(Color(.dashLine))
-//                    .frame(width: 310, height: 0.1, alignment: .center)
                 
                 HStack{
                     

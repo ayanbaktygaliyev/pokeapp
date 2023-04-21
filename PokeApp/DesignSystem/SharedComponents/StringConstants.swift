@@ -7,7 +7,7 @@ public enum StringConstants {
         static let yourLocation = "Your location"
         static let seeAll = "See all"
         static let close = "Close"
-        static let error = "Something went wrong!"
+        static let error = "Oops, there's an error"
     }
     
     public enum TabView {
@@ -73,5 +73,6 @@ public enum StringConstants {
     
     public enum RestaurantSeeAll {
         static let recommended = "Recommended"
+        static let empty = "Oops, the restaurants do not seem\nto be loading at the moment.\nTry again later please"
     }
 }

@@ -9,6 +9,14 @@ protocol AuthRepositoryProtocol {
 final class AuthRepository: AuthRepositoryProtocol {
     private let session: SessionCoordinator
     
+    var isSignedIn: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: "isSignedIn")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "isSignedIn")
+        }
+    }
+    
     init(session: SessionCoordinator = .shared) {
         self.session = session
     }

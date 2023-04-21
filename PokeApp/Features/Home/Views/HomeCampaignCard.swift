@@ -11,11 +11,23 @@ struct HomeCampaignCard: View {
 private extension HomeCampaignCard {
     private var content: some View {
         ZStack(alignment: .bottomLeading) {
-            AsyncImage(url: campaign.imageURL)
-                .scaledToFit()
-                .frame(width: 343, height: 164)
-                .cornerRadius(15)
-                .brightness(-0.15)
+            AsyncImage(
+                url: campaign.imageURL,
+                content: { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 343, height: 164)
+                        .cornerRadius(15)
+                        .brightness(-0.16)
+                },
+                placeholder: {
+                    FoodiePlaceholderImage()
+                        .frame(width: 343, height: 164)
+                        .cornerRadius(15)
+                        .brightness(-0.16)
+                }
+            )
             
             VStack(alignment: .leading, spacing: .spacing6) {
                 TextLabel(

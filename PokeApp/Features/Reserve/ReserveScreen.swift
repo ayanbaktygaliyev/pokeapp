@@ -34,19 +34,7 @@ private extension ReserveScreen {
                         title: "Seats",
                         icon: "person",
                         content: {
-                            Stepper(
-                                "",
-                                onIncrement: {
-                                    viewModel.send(
-                                        event: .changeNumberOfPeople(viewModel.state.numberOfPeople + 1)
-                                    )
-                                },
-                                onDecrement: {
-                                    viewModel.send(
-                                        event: .changeNumberOfPeople(viewModel.state.numberOfPeople - 1)
-                                    )
-                                }
-                            )
+                            Stepper(count: $viewModel.state.numberOfPeople)
                         }
                     )
                     
@@ -100,15 +88,30 @@ private extension ReserveScreen {
                 
                 HStack(spacing: 72) {
                     table1
+                        .button {
+                            viewModel.send(event: .selectTable(id: 1))
+                        }
                     table2
+                        .button {
+                            viewModel.send(event: .selectTable(id: 2))
+                        }
                 }
                 
                 HStack(spacing: 72) {
                     table3
+                        .button {
+                            viewModel.send(event: .selectTable(id: 3))
+                        }
                     table4
+                        .button {
+                            viewModel.send(event: .selectTable(id: 4))
+                        }
                 }
                 
                 table5
+                    .button {
+                        viewModel.send(event: .selectTable(id: 5))
+                    }
             }
         }
     }
@@ -162,9 +165,7 @@ private extension ReserveScreen {
                 get: {
                     viewModel.state.isTableSelected(tableID: 1)
                 },
-                set: { _ in
-                    viewModel.send(event: .selectTable(id: 1))
-                }
+                set: { _ in }
             ),
             isReserved: false,
             tableNumber: 1
@@ -177,11 +178,9 @@ private extension ReserveScreen {
                 get: {
                     viewModel.state.isTableSelected(tableID: 2)
                 },
-                set: { _ in
-                    viewModel.send(event: .selectTable(id: 2))
-                }
+                set: { _ in }
             ),
-            isReserved: false,
+            isReserved: true,
             tableNumber: 2
         )
     }
@@ -192,9 +191,7 @@ private extension ReserveScreen {
                 get: {
                     viewModel.state.isTableSelected(tableID: 3)
                 },
-                set: { _ in
-                    viewModel.send(event: .selectTable(id: 3))
-                }
+                set: { _ in }
             ),
             isReserved: false,
             tableNumber: 3
@@ -207,9 +204,7 @@ private extension ReserveScreen {
                 get: {
                     viewModel.state.isTableSelected(tableID: 4)
                 },
-                set: { _ in
-                    viewModel.send(event: .selectTable(id: 4))
-                }
+                set: { _ in }
             ),
             isReserved: false,
             tableNumber: 4
@@ -222,9 +217,7 @@ private extension ReserveScreen {
                 get: {
                     viewModel.state.isTableSelected(tableID: 5)
                 },
-                set: { _ in
-                    viewModel.send(event: .selectTable(id: 5))
-                }
+                set: { _ in }
             ),
             isReserved: false,
             tableNumber: 5,

@@ -26,6 +26,13 @@
 		741E292E29A294BE001A273E /* HomeCuisineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E292D29A294BE001A273E /* HomeCuisineCard.swift */; };
 		74243469297C53A500462399 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74243468297C53A500462399 /* Logger.swift */; };
 		742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A84BB29ADE5CB00469FEB /* Separator.swift */; };
+		74314C1F29F12BEA0031F1F8 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C1E29F12BEA0031F1F8 /* Reservation.swift */; };
+		74314C2129F12DCF0031F1F8 /* ReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2029F12DCF0031F1F8 /* ReservationResponse.swift */; };
+		74314C2329F12E710031F1F8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2229F12E710031F1F8 /* Dates.swift */; };
+		74314C2529F13CCA0031F1F8 /* FoodiePlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2429F13CCA0031F1F8 /* FoodiePlaceholderImage.swift */; };
+		74314C2729F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2629F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift */; };
+		74314C2929F2731F0031F1F8 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2829F2731F0031F1F8 /* Stepper.swift */; };
+		74314C2B29F279980031F1F8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74314C2A29F279980031F1F8 /* UserRepository.swift */; };
 		7432302729B0E12A0095B496 /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432302629B0E12A0095B496 /* JSONRequest.swift */; };
 		7432302A29B0E1840095B496 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432302929B0E1840095B496 /* AuthRequest.swift */; };
 		7432302D29B120FD0095B496 /* SessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7432302C29B120FD0095B496 /* SessionCoordinator.swift */; };
@@ -49,7 +56,6 @@
 		7456AFBC28D4676B00C347E9 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456AFBB28D4676B00C347E9 /* Env.swift */; };
 		7456AFBF28D467B000C347E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456AFBE28D467B000C347E9 /* AppDelegate.swift */; };
 		7456AFC528D4782900C347E9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456AFC428D4782900C347E9 /* Restaurant.swift */; };
-		7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456AFC628D4793E00C347E9 /* Identifier.swift */; };
 		745C8A6029BF13B0008A8086 /* ResultPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745C8A5F29BF13B0008A8086 /* ResultPublisher.swift */; };
 		745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745C8A6229BF2705008A8086 /* DictionaryHelper.swift */; };
 		745C8A6529BF28E0008A8086 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745C8A6429BF28E0008A8086 /* AuthRepository.swift */; };
@@ -152,6 +158,13 @@
 		741E292D29A294BE001A273E /* HomeCuisineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCuisineCard.swift; sourceTree = "<group>"; };
 		74243468297C53A500462399 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		742A84BB29ADE5CB00469FEB /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		74314C1E29F12BEA0031F1F8 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		74314C2029F12DCF0031F1F8 /* ReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResponse.swift; sourceTree = "<group>"; };
+		74314C2229F12E710031F1F8 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		74314C2429F13CCA0031F1F8 /* FoodiePlaceholderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodiePlaceholderImage.swift; sourceTree = "<group>"; };
+		74314C2629F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieEmptyPlaceholder.swift; sourceTree = "<group>"; };
+		74314C2829F2731F0031F1F8 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		74314C2A29F279980031F1F8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		7432302629B0E12A0095B496 /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
 		7432302929B0E1840095B496 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		7432302C29B120FD0095B496 /* SessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCoordinator.swift; sourceTree = "<group>"; };
@@ -178,7 +191,6 @@
 		7456AFBB28D4676B00C347E9 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		7456AFBE28D467B000C347E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7456AFC428D4782900C347E9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		7456AFC628D4793E00C347E9 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		745C8A5F29BF13B0008A8086 /* ResultPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPublisher.swift; sourceTree = "<group>"; };
 		745C8A6229BF2705008A8086 /* DictionaryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 		745C8A6429BF28E0008A8086 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
@@ -275,6 +287,8 @@
 			children = (
 				740CF9D22924FD64000ADFEE /* Logo.swift */,
 				74C334AD2926060E00FE7A34 /* StringConstants.swift */,
+				74314C2429F13CCA0031F1F8 /* FoodiePlaceholderImage.swift */,
+				74314C2629F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -291,6 +305,7 @@
 				748FAE5429D199AC00062E27 /* Line.swift */,
 				74E1722129D2FC5900CD1225 /* Snackbar.swift */,
 				747B81EF29DA18E5000D6120 /* Dialog.swift */,
+				74314C2829F2731F0031F1F8 /* Stepper.swift */,
 			);
 			path = DesignComponents;
 			sourceTree = "<group>";
@@ -400,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				745C8A6429BF28E0008A8086 /* AuthRepository.swift */,
+				74314C2A29F279980031F1F8 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -447,6 +463,7 @@
 			children = (
 				7434030329D05C4600FF1F9A /* AuthResponse.swift */,
 				748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */,
+				74314C2029F12DCF0031F1F8 /* ReservationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -547,9 +564,9 @@
 			children = (
 				7434030229D05C3700FF1F9A /* Responses */,
 				7456AFC428D4782900C347E9 /* Restaurant.swift */,
-				7456AFC628D4793E00C347E9 /* Identifier.swift */,
 				74385A3629A8D898004BFE07 /* TabItem.swift */,
 				747B81ED29DA026B000D6120 /* Campaign.swift */,
+				74314C1E29F12BEA0031F1F8 /* Reservation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -558,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				745C8A6229BF2705008A8086 /* DictionaryHelper.swift */,
+				74314C2229F12E710031F1F8 /* Dates.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -917,6 +935,7 @@
 				7432302A29B0E1840095B496 /* AuthRequest.swift in Sources */,
 				741E292629A24611001A273E /* ImageExtensions.swift in Sources */,
 				741E292A29A289B4001A273E /* HomeRecommendedCard.swift in Sources */,
+				74314C2929F2731F0031F1F8 /* Stepper.swift in Sources */,
 				7432303529B492C00095B496 /* RequestParameters.swift in Sources */,
 				740CF9DF29250442000ADFEE /* SpacingToken.swift in Sources */,
 				745C8A6029BF13B0008A8086 /* ResultPublisher.swift in Sources */,
@@ -951,8 +970,11 @@
 				745C8A6329BF2705008A8086 /* DictionaryHelper.swift in Sources */,
 				74DC01372910E18200629D11 /* SignInScreen.swift in Sources */,
 				748FAE4629D1676600062E27 /* Spinner.swift in Sources */,
+				74314C2129F12DCF0031F1F8 /* ReservationResponse.swift in Sources */,
 				E44A92A529E367C100CBB211 /* UsernameSettingsScreen.swift in Sources */,
+				74314C1F29F12BEA0031F1F8 /* Reservation.swift in Sources */,
 				740ECA8D29004EDC00C7CF26 /* DesignSystem.swift in Sources */,
+				74314C2729F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift in Sources */,
 				74972E9029E407390006868A /* RectangularDiningTableView.swift in Sources */,
 				74972E8E29E4072F0006868A /* RoundDiningTableView.swift in Sources */,
 				74385A3E29A8DB0E004BFE07 /* RootTopViewModel.swift in Sources */,
@@ -967,15 +989,16 @@
 				745C8A6529BF28E0008A8086 /* AuthRepository.swift in Sources */,
 				7434030429D05C4600FF1F9A /* AuthResponse.swift in Sources */,
 				74972E9429E416620006868A /* SeatsStepper.swift in Sources */,
+				74314C2329F12E710031F1F8 /* Dates.swift in Sources */,
 				7415028629A22A600071BC11 /* ViewExtensions.swift in Sources */,
 				74243469297C53A500462399 /* Logger.swift in Sources */,
 				E43B6AD429F0C6D200F71734 /* ReserveSuccessScreen.swift in Sources */,
-				7456AFC728D4793E00C347E9 /* Identifier.swift in Sources */,
 				74972E8B29E3FC0E0006868A /* ReserveViewModel.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
 				74E1722429D3006700CD1225 /* HomeCampaignCard.swift in Sources */,
 				E43B6ACE29F0A22800F71734 /* CuisinesSeeAllViewModel.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
+				74314C2529F13CCA0031F1F8 /* FoodiePlaceholderImage.swift in Sources */,
 				746E0A5229A7622A009876D3 /* NavigationBottom.swift in Sources */,
 				742A84BC29ADE5CB00469FEB /* Separator.swift in Sources */,
 				747B81F329DAC687000D6120 /* RestaurantDetailsScreen.swift in Sources */,
@@ -995,6 +1018,7 @@
 				7434030A29D065F700FF1F9A /* ViewModel.swift in Sources */,
 				74972E8929E3F3FD0006868A /* ReserveScreen.swift in Sources */,
 				747FB0FC2989335E006AFE43 /* Button.swift in Sources */,
+				74314C2B29F279980031F1F8 /* UserRepository.swift in Sources */,
 				74727A8F29700A9D00ED29FF /* Route.swift in Sources */,
 				741E292429A24608001A273E /* ImageAsset.swift in Sources */,
 				748FAE4829D16B4600062E27 /* Inputs + SignIn.swift in Sources */,
@@ -1171,7 +1195,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1202,7 +1225,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
