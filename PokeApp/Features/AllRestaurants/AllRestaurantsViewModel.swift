@@ -1,24 +1,10 @@
 import Foundation
 import SwiftUI
+import Combine
 
 class AllRestaurantsViewModel: ObservableObject {
     struct State {
-        private var restaurants: [Restaurant] = [
-            .stub {
-                $0.name = "Тәтті"
-                $0.id = "1"
-            },
-            .stub {
-                $0.name = "Qazy Qarta"
-                $0.id = "2"
-            },
-            .stub {
-                $0.name = "Seoul Food"
-                $0.id = "3"
-            },
-            .stub()
-        ]
-        
+        var restaurants: [Restaurant] = []
         var searchText: String = ""
         var filteredRestaurants: [Restaurant] {
             if searchText.isEmpty {
@@ -29,8 +15,79 @@ class AllRestaurantsViewModel: ObservableObject {
                 $0.name.lowercased().contains(searchText.lowercased())
             }
         }
+        var favorites: [Restaurant] = []
     }
     
     @Published
     var state = State()
+    
+    let restaurantsRepository: RestaurantsRepository
+    let userRepository: UserRepository
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(restaurantsRepository: RestaurantsRepository, userRepository: UserRepository) {
+        self.restaurantsRepository = restaurantsRepository
+        self.userRepository = userRepository
+        loadAllRestaurants()
+        loadUserFavoriteRestaurants()
+    }
+    
+    func reload() {
+        loadUserFavoriteRestaurants()
+    }
+    
+    func loadAllRestaurants() {
+        restaurantsRepository.loadAllRestaurants()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                case .success(let restaurants):
+                    self?.state.restaurants = restaurants
+                    
+                case .failure(let error):
+                    print(#line, #file)
+                    print(String(describing: error))
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func loadUserFavoriteRestaurants() {
+        restaurantsRepository.getFavoriteRestaurants(login: userRepository.username)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                case .success(let restaurants):
+                    self?.state.favorites = restaurants
+                    
+                case .failure(let error):
+                    print(#line, #file)
+                    print(String(describing: error))
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func heartAction(restaurantID: String, completion: @escaping () -> Void) {
+        let publisher = state.favorites.contains { $0.id == restaurantID } ?
+            restaurantsRepository.removeFavorite(login: userRepository.username, restaurantID: restaurantID) :
+            restaurantsRepository.addFavorite(login: userRepository.username, restaurantID: restaurantID)
+        
+        publisher
+            .receive(on: DispatchQueue.main)
+            .sink { result in
+                switch result {
+                case .success:
+                    completion()
+                case .failure(let error):
+                    print(#line, #file)
+                    print(String(describing: error))
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func heartImage(restaurantID: String) -> String {
+        state.favorites.contains { $0.id == restaurantID } ? "heart.fill" : "heart"
+    }
 }

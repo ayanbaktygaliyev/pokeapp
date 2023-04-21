@@ -17,7 +17,7 @@ struct ReservationsCard: View {
         VStack(alignment: .leading) {
             ZStack(alignment: .bottomLeading){
                 ZStack(alignment: .topTrailing) {
-                    AsyncImage(
+                    CachedAsyncImage(
                         url: reservationResponse.restaurant.imageURL,
                         content: { image in
                             image
@@ -34,8 +34,6 @@ struct ReservationsCard: View {
                                 .brightness(-0.16)
                         }
                     )
-
-                    likeButton
                 }
                 
                 TextLabel(
@@ -121,7 +119,7 @@ struct ReservationsCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: "\(reservationResponse.reservation.tableID)",
+                content: "4",
                 color: .black,
                 fontToken: .size15,
                 style: .semibold
@@ -146,31 +144,5 @@ struct ReservationsCard: View {
                 style: .semibold
             )
         }
-    }
-    
-    private var likeButton: some View {
-        ZStack {
-            Circle()
-                .fill(.black.opacity(0.48))
-                .frame(width: 32, height: 32)
-                .padding(.trailing, 8)
-                .padding(.top, 8)
-            
-            Image(systemName: "heart.fill")
-                .resizable()
-                .foregroundColor(Color(.foodieGreen))
-                .frame(width: 20, height: 18)
-                .padding(.trailing, 8)
-                .padding(.top, 10)
-                .button {
-                    print("Liked")
-                }
-        }
-    }
-}
-
-struct ReservationsCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ReservationsCard(reservationResponse: .stub())
     }
 }

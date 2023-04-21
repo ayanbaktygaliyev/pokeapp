@@ -2,6 +2,8 @@ import SwiftUI
 
 struct RestaurantCard: View {
     let restaurant: Restaurant
+    let heartAction: () -> Void
+    let heartImage: String
     
     var body: some View {
         content
@@ -16,7 +18,7 @@ struct RestaurantCard: View {
     private var content: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                AsyncImage(
+                CachedAsyncImage(
                     url: restaurant.imageURL,
                     content: { image in
                         image
@@ -117,21 +119,15 @@ struct RestaurantCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(systemName: "heart.fill")
+            Image(systemName: heartImage)
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)
                 .padding(.trailing, 8)
                 .padding(.top, 10)
                 .button {
-                    print("Liked")
+                    heartAction()
                 }
         }
-    }
-}
-
-struct RestaurantCard_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantCard(restaurant: .stub())
     }
 }

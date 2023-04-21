@@ -4,8 +4,8 @@ public struct CuisinesSeeAllScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
 
-    @StateObject
-    var viewModel = CuisinesSeeAllViewModel()
+    @ObservedObject
+    var viewModel: CuisinesSeeAllViewModel
 
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 150))
@@ -30,7 +30,18 @@ public struct CuisinesSeeAllScreen: View {
                     Spacer()
                         .fixedSize()
                     
-                    cuisinesSection
+                    if viewModel.state.cuisines.isEmpty {
+                        VStack {
+                            FoodieEmptyPlaceholder(
+                                title: "Oops, the cuisines do not seem\nto be loading at the moment.\nTry again later please"
+                            )
+                            
+                            Spacer()
+                        }
+                    }
+                    else {
+                        cuisinesSection
+                    }
                 }
             }
         }
@@ -83,28 +94,28 @@ public struct CuisinesSeeAllScreen: View {
                 style: .bold
             )
             .padding(.leading, 10)
-            
         }
     }
     
     private var cuisinesSection: some View {
         VStack(spacing: .spacing6) {
-            
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: adaptiveColumns){
-                            ForEach(0..<10) { index in
-                                SeeAllCuisineCard.stub()
-                                    .frame(width: 140, height: 190)
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVGrid(columns: adaptiveColumns){
+                    ForEach(viewModel.state.cuisines, id: \.category) { cuisine in
+                        SeeAllCuisineCard(cuisine: cuisine)
+                            .frame(width: 140, height: 190)
+                            .onTapGesture {
+                                router.push(
+                                    .seeAllRestaurants(
+                                        title: cuisine.category,
+                                        restaurants: cuisine.restaurants
+                                    )
+                                )
+                            }
                     }
                 }
             }
             .padding(.trailing, 16)
         }
-    }
-}
-
-struct CuisinesSeeAllScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CuisinesSeeAllScreen()
     }
 }

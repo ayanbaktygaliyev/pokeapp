@@ -95,17 +95,19 @@ public struct RestaurantSeeAllScreen: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: .spacing12) {
                     ForEach(viewModel.state.restaurants) { restaurant in
-                        RestaurantCard(restaurant: restaurant)
+                        RestaurantCard(
+                            restaurant: restaurant,
+                            heartAction: {
+                                viewModel.heartAction(restaurantID: restaurant.id) {
+                                    viewModel.reload()
+                                }
+                            },
+                            heartImage: viewModel.heartImage(restaurantID: restaurant.id)
+                        )
                     }
                 }
             }
             .padding(.trailing, 16)
         }
-    }
-}
-
-struct RestaurantSeeAllScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantSeeAllScreen(viewModel: .init(title: "", restaurants: []))
     }
 }

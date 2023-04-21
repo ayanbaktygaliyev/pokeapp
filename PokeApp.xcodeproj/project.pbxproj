@@ -76,6 +76,13 @@
 		747B81F529DAC9FC000D6120 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B81F429DAC9FC000D6120 /* RestaurantDetailsViewModel.swift */; };
 		747FB0FA298927D9006AFE43 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0F9298927D9006AFE43 /* TextField.swift */; };
 		747FB0FC2989335E006AFE43 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB0FB2989335E006AFE43 /* Button.swift */; };
+		748A1B7029F2921F001C97AB /* RestaurantsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A1B6F29F2921F001C97AB /* RestaurantsRepository.swift */; };
+		748A1B7229F29289001C97AB /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A1B7129F29289001C97AB /* MenuItem.swift */; };
+		748A1B7429F29800001C97AB /* RestaurantsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A1B7329F29800001C97AB /* RestaurantsRequest.swift */; };
+		748A1B7829F2C109001C97AB /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A1B7729F2C109001C97AB /* CachedAsyncImage.swift */; };
+		748A1B7A29F2CA12001C97AB /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A1B7929F2CA12001C97AB /* EmptyResponse.swift */; };
+		748F234B29F2D80000CDE2FF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F234A29F2D80000CDE2FF /* Category.swift */; };
+		748F234D29F2E91000CDE2FF /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F234C29F2E91000CDE2FF /* Table.swift */; };
 		748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */; };
 		748FAE4629D1676600062E27 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4529D1676600062E27 /* Spinner.swift */; };
 		748FAE4829D16B4600062E27 /* Inputs + SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAE4729D16B4600062E27 /* Inputs + SignIn.swift */; };
@@ -213,6 +220,13 @@
 		747B81F429DAC9FC000D6120 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		747FB0F9298927D9006AFE43 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		747FB0FB2989335E006AFE43 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		748A1B6F29F2921F001C97AB /* RestaurantsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsRepository.swift; sourceTree = "<group>"; };
+		748A1B7129F29289001C97AB /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		748A1B7329F29800001C97AB /* RestaurantsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsRequest.swift; sourceTree = "<group>"; };
+		748A1B7729F2C109001C97AB /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		748A1B7929F2CA12001C97AB /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		748F234A29F2D80000CDE2FF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		748F234C29F2E91000CDE2FF /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		748FAE4229D0A76900062E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		748FAE4529D1676600062E27 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
@@ -310,6 +324,7 @@
 				74E1722129D2FC5900CD1225 /* Snackbar.swift */,
 				747B81EF29DA18E5000D6120 /* Dialog.swift */,
 				74314C2829F2731F0031F1F8 /* Stepper.swift */,
+				748A1B7729F2C109001C97AB /* CachedAsyncImage.swift */,
 			);
 			path = DesignComponents;
 			sourceTree = "<group>";
@@ -421,6 +436,7 @@
 			children = (
 				745C8A6429BF28E0008A8086 /* AuthRepository.swift */,
 				74314C2A29F279980031F1F8 /* UserRepository.swift */,
+				748A1B6F29F2921F001C97AB /* RestaurantsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -439,6 +455,7 @@
 			children = (
 				7432302629B0E12A0095B496 /* JSONRequest.swift */,
 				7432302929B0E1840095B496 /* AuthRequest.swift */,
+				748A1B7329F29800001C97AB /* RestaurantsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -469,6 +486,7 @@
 				7434030329D05C4600FF1F9A /* AuthResponse.swift */,
 				748FAE4329D0AE8C00062E27 /* ErrorResponse.swift */,
 				74314C2029F12DCF0031F1F8 /* ReservationResponse.swift */,
+				748A1B7929F2CA12001C97AB /* EmptyResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -572,6 +590,9 @@
 				74385A3629A8D898004BFE07 /* TabItem.swift */,
 				747B81ED29DA026B000D6120 /* Campaign.swift */,
 				74314C1E29F12BEA0031F1F8 /* Reservation.swift */,
+				748A1B7129F29289001C97AB /* MenuItem.swift */,
+				748F234A29F2D80000CDE2FF /* Category.swift */,
+				748F234C29F2E91000CDE2FF /* Table.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -945,7 +966,9 @@
 				7432303E29B601FD0095B496 /* SessionLogger.swift in Sources */,
 				7456AFBF28D467B000C347E9 /* AppDelegate.swift in Sources */,
 				7434030829D05F1C00FF1F9A /* ReservationsViewModel.swift in Sources */,
+				748F234B29F2D80000CDE2FF /* Category.swift in Sources */,
 				740ECA95290054E800C7CF26 /* UIColorExtensions.swift in Sources */,
+				748A1B7029F2921F001C97AB /* RestaurantsRepository.swift in Sources */,
 				7432302A29B0E1840095B496 /* AuthRequest.swift in Sources */,
 				741E292629A24611001A273E /* ImageExtensions.swift in Sources */,
 				741E292A29A289B4001A273E /* HomeRecommendedCard.swift in Sources */,
@@ -955,6 +978,7 @@
 				745C8A6029BF13B0008A8086 /* ResultPublisher.swift in Sources */,
 				740ECA9329004F0D00C7CF26 /* FontToken.swift in Sources */,
 				74C334B029268A1900FE7A34 /* ColorToken.swift in Sources */,
+				748A1B7829F2C109001C97AB /* CachedAsyncImage.swift in Sources */,
 				74385A3529A8D697004BFE07 /* BottomTabView.swift in Sources */,
 				7432302D29B120FD0095B496 /* SessionCoordinator.swift in Sources */,
 				74DC363829D080DF00F97D5C /* DictionaryExtensions.swift in Sources */,
@@ -991,6 +1015,7 @@
 				74314C1F29F12BEA0031F1F8 /* Reservation.swift in Sources */,
 				740ECA8D29004EDC00C7CF26 /* DesignSystem.swift in Sources */,
 				74314C2729F13E3D0031F1F8 /* FoodieEmptyPlaceholder.swift in Sources */,
+				748F234D29F2E91000CDE2FF /* Table.swift in Sources */,
 				74972E9029E407390006868A /* RectangularDiningTableView.swift in Sources */,
 				74972E8E29E4072F0006868A /* RoundDiningTableView.swift in Sources */,
 				74385A3E29A8DB0E004BFE07 /* RootTopViewModel.swift in Sources */,
@@ -1011,6 +1036,7 @@
 				E43B6AD429F0C6D200F71734 /* ReserveSuccessScreen.swift in Sources */,
 				74972E8B29E3FC0E0006868A /* ReserveViewModel.swift in Sources */,
 				740ECA8F29004EEC00C7CF26 /* DesignSystemProvider.swift in Sources */,
+				748A1B7229F29289001C97AB /* MenuItem.swift in Sources */,
 				74E1722429D3006700CD1225 /* HomeCampaignCard.swift in Sources */,
 				E43B6ACE29F0A22800F71734 /* CuisinesSeeAllViewModel.swift in Sources */,
 				74727A8A29700A9C00ED29FF /* NavigationEnvironmentValues.swift in Sources */,
@@ -1031,6 +1057,7 @@
 				740ECA8B29004ECE00C7CF26 /* TextLabel.swift in Sources */,
 				7434030629D05D6000FF1F9A /* SceneDelegate.swift in Sources */,
 				E431D0CB29C47DEC00B9DB31 /* ReservationsScreen.swift in Sources */,
+				748A1B7A29F2CA12001C97AB /* EmptyResponse.swift in Sources */,
 				7434030A29D065F700FF1F9A /* ViewModel.swift in Sources */,
 				74972E8929E3F3FD0006868A /* ReserveScreen.swift in Sources */,
 				747FB0FC2989335E006AFE43 /* Button.swift in Sources */,
@@ -1047,6 +1074,7 @@
 				748FAE4429D0AE8C00062E27 /* ErrorResponse.swift in Sources */,
 				747B81F529DAC9FC000D6120 /* RestaurantDetailsViewModel.swift in Sources */,
 				747B81F029DA18E5000D6120 /* Dialog.swift in Sources */,
+				748A1B7429F29800001C97AB /* RestaurantsRequest.swift in Sources */,
 				740ECA97290054F800C7CF26 /* ColorExtensions.swift in Sources */,
 				74DC01342910DE3800629D11 /* FontStyle.swift in Sources */,
 			);
@@ -1211,6 +1239,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1241,6 +1272,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokeApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give a permission to track user location to get the list of nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

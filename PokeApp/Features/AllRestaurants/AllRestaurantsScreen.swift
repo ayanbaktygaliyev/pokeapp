@@ -4,8 +4,8 @@ public struct AllRestaurantsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = AllRestaurantsViewModel()
+    @ObservedObject
+    var viewModel: AllRestaurantsViewModel
     
     public var body: some View {
         content
@@ -16,7 +16,16 @@ public struct AllRestaurantsScreen: View {
             headerView
                 .padding(.horizontal, 16)
 
-            restaurantsSection
+            if viewModel.state.restaurants.isEmpty {
+                VStack {
+                    FoodieEmptyPlaceholder(title: StringConstants.RestaurantSeeAll.empty)
+                    
+                    Spacer()
+                }
+            }
+            else {
+                restaurantsSection
+            }
         }
     }
     
@@ -46,24 +55,29 @@ public struct AllRestaurantsScreen: View {
         NavigationStack {
             List {
                 ForEach(viewModel.state.filteredRestaurants) { restaurant in
-                    RestaurantCard(restaurant: restaurant)
-                        .listRowSeparator(.hidden)
-                        .button {
-                            router.push(.restaurantDetails)
-                        }
-                        .buttonStyle(PlainButtonStyle())
+                    RestaurantCard(
+                        restaurant: restaurant,
+                        heartAction: {
+                            viewModel.heartAction(restaurantID: restaurant.id) {
+                                viewModel.reload()
+                            }
+                        },
+                        heartImage: viewModel.heartImage(restaurantID: restaurant.id)
+                    )
+                    .listRowSeparator(.hidden)
+                    .onTapGesture {
+                        router.push(.restaurantDetails(restaurant: restaurant))
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .listStyle(.plain)
             .navigationTitle(Text("Restaurants"))
             .navigationBarTitleDisplayMode(.large)
+            .refreshable {
+                viewModel.loadAllRestaurants()
+            }
         }
         .searchable(text: $viewModel.state.searchText)
-    }
-}
-
-struct AllRestaurantsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AllRestaurantsScreen()
     }
 }

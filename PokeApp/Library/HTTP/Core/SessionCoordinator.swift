@@ -86,7 +86,10 @@ public final class SessionCoordinator {
         method: HTTPMethod,
         parameters: RequestParameters? = nil
     ) -> AnyPublisher<Result<Data, SessionError>, Never> {
-        let url = baseURL.appendingPathComponent(request.path)
+        var url = baseURL.appendingPathComponent(request.path)
+        if let queryItems = request.queryItems {
+            url.append(queryItems: queryItems)
+        }
         let urlRequest = makeURLRequest(url: url, method: method, parameters: parameters)
         
         return URLSession(configuration: sessionConfiguration)

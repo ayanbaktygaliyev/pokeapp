@@ -1,6 +1,6 @@
 import Foundation
 
-public enum SessionError: Error {    
+public enum SessionError: Error, Equatable {    
     case notHTTPResponse
     case badURL(_ error: String)
     case invalidJSON(_ error: String)

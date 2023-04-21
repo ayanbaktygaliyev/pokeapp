@@ -11,8 +11,8 @@ public struct ReservationsScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = ReservationsViewModel()
+    @ObservedObject
+    var viewModel: ReservationsViewModel
     
     @State
     private var query = ""
@@ -30,26 +30,28 @@ public struct ReservationsScreen: View {
     
     private var content: some View {
         VStack(alignment: .leading, spacing: .spacing16){
-            
             headerView
             
-//            ScrollView {
-                VStack(alignment: .leading, spacing: .spacing16) {
-                    
-                    TextLabel(
-                        content: StringConstants.Reservations.reservations,
-                        color: .black,
-                        fontToken: .size24,
-                        style: .bold
-                    )
-                    
+            VStack(alignment: .leading, spacing: .spacing16) {
+                TextLabel(
+                    content: StringConstants.Reservations.reservations,
+                    color: .black,
+                    fontToken: .size24,
+                    style: .bold
+                )
+                
+                if viewModel.state.reservations.isEmpty {
+                    VStack {
+                        FoodieEmptyPlaceholder(title: "You haven't reserved any seats yet")
+                        
+                        Spacer()
+                    }
+                } else {
                     ReservationsSection
-                    
                 }
-//            }
             
         }
-        
+    }
     }
     
     private var headerView: some View {
@@ -81,18 +83,17 @@ public struct ReservationsScreen: View {
                     ReservationsCard(reservationResponse: reservationResponse)
                         .buttonStyle(PlainButtonStyle())
                         .listRowSeparator(.hidden)
-                }
-                .onDelete { indexSet in
-                    viewModel.deleteReservations(indexSet: indexSet)
+                        .swipeActions(edge: .trailing) {
+                            SwiftUI.Button(role: .destructive) {
+                                viewModel.deleteReservations(reservationResponse: reservationResponse)
+                                viewModel.loadReservations()
+                            } label: {
+                                Label("Cancel reservation", systemImage: "trash")
+                            }
+                        }
                 }
             }
             .listStyle(.plain)
             }
-    }
-    
-    struct ReservationsScreen_Previews: PreviewProvider {
-        static var previews: some View {
-            ReservationsScreen  ()
-        }
     }
 }

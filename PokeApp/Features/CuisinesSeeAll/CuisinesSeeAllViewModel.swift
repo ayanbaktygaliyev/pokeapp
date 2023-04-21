@@ -1,17 +1,16 @@
 import Foundation
 import SwiftUI
+import Combine
 
 class CuisinesSeeAllViewModel: ObservableObject {
     struct State {
-        var username: String
-        var password: String
+        var cuisines: [Category]
     }
     
     @Published
     var state: State
 
-    init() {
-        self.state = State(username: "", password: "")
+    init(cuisines: [Category]) {
+        self.state = State(cuisines: cuisines)
     }
-
 }

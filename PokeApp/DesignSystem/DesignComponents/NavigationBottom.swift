@@ -101,17 +101,3 @@ private struct TabButton<Label: View>: View {
         )
     }
 }
-
-struct NavigationBottom_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBottom(
-            .constant(TabItem.home),
-            title: \.title,
-            icon: \.icon,
-            tabs: TabItem.allCases,
-            content: { _ in
-                HomeScreen()
-            }
-        )
-    }
-}

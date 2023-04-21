@@ -1,11 +1,9 @@
 import SwiftUI
 
 struct HomeRecommendedCard: View {
-    let imageName: String
-    let restaurantName: String
-    let categories: [String]
-    let price: Int
-    let rating: Double
+    let restaurant: Restaurant
+    let heartAction: () -> Void
+    let heartImage: String
     
     var body: some View {
         content
@@ -20,10 +18,21 @@ struct HomeRecommendedCard: View {
     private var content: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(15, corners: [.topLeft, .topRight])
+                CachedAsyncImage(
+                    url: restaurant.imageURL,
+                    content: { image in
+                        image
+                            .resizable()
+                            .frame(width: 166, height: 120)
+                            .scaledToFill()
+                            .cornerRadius(15, corners: [.topLeft, .topRight])
+                    },
+                    placeholder: {
+                        FoodiePlaceholderImage()
+                            .frame(width: 166, height: 120)
+                            .cornerRadius(15, corners: [.topLeft, .topRight])
+                    }
+                )
                 
                 likeButton
             }
@@ -32,7 +41,7 @@ struct HomeRecommendedCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: restaurantName,
+                content: restaurant.name,
                 color: .black,
                 fontToken: .size13,
                 style: .semibold
@@ -43,7 +52,7 @@ struct HomeRecommendedCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: categories.joined(separator: ", "),
+                content: restaurant.categories.isEmpty ? " " : restaurant.categories.joined(separator: ", "),
                 color: .black,
                 fontToken: .size12,
                 style: .regular
@@ -84,7 +93,7 @@ struct HomeRecommendedCard: View {
     
     private var priceView: some View {
         HStack(spacing: .spacing4) {
-            ForEach(0..<4) { _ in
+            ForEach(0..<restaurant.priceRange) { _ in
                 Image(asset: .currency)
                     .resizable()
                     .frame(width: 7, height: 13.5)
@@ -94,7 +103,7 @@ struct HomeRecommendedCard: View {
     
     private var ratingView: some View {
         HStack(spacing: .spacing2) {
-            ForEach(0..<5) { _ in
+            ForEach(0..<Int(restaurant.rating)) { _ in
                 Image(asset: .star)
                     .resizable()
                     .frame(width: 12.5, height: 12)
@@ -110,33 +119,15 @@ struct HomeRecommendedCard: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
             
-            Image(systemName: "heart.fill")
+            Image(systemName: heartImage)
                 .resizable()
                 .foregroundColor(Color(.foodieGreen))
                 .frame(width: 20, height: 18)
                 .padding(.trailing, 8)
                 .padding(.top, 10)
                 .button {
-                    print("Liked")
+                    heartAction()
                 }
         }
-    }
-}
-
-extension HomeRecommendedCard {
-    static func stub() -> Self {
-        HomeRecommendedCard(
-            imageName: "test",
-            restaurantName: "Seoul Food",
-            categories: ["healthy", "korean"],
-            price: 2,
-            rating: 5
-        )
-    }
-}
-
-struct HomeRecommendedCard_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeRecommendedCard.stub()
     }
 }

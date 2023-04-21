@@ -4,12 +4,21 @@ public struct ReserveScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = ReserveViewModel()
+    @ObservedObject
+    var viewModel: ReserveViewModel
     
     public var body: some View {
         content
             .ignoresSafeArea()
+            .overlay(if: viewModel.state.isShowingDialog) {
+                Dialog(
+                    isShowingDialog: $viewModel.state.isShowingDialog,
+                    title: StringConstants.App.error,
+                    subtitle: "You cannot reserve a seat for \(viewModel.state.numberOfPeople) people.\nMake sure table capacity is enough for number of people.",
+                    colorToken: .foodieGreen
+                )
+                .frame(width: UIScreen.main.bounds.width)
+            }
     }
 }
 
@@ -63,7 +72,9 @@ private extension ReserveScreen {
                     )
                     
                     Button(title: "Reserve") {
-                        router.push(.reservesuccess)
+                        viewModel.reserve {
+                            router.push(.reservesuccess)
+                        }
                     }
                     .padding(.bottom, 16)
                 }
@@ -80,38 +91,65 @@ private extension ReserveScreen {
             
             VStack(spacing: .spacing40) {
                 HStack(spacing: .spacing24) {
+                    ZStack {
+                        Circle()
+                            .fill(.black.opacity(0.2))
+                            .frame(width: 32, height: 32)
+                        
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 8, height: 12)
+                    }
+                    .button {
+                        router.pop()
+                    }
+                    
                     timeCapsule(numberOfPeople: viewModel.state.numberOfPeople, time: "9:41")
                     
                     timeCapsule(numberOfPeople: viewModel.state.numberOfPeople, time: "19:00")
                 }
                 .padding(.top, 72)
                 
-                HStack(spacing: 72) {
-                    table1
-                        .button {
-                            viewModel.send(event: .selectTable(id: 1))
-                        }
-                    table2
-                        .button {
-                            viewModel.send(event: .selectTable(id: 2))
-                        }
-                }
-                
-                HStack(spacing: 72) {
-                    table3
-                        .button {
-                            viewModel.send(event: .selectTable(id: 3))
-                        }
-                    table4
-                        .button {
-                            viewModel.send(event: .selectTable(id: 4))
-                        }
-                }
-                
-                table5
-                    .button {
-                        viewModel.send(event: .selectTable(id: 5))
+                if viewModel.state.tables.isEmpty {
+                    VStack {
+                        TextLabel(
+                            content: "Oops, the restaurant does not have \nempty tables",
+                            color: .black,
+                            fontToken: .size36,
+                            style: .medium
+                        )
+                        
+                        Spacer()
                     }
+                } else {
+                    VStack {
+                        ForEach(viewModel.state.tables) { table in
+                            VStack(spacing: 0) {
+                                RectangularDiningTableView(
+                                    isSelected: Binding(
+                                        get: {
+                                            viewModel.state.isTableSelected(tableID: table.id)
+                                        },
+                                        set: { _ in }
+                                    ),
+                                    isReserved: table.status == "Occupied",
+                                    tableNumber: table.seats,
+                                    variant: .horizontal
+                                )
+                                .button {
+                                    viewModel.send(event: .selectTable(id: table.id))
+                                }
+                                .disabled(table.status == "Occupied")
+                                
+                                Spacer(minLength: 24)
+                                    .fixedSize()
+                            }
+                        }
+                        
+                        Spacer()
+                    }
+                }
             }
         }
     }
@@ -159,72 +197,6 @@ private extension ReserveScreen {
         }
     }
     
-    private var table1: some View {
-        RoundDiningTableView(
-            isSelected: Binding(
-                get: {
-                    viewModel.state.isTableSelected(tableID: 1)
-                },
-                set: { _ in }
-            ),
-            isReserved: false,
-            tableNumber: 1
-        )
-    }
-    
-    private var table2: some View {
-        RoundDiningTableView(
-            isSelected: Binding(
-                get: {
-                    viewModel.state.isTableSelected(tableID: 2)
-                },
-                set: { _ in }
-            ),
-            isReserved: true,
-            tableNumber: 2
-        )
-    }
-    
-    private var table3: some View {
-        RectangularDiningTableView(
-            isSelected: Binding(
-                get: {
-                    viewModel.state.isTableSelected(tableID: 3)
-                },
-                set: { _ in }
-            ),
-            isReserved: false,
-            tableNumber: 3
-        )
-    }
-    
-    private var table4: some View {
-        RectangularDiningTableView(
-            isSelected: Binding(
-                get: {
-                    viewModel.state.isTableSelected(tableID: 4)
-                },
-                set: { _ in }
-            ),
-            isReserved: false,
-            tableNumber: 4
-        )
-    }
-    
-    private var table5: some View {
-        RectangularDiningTableView(
-            isSelected: Binding(
-                get: {
-                    viewModel.state.isTableSelected(tableID: 5)
-                },
-                set: { _ in }
-            ),
-            isReserved: false,
-            tableNumber: 5,
-            variant: .horizontal
-        )
-    }
-    
     private func timeCapsule(numberOfPeople: Int, time: String) -> some View {
         HStack(spacing: .spacing4) {
             Image(systemName: "person")
@@ -261,11 +233,5 @@ private extension ReserveScreen {
         )
         .frame(width: 140, height: 32)
         .shadow(color: .black.opacity(0.2), radius: 6, x: 0, y: 2)
-    }
-}
-
-struct ReserveScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ReserveScreen()
     }
 }

@@ -17,4 +17,8 @@ enum AuthRequest: JSONRequest {
             return "/register"
         }
     }
+    
+    var queryItems: [URLQueryItem]? {
+        nil
+    }
 }

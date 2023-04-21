@@ -4,8 +4,8 @@ public struct SignInScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = SignInViewModel()
+    @ObservedObject
+    var viewModel: SignInViewModel
     
     public var body: some View {
         content
@@ -109,11 +109,5 @@ private extension SignInInputs.FailureReason {
         case .passwordNotInput:
             return StringConstants.SignIn.passwordNotInput
         }
-    }
-}
-
-struct SignInScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInScreen()
     }
 }

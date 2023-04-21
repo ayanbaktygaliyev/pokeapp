@@ -11,7 +11,7 @@ struct HomeCampaignCard: View {
 private extension HomeCampaignCard {
     private var content: some View {
         ZStack(alignment: .bottomLeading) {
-            AsyncImage(
+            CachedAsyncImage(
                 url: campaign.imageURL,
                 content: { image in
                     image

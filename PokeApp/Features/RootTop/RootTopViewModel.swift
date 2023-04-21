@@ -25,10 +25,11 @@ class RootTopViewModel: ObservableObject {
     @Published
     var state: State
     
-    private let authRepository = AuthRepository()
+    let environment: Env
     
-    init() {
-        self.state = State(isSignedIn: authRepository.isSignedIn)
+    init(environment: Env) {
+        self.environment = environment
+        self.state = State(isSignedIn: environment.authRepository.isSignedIn)
     }
     
     func switchTab(_ tab: TabItem) {

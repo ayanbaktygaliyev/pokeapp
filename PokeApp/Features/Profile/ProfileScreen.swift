@@ -4,8 +4,8 @@ public struct ProfileScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = ProfileScreenViewModel()
+    @ObservedObject
+    var viewModel: ProfileScreenViewModel
     
     public var body: some View {
         content
@@ -109,7 +109,7 @@ public struct ProfileScreen: View {
                         .padding(.trailing, 16)
                         .button {
                             router.push(
-                                .seeAllRestaurants(title: "Favourites", restaurants: [])
+                                .seeAllRestaurants(title: "Favourites", restaurants: viewModel.state.favorites)
                             )
                         }
                 }
@@ -185,11 +185,5 @@ public struct ProfileScreen: View {
             }
             .frame(width: 327, alignment: .leading)
         }
-    }
-}
-    
-struct ProfileScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileScreen()
     }
 }

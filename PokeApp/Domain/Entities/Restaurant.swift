@@ -11,6 +11,7 @@ struct Restaurant: Equatable, Codable, Identifiable {
     let openingHours: String
     let priceRange: Int
     let rating: Double
+    let menu: [MenuItem]
     
     enum CodingKeys: String, CodingKey {
         case address
@@ -23,6 +24,7 @@ struct Restaurant: Equatable, Codable, Identifiable {
         case openingHours = "opening_hours"
         case priceRange = "price_range"
         case rating
+        case menu
     }
     
     static func stub(_ mutate: ((inout Self) -> Void)? = nil) -> Self {
@@ -36,7 +38,8 @@ struct Restaurant: Equatable, Codable, Identifiable {
             name: "Zina",
             openingHours: "08:00-24:00",
             priceRange: 4,
-            rating: 4.2
+            rating: 4.2,
+            menu: []
         )
         mutate?(&value)
         return value

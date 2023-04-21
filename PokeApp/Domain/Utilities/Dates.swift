@@ -39,6 +39,6 @@ public enum Dates {
         let hours = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         
-        return "\(hours):\(minutes == 0 ? "00" : "0")"
+        return "\(hours):\(minutes == 0 ? "00" : "00")"
     }
 }
