@@ -12,6 +12,7 @@ final class UserRepository: NSObject, CLLocationManagerDelegate {
             UserDefaults.standard.set(newValue, forKey: "username")
         }
     }
+    
     var latitude: Double = 0
     var longitude: Double = 0
     

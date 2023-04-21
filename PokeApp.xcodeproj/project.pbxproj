@@ -126,6 +126,8 @@
 		E4B9FE0429E3DFB2006E0DDC /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0329E3DFB2006E0DDC /* FeedbackViewModel.swift */; };
 		E4B9FE0729E3E621006E0DDC /* AboutUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0629E3E621006E0DDC /* AboutUsScreen.swift */; };
 		E4B9FE0929E3E62D006E0DDC /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE0829E3E62D006E0DDC /* AboutUsViewModel.swift */; };
+		E4FD17B329F28F8D00F4A93B /* FullNameChangeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FD17B229F28F8D00F4A93B /* FullNameChangeScreen.swift */; };
+		E4FD17B529F28FEC00F4A93B /* FullNameChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FD17B429F28FEC00F4A93B /* FullNameChangeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +271,8 @@
 		E4B9FE0329E3DFB2006E0DDC /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		E4B9FE0629E3E621006E0DDC /* AboutUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsScreen.swift; sourceTree = "<group>"; };
 		E4B9FE0829E3E62D006E0DDC /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
+		E4FD17B229F28F8D00F4A93B /* FullNameChangeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameChangeScreen.swift; sourceTree = "<group>"; };
+		E4FD17B429F28FEC00F4A93B /* FullNameChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameChangeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +381,7 @@
 		740ECA8729000D3300C7CF26 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E4FD17B129F28F7100F4A93B /* FullNameChange */,
 				747B81F129DAC676000D6120 /* RestaurantDetails */,
 				E43B6AD229F0C6B400F71734 /* ReserveSuccess */,
 				E43B6ACA29F0A1E200F71734 /* CuisinesSeeAll */,
@@ -817,6 +822,15 @@
 			path = AboutUs;
 			sourceTree = "<group>";
 		};
+		E4FD17B129F28F7100F4A93B /* FullNameChange */ = {
+			isa = PBXGroup;
+			children = (
+				E4FD17B229F28F8D00F4A93B /* FullNameChangeScreen.swift */,
+				E4FD17B429F28FEC00F4A93B /* FullNameChangeViewModel.swift */,
+			);
+			path = FullNameChange;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -982,9 +996,11 @@
 				E4B9FE0229E3DFA6006E0DDC /* FeedbackScreen.swift in Sources */,
 				748FAE4F29D1913500062E27 /* AllRestaurantsScreen.swift in Sources */,
 				E43B6AD129F0A73E00F71734 /* SeeAllCuisinesCard.swift in Sources */,
+				E4FD17B529F28FEC00F4A93B /* FullNameChangeViewModel.swift in Sources */,
 				741E292E29A294BE001A273E /* HomeCuisineCard.swift in Sources */,
 				7432303929B4A4200095B496 /* HTTPMethod.swift in Sources */,
 				749CC8FC2913B50000BB9E87 /* SignInViewModel.swift in Sources */,
+				E4FD17B329F28F8D00F4A93B /* FullNameChangeScreen.swift in Sources */,
 				E40BBDB729D9E97A00CD5A4A /* RestaurantSeeAllScreen.swift in Sources */,
 				E451443329E0A91F001555C5 /* ProfileScreenViewModel.swift in Sources */,
 				747B81EE29DA026B000D6120 /* Campaign.swift in Sources */,

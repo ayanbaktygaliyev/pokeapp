@@ -19,4 +19,5 @@ enum Route: Equatable {
     case reserve(tables: [Table])
     case seeAllCuisines(cuisines: [Category])
     case reservesuccess
+    case fullnamechange
 }
