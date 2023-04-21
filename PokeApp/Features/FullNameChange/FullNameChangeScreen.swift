@@ -4,8 +4,8 @@ public struct FullNameChangeScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
-    @StateObject
-    private var viewModel = FullNameChangeScreenViewModel()
+    @ObservedObject
+    var viewModel: FullNameChangeScreenViewModel
     
     public var body: some View {
         content
@@ -13,7 +13,7 @@ public struct FullNameChangeScreen: View {
                 Dialog(
                     isShowingDialog: $viewModel.state.isShowingDialog,
                     title: StringConstants.App.error,
-                    subtitle: "Make sure that you've confirmed your username correctly",
+                    subtitle: "Make sure that you've confirmed your full name correctly",
                     colorToken: .foodieGreen
                 )
                 .frame(width: UIScreen.main.bounds.width)
@@ -48,7 +48,7 @@ public struct FullNameChangeScreen: View {
             VStack(alignment: .leading){
             
                 TextLabel(
-                    content: "Change Username",
+                    content: "Change fullname",
                     color: .black,
                     fontToken: .size20,
                     style: .bold
@@ -58,7 +58,7 @@ public struct FullNameChangeScreen: View {
                     .fixedSize()
                 
                 TextLabel(
-                    content: "Enter your new username below:",
+                    content: "Enter your new fullname below:",
                     color: .grey,
                     fontToken: .size16,
                     style: .bold
@@ -82,7 +82,7 @@ public struct FullNameChangeScreen: View {
                 .frame(alignment: .center)
                 .padding(.leading, -16)
                 .button {
-                    viewModel.changeUsername {
+                    viewModel.changeFullname {
                         router.pop()
                     }
                 }
@@ -91,7 +91,7 @@ public struct FullNameChangeScreen: View {
     
     private var greeting: some View{
         TextLabel(
-            content: "Hi, PokeApp Creator!",
+            content: "Hi, \(viewModel.userRepository.fullname)!",
             color: .black,
             fontToken: .size24,
             style: .bold
@@ -125,7 +125,7 @@ public struct FullNameChangeScreen: View {
                 style: .bold
             )
             
-            SwiftUI.TextField("", text: $viewModel.state.username)
+            SwiftUI.TextField("", text: $viewModel.state.fullname)
                 .padding(.leading, 10)
                 .frame(width: 327, height: 48)
                 .overlay(
@@ -141,7 +141,7 @@ public struct FullNameChangeScreen: View {
                 style: .bold
             )
             
-            SwiftUI.TextField("", text: $viewModel.state.confirmUsername)
+            SwiftUI.TextField("", text: $viewModel.state.confirmFullname)
                 .padding(.leading, 10)
                 .frame(width: 327, height: 48)
                 .overlay(
@@ -149,15 +149,5 @@ public struct FullNameChangeScreen: View {
                             .stroke(.gray, lineWidth: 1)
                     )
         }
-    }
-}
-    
-
-
-    
-
-struct FullNameChangeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        FullNameChangeScreen()
     }
 }

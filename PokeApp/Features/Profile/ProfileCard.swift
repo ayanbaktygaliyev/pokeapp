@@ -8,6 +8,7 @@ struct ProfileCard: View {
     
     var body: some View {
         content
+            .padding(.horizontal, 30)
     }
     
     private var content: some View {
@@ -15,7 +16,7 @@ struct ProfileCard: View {
             
             Rectangle()
                 .fill(.white)
-                .frame(width: 327, height: 70)
+                .frame(height: 70)
                 .cornerRadius(11)
                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
@@ -23,7 +24,7 @@ struct ProfileCard: View {
                 Circle()
                     .fill(Color(.foodieGreen))
                     .frame(width: 44, height: 44)
-                    .padding(.leading, 24)
+                    .padding(.leading, 16)
                 
                 VStack(alignment: .leading, spacing: 2){
                     TextLabel(
@@ -42,9 +43,9 @@ struct ProfileCard: View {
                 }
                 
                 Spacer()
-                    .fixedSize()
                 
                 NotificationButton
+                    .padding(.trailing, 16)
             }
         }
     }
@@ -89,7 +90,7 @@ extension ProfileCard {
     static func stub() -> Self {
         ProfileCard(
             imageName: "test",
-            userFullName: "Pokeapp Creator",
+            userFullName: UserDefaults.standard.string(forKey: "fullname") ?? "",
             userEmail: "foodie@nu.edu.kz",
             numberOfNotifications: "3"
         )

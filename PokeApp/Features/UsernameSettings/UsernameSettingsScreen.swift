@@ -13,7 +13,7 @@ public struct UsernameSettingsScreen: View {
                 Dialog(
                     isShowingDialog: $viewModel.state.isShowingDialog,
                     title: StringConstants.App.error,
-                    subtitle: "Make sure that you've confirmed your full name correctly",
+                    subtitle: "Make sure that you've confirmed your username correctly",
                     colorToken: .foodieGreen
                 )
                 .frame(width: UIScreen.main.bounds.width)
@@ -91,7 +91,7 @@ public struct UsernameSettingsScreen: View {
     
     private var greeting: some View{
         TextLabel(
-            content: "Hi, PokeApp Creator!",
+            content: "Hi, \(viewModel.userRepository.fullname)",
             color: .black,
             fontToken: .size24,
             style: .bold
@@ -119,7 +119,7 @@ public struct UsernameSettingsScreen: View {
         VStack(alignment: .leading ,spacing: 23){
             
             TextLabel(
-                content: "New Full Name:",
+                content: "New username:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold
@@ -135,7 +135,7 @@ public struct UsernameSettingsScreen: View {
 
             
             TextLabel(
-                content: "Confirm Full name:",
+                content: "Confirm username:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold

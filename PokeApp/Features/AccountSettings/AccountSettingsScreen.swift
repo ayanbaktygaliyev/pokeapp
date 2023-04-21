@@ -65,7 +65,7 @@ public struct AccountSettingsScreen: View {
     
     private var greeting: some View{
         TextLabel(
-            content: "Hi, PokeApp Creator!",
+            content: "Hi, \(viewModel.state.fullname)",
             color: .black,
             fontToken: .size24,
             style: .bold
@@ -145,7 +145,7 @@ public struct AccountSettingsScreen: View {
                     Spacer(minLength: 0)
                     
                     TextLabel(
-                        content: "Pokeapp creator",
+                        content: viewModel.userRepository.fullname,
                         color: .black,
                         fontToken: .size17,
                         style: .bold
@@ -158,7 +158,7 @@ public struct AccountSettingsScreen: View {
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
                         .button {
-                            router.push(.usernamesettings)
+                            router.push(.fullnamechange)
                         }
                     
                 }
