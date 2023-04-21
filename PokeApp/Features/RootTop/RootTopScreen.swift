@@ -62,6 +62,9 @@ struct RootTopScreen: View {
                 
             case .seeAllCuisines:
                 CuisinesSeeAllScreen()
+                
+            case .fullnamechange:
+                FullNameChangeScreen()
             }
         }
         .onAppear {

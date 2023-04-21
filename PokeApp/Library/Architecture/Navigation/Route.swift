@@ -19,4 +19,5 @@ enum Route: Equatable {
     case reserve
     case seeAllCuisines
     case reservesuccess
+    case fullnamechange
 }
