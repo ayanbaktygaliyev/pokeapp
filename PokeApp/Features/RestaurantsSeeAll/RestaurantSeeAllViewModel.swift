@@ -14,8 +14,4 @@ class RestaurantSeeAllViewModel: ObservableObject {
         self.state.title = title
         self.state.restaurants = restaurants
     }
-    
-    func didTapSignIn() {
-        print("Hello Sign In")
-    }
 }

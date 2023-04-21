@@ -9,21 +9,12 @@ public struct AllRestaurantsScreen: View {
     
     public var body: some View {
         content
-            .padding(.leading, 16)
     }
     
     private var content: some View {
         VStack(alignment: .leading, spacing: .spacing16){
-            
             headerView
-                .padding(.trailing, 16)
- 
-//            TextLabel(
-//                content: StringConstants.AllRestaurants.restaurants,
-//                color: .black,
-//                fontToken: .size24,
-//                style: .bold
-//            )
+                .padding(.horizontal, 16)
 
             restaurantsSection
         }
@@ -53,13 +44,17 @@ public struct AllRestaurantsScreen: View {
     
     private var restaurantsSection: some View {
         NavigationStack {
-            List{
-                ForEach(0..<10) { index in
-                    RestaurantCard.stub()
+            List {
+                ForEach(viewModel.state.filteredRestaurants) { restaurant in
+                    RestaurantCard(restaurant: restaurant)
+                        .listRowSeparator(.hidden)
+                        .button {
+                            router.push(.restaurantDetails)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                 }
             }
             .listStyle(.plain)
-            .padding(.leading, -15)
             .navigationTitle(Text("Restaurants"))
             .navigationBarTitleDisplayMode(.large)
         }

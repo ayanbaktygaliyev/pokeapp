@@ -3,18 +3,23 @@ import SwiftUI
 
 class UsernameSettingsScreenViewModel: ObservableObject {
     struct State {
-        
-        var inputs = SignInInputs()
-        var username: String
-        var password: String
-        
+        var username = ""
+        var confirmUsername = ""
+        var isShowingDialog = false
     }
     
     @Published
-    var state: State
+    var state = State()
+    
+    private let userRepository = UserRepository()
 
-    init() {
-        self.state = State(username: "", password: "")
+    func changeUsername(completion: @escaping() -> Void) {
+        if state.username != state.confirmUsername {
+            state.isShowingDialog = true
+            return
+        }
+        
+        userRepository.changeUsername(username: state.username)
+        completion()
     }
-
 }

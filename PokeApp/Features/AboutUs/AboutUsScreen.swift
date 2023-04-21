@@ -10,7 +10,6 @@ public struct AboutUsScreen: View {
     public var body: some View {
         
         content
-            .padding(.leading, 16)
     }
     
     private var content: some View {

@@ -2,20 +2,36 @@ import Foundation
 
 class ReservationsViewModel: ObservableObject {
     struct State {
-        var username: String
-        var password: String
+        var reservations: [ReservationResponse] = [
+            .stub {
+                $0.id = 1
+                $0.restaurant = .stub {
+                    $0.name = "Тәтті"
+                    $0.id = "1"
+                }
+            },
+            .stub {
+                $0.id = 2
+                $0.restaurant = .stub {
+                    $0.name = "Qazy Qarta"
+                    $0.id = "2"
+                }
+            },
+            .stub {
+                $0.id = 3
+                $0.restaurant = .stub {
+                    $0.name = "Seoul Food"
+                    $0.id = "3"
+                }
+            },
+            .stub()
+        ]
     }
     
     @Published
-    var state: State
-
-    init() {
-        self.state = State(username: "", password: "")
-    }
+    var state = State()
     
-    func didTapSignUp() {
-    }
-    
-    func didTapSignIn() {
+    func deleteReservations(indexSet: IndexSet) {
+        state.reservations.remove(atOffsets: indexSet)
     }
 }

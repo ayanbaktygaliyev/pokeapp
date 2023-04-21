@@ -13,5 +13,10 @@ class ProfileScreenViewModel: ObservableObject {
     init() {
         self.state = State(username: "", password: "")
     }
-
+    
+    private var authRepository = AuthRepository()
+    
+    func logOut() {
+        authRepository.isSignedIn = false
+    }
 }

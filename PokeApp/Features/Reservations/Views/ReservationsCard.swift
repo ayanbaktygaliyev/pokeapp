@@ -1,12 +1,7 @@
 import SwiftUI
 
 struct ReservationsCard: View {
-    let imageName: String
-    let restaurantName: String
-    let numOfPeople: Int
-    let time: String
-    let tableNumber: Int
-    let address: String
+    let reservationResponse: ReservationResponse
     
     var body: some View {
         content
@@ -22,17 +17,29 @@ struct ReservationsCard: View {
         VStack(alignment: .leading) {
             ZStack(alignment: .bottomLeading){
                 ZStack(alignment: .topTrailing) {
-                    Image(imageName)
-                        .resizable()
-                        .frame(width: 343, height: 164)
-                        .cornerRadius(15)
-                        .brightness(-0.16)
+                    AsyncImage(
+                        url: reservationResponse.restaurant.imageURL,
+                        content: { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 343, height: 164)
+                                .cornerRadius(15)
+                                .brightness(-0.16)
+                        },
+                        placeholder: {
+                            FoodiePlaceholderImage()
+                                .frame(width: 343, height: 164)
+                                .cornerRadius(15)
+                                .brightness(-0.16)
+                        }
+                    )
 
                     likeButton
                 }
                 
                 TextLabel(
-                    content: restaurantName,
+                    content: reservationResponse.restaurant.name,
                     color: .white,
                     fontToken: .size27,
                     style: .semibold
@@ -62,14 +69,6 @@ struct ReservationsCard: View {
                 .fixedSize()
             
         }
-            .swipeActions {
-                SwiftUI.Button(
-                    action: {
-                        print("Delete")
-                    }) {
-                        Image(systemName: "trash")
-                    }
-            }
     }
     
     
@@ -84,7 +83,7 @@ struct ReservationsCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: "\(numOfPeople)",
+                content: "\(reservationResponse.reservation.personas)",
                 color: .black,
                 fontToken: .size15,
                 style: .semibold
@@ -103,7 +102,7 @@ struct ReservationsCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: time,
+                content: Dates.hoursAndMinutes(string: reservationResponse.reservation.reservationStart),
                 color: .black,
                 fontToken: .size15,
                 style: .semibold
@@ -122,7 +121,7 @@ struct ReservationsCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: "\(tableNumber)",
+                content: "\(reservationResponse.reservation.tableID)",
                 color: .black,
                 fontToken: .size15,
                 style: .semibold
@@ -141,7 +140,7 @@ struct ReservationsCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: address,
+                content: reservationResponse.restaurant.address,
                 color: .black,
                 fontToken: .size15,
                 style: .semibold
@@ -170,22 +169,8 @@ struct ReservationsCard: View {
     }
 }
 
-
-extension ReservationsCard {
-    static func stub() -> Self {
-        ReservationsCard(
-            imageName: "test",
-            restaurantName: "Seoul Food",
-            numOfPeople: 2,
-            time: "19:30",
-            tableNumber: 34,
-            address: "Tauke khan ave, 170/4"
-        )
-    }
-}
-
 struct ReservationsCard_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationsCard.stub()
+        ReservationsCard(reservationResponse: .stub())
     }
 }

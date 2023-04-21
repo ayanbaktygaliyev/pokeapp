@@ -1,11 +1,7 @@
 import SwiftUI
 
 struct RestaurantCard: View {
-    let imageName: String
-    let restaurantName: String
-    let categories: [String]
-    let price: Int
-    let rating: Double
+    let restaurant: Restaurant
     
     var body: some View {
         content
@@ -20,11 +16,21 @@ struct RestaurantCard: View {
     private var content: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 160)
-                    .cornerRadius(15, corners: [.topLeft, .topRight])
+                AsyncImage(
+                    url: restaurant.imageURL,
+                    content: { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 160)
+                            .cornerRadius(15, corners: [.topLeft, .topRight])
+                    },
+                    placeholder: {
+                        FoodiePlaceholderImage()
+                            .frame(height: 160)
+                            .cornerRadius(15, corners: [.topLeft, .topRight])
+                    }
+                )
                 
                 likeButton
             }
@@ -33,7 +39,7 @@ struct RestaurantCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: restaurantName,
+                content: restaurant.name,
                 color: .black,
                 fontToken: .size13,
                 style: .semibold
@@ -44,7 +50,7 @@ struct RestaurantCard: View {
                 .fixedSize()
             
             TextLabel(
-                content: categories.joined(separator: ", "),
+                content: restaurant.categories.joined(separator: ", "),
                 color: .black,
                 fontToken: .size12,
                 style: .regular
@@ -85,7 +91,7 @@ struct RestaurantCard: View {
     
     private var priceView: some View {
         HStack(spacing: .spacing4) {
-            ForEach(0..<4) { _ in
+            ForEach(0..<restaurant.priceRange) { _ in
                 Image(asset: .currency)
                     .resizable()
                     .frame(width: 7, height: 13.5)
@@ -95,7 +101,7 @@ struct RestaurantCard: View {
     
     private var ratingView: some View {
         HStack(spacing: .spacing2) {
-            ForEach(0..<5) { _ in
+            ForEach(0..<Int(restaurant.rating)) { _ in
                 Image(asset: .star)
                     .resizable()
                     .frame(width: 12.5, height: 12)
@@ -124,20 +130,8 @@ struct RestaurantCard: View {
     }
 }
 
-extension RestaurantCard {
-    static func stub() -> Self {
-        RestaurantCard(
-            imageName: "test",
-            restaurantName: "Seoul Food",
-            categories: ["healthy", "korean"],
-            price: 2,
-            rating: 5
-        )
-    }
-}
-
 struct RestaurantCard_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCard.stub()
+        RestaurantCard(restaurant: .stub())
     }
 }

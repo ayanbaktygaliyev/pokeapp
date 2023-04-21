@@ -9,26 +9,10 @@ public struct ProfileScreen: View {
     
     public var body: some View {
         content
-            .padding(.leading, 16)
     }
     
     private var content: some View {
-        VStack(alignment: .leading){
-            
-//            ZStack {
-//                Circle()
-//                    .fill(.black.opacity(0.2))
-//                    .frame(width: 32, height: 32)
-//
-//                Image(systemName: "chevron.left")
-//                    .resizable()
-//                    .foregroundColor(.white)
-//                    .frame(width: 8, height: 12)
-//            }
-//            .button {
-//                router.pop()
-//            }
-            
+        VStack(alignment: .center){
             ProfileCard.stub()
 
             Spacer(minLength: 90)
@@ -42,7 +26,10 @@ public struct ProfileScreen: View {
                 .fixedSize()
 
             logOutButton
-            
+                .button {
+                    viewModel.logOut()
+                    router.push(.signIn)
+                }
         }
     }
     
@@ -59,14 +46,11 @@ public struct ProfileScreen: View {
                 fontToken: .size17,
                 style: .medium
             )
-            
         }
-        
     }
     
     private var moreSettings: some View{
         ZStack(alignment: .leading){
-            
             Rectangle()
                 .fill(.white)
                 .frame(width: 327, height: 150)
@@ -74,9 +58,7 @@ public struct ProfileScreen: View {
                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
             
             VStack(alignment: .leading ,spacing: 20){
-                
-                HStack{
-                    
+                HStack {
                     Image(systemName: "text.bubble")
                         .resizable()
                         .foregroundColor(Color(.black))
@@ -101,11 +83,9 @@ public struct ProfileScreen: View {
                         .button {
                             router.push(.feedbackscreen)
                         }
-                    
                 }
                 
-                HStack{
-                    
+                HStack {
                     Image(systemName: "star")
                         .resizable()
                         .foregroundColor(Color(.black))
@@ -128,13 +108,13 @@ public struct ProfileScreen: View {
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
                         .button {
-                            router.push(.seeAllRestaurants(title: "Favourites", restaurants: []))
+                            router.push(
+                                .seeAllRestaurants(title: "Favourites", restaurants: [])
+                            )
                         }
-                    
                 }
                 
-                HStack{
-                    
+                HStack {
                     Image(systemName: "info.circle")
                         .resizable()
                         .foregroundColor(Color(.black))
@@ -204,18 +184,10 @@ public struct ProfileScreen: View {
                     
             }
             .frame(width: 327, alignment: .leading)
-            
-            
-            
         }
-    
     }
 }
     
-
-
-    
-
 struct ProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
         ProfileScreen()

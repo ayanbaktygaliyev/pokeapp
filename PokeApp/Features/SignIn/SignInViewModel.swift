@@ -60,6 +60,8 @@ final class SignInViewModel: ViewModel, ObservableObject {
             switch result {
             case .success:
                 self?.state.status = .signedIn
+                UserDefaults.standard.set(username, forKey: "username")
+                self?.authRepository.isSignedIn = true
                 
             case .failure(let error):
                 self?.state.status = .idle

@@ -41,6 +41,7 @@ public struct HomeScreen: View {
                     nearbySection
                     
                     favouritesSection
+                        .opacity(viewModel.state.favorites.count == 0 ? 0 : 1)
                 }
             }
         }
@@ -116,7 +117,9 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeAllRestaurants(title: "Recommended", restaurants: []))
+                    router.push(
+                        .seeAllRestaurants(title: "Recommended", restaurants: [.stub(), .stub()])
+                    )
                 }
             }
             
@@ -194,7 +197,9 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeAllRestaurants(title: "Nearby", restaurants: []))
+                    router.push(
+                        .seeAllRestaurants(title: "Nearby", restaurants: [.stub(), .stub(), .stub()])
+                    )
                 }
             }
             
@@ -233,16 +238,17 @@ public struct HomeScreen: View {
                 )
                 .padding(.trailing, 16)
                 .button {
-                    router.push(.seeAllRestaurants(title: "Favourites", restaurants: []))
+                    router.push(
+                        .seeAllRestaurants(title: "Favourites", restaurants: [])
+                    )
                 }
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: .spacing12) {
-                    ForEach(0..<10) { index in
+                    ForEach(viewModel.state.favorites) { favorite in
                         HomeRecommendedCard.stub()
                             .frame(width: 166, height: 220)
-                            .padding(.trailing, index == 10 - 1 ? 16 : 0)
                             .button {
                                 router.push(.restaurantDetails)
                             }

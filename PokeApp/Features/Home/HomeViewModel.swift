@@ -3,16 +3,11 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     struct State {
-        var username: String
-        var password: String
+        var favorites = [Restaurant]()
     }
     
     @Published
-    var state: State
-
-    init() {
-        self.state = State(username: "", password: "")
-    }
+    var state = State()
     
     static func stub() -> [Campaign] {
         [

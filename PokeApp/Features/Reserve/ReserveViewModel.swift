@@ -5,7 +5,6 @@ import Combine
 final class ReserveViewModel: ViewModel, ObservableObject {
     enum Event {
         case selectTable(id: Int)
-        case changeNumberOfPeople(Int)
     }
     
     struct State {
@@ -39,8 +38,6 @@ final class ReserveViewModel: ViewModel, ObservableObject {
     var state = State()
     
     private var cancellables = Set<AnyCancellable>()
-    
-    let authRepository = AuthRepository()
 
     init() {}
     
@@ -48,11 +45,6 @@ final class ReserveViewModel: ViewModel, ObservableObject {
         switch event {
         case .selectTable(let id):
             state.selectedTableID = id
-        case .changeNumberOfPeople(let numberOfPeople):
-            guard numberOfPeople >= 0 else {
-                return
-            }
-            state.numberOfPeople = numberOfPeople
         }
     }
 }

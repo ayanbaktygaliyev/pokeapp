@@ -89,10 +89,10 @@ private class PopUINavigationController: UINavigationController, UINavigationCon
     }
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        if let coordinator = viewController.transitionCoordinator,
-           let dismissedViewController = coordinator.viewController(forKey: .from),
-           !navigationController.viewControllers.contains(dismissedViewController) {
-                self.popHandler?()
-        }
+//        if let coordinator = viewController.transitionCoordinator,
+//           let dismissedViewController = coordinator.viewController(forKey: .from),
+//           !navigationController.viewControllers.contains(dismissedViewController) {
+//                self.popHandler?()
+//        }
     }
 }
