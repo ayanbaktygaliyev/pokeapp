@@ -6,6 +6,8 @@ class HomeViewModel: ObservableObject {
         var favorites = [Restaurant]()
     }
     
+    private var userRepository = UserRepository()
+    
     @Published
     var state = State()
     

@@ -62,7 +62,7 @@ public struct CuisinesSeeAllScreen: View {
             
             ZStack {
                 Circle()
-                    .fill(.black.opacity(0.48))
+                    .fill(.black.opacity(0.2))
                     .frame(width: 32, height: 32)
                 
                 Image(systemName: "chevron.left")
