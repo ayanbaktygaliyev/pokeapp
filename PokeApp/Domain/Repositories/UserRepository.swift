@@ -11,7 +11,7 @@ final class UserRepository {
             UserDefaults.standard.set(newValue, forKey: "username")
         }
     }
-    
+
     private let session: SessionCoordinator
     
     init(session: SessionCoordinator = .shared) {
@@ -21,4 +21,5 @@ final class UserRepository {
     func changeUsername(username: String) {
         self.username = username
     }
+    
 }

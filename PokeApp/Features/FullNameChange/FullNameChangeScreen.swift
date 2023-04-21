@@ -1,11 +1,11 @@
 import SwiftUI
 
-public struct UsernameSettingsScreen: View {
+public struct FullNameChangeScreen: View {
     @EnvironmentObject
     private var router: Router<Route>
     
     @StateObject
-    private var viewModel = UsernameSettingsScreenViewModel()
+    private var viewModel = FullNameChangeScreenViewModel()
     
     public var body: some View {
         content
@@ -13,7 +13,7 @@ public struct UsernameSettingsScreen: View {
                 Dialog(
                     isShowingDialog: $viewModel.state.isShowingDialog,
                     title: StringConstants.App.error,
-                    subtitle: "Make sure that you've confirmed your full name correctly",
+                    subtitle: "Make sure that you've confirmed your username correctly",
                     colorToken: .foodieGreen
                 )
                 .frame(width: UIScreen.main.bounds.width)
@@ -48,7 +48,7 @@ public struct UsernameSettingsScreen: View {
             VStack(alignment: .leading){
             
                 TextLabel(
-                    content: "Change Full name",
+                    content: "Change Username",
                     color: .black,
                     fontToken: .size20,
                     style: .bold
@@ -58,7 +58,7 @@ public struct UsernameSettingsScreen: View {
                     .fixedSize()
                 
                 TextLabel(
-                    content: "Enter your new full name below:",
+                    content: "Enter your new username below:",
                     color: .grey,
                     fontToken: .size16,
                     style: .bold
@@ -119,7 +119,7 @@ public struct UsernameSettingsScreen: View {
         VStack(alignment: .leading ,spacing: 23){
             
             TextLabel(
-                content: "New Full Name:",
+                content: "New Username:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold
@@ -135,7 +135,7 @@ public struct UsernameSettingsScreen: View {
 
             
             TextLabel(
-                content: "Confirm Full name:",
+                content: "Confirm Username:",
                 color: .grey,
                 fontToken: .size15,
                 style: .bold
@@ -156,8 +156,8 @@ public struct UsernameSettingsScreen: View {
 
     
 
-struct UsernameSettingsScreen_Previews: PreviewProvider {
+struct FullNameChangeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        UsernameSettingsScreen()
+        FullNameChangeScreen()
     }
 }

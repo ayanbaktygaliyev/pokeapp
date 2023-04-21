@@ -157,6 +157,9 @@ public struct AccountSettingsScreen: View {
                         .foregroundColor(Color(.black))
                         .frame(width: 7, height: 14)
                         .padding(.trailing, 16)
+                        .button {
+                            router.push(.usernamesettings)
+                        }
                     
                 }
                 
