@@ -79,7 +79,7 @@ public struct FeedbackScreen: View {
     
     private var greeting: some View{
         TextLabel(
-            content: "Hi, PokeApp Creator!",
+            content: "Hi, \(UserDefaults.standard.string(forKey: "fullname") ?? "")",
             color: .black,
             fontToken: .size24,
             style: .bold

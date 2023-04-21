@@ -3,23 +3,27 @@ import SwiftUI
 
 class FullNameChangeScreenViewModel: ObservableObject {
     struct State {
-        var username = ""
-        var confirmUsername = ""
+        var fullname = ""
+        var confirmFullname = ""
         var isShowingDialog = false
     }
     
     @Published
     var state = State()
     
-    private let userRepository = UserRepository()
+    let userRepository: UserRepository
+    
+    init(userRepository: UserRepository) {
+        self.userRepository = userRepository
+    }
 
-    func changeUsername(completion: @escaping() -> Void) {
-        if state.username != state.confirmUsername {
+    func changeFullname(completion: @escaping() -> Void) {
+        if state.fullname != state.confirmFullname {
             state.isShowingDialog = true
             return
         }
         
-        userRepository.changeUsername(username: state.username)
+        userRepository.changeFullname(fullname: state.fullname)
         completion()
     }
 }

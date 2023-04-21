@@ -13,6 +13,15 @@ final class UserRepository: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    var fullname: String {
+        get {
+            UserDefaults.standard.string(forKey: "fullname") ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "fullname")
+        }
+    }
+    
     var latitude: Double = 0
     var longitude: Double = 0
     
@@ -64,5 +73,9 @@ final class UserRepository: NSObject, CLLocationManagerDelegate {
         guard let locationCoordinates: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         latitude = locationCoordinates.latitude
         longitude = locationCoordinates.longitude
+    }
+    
+    func changeFullname(fullname: String) {
+        self.fullname = fullname
     }
 }

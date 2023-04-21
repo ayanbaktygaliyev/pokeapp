@@ -105,7 +105,7 @@ struct RootTopScreen: View {
                 CuisinesSeeAllScreen(viewModel: .init(cuisines: cuisines))
                 
             case .fullnamechange:
-                FullNameChangeScreen()
+                FullNameChangeScreen(viewModel: .init(userRepository: viewModel.environment.userRepository))
             }
         }
         .onAppear {
